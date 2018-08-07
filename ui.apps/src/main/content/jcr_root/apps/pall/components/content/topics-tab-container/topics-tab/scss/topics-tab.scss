@@ -1,0 +1,241 @@
+.topics-tab {
+
+ 	&__topic {
+		display: none;
+
+		&__edit-mode {
+			display: block;
+		}
+
+		@include mobile {
+			display: block;
+		}
+
+		&__title {
+			background: radial-gradient(ellipse at bottom, rgba(86,86,86,0.15) 0%, rgba(255,255,255,0) 35%);
+			display: none;
+			font-size: 20px;
+			line-height: 24px;
+			padding: 0.5em 0 0.5em 0;
+			position: relative;
+			text-align: center;
+
+			@include mobile {
+				position: relative;
+				display: block;
+			}
+		}
+		&__item__wrapper {
+			@include flexbox();
+			padding-top: 3em;
+			padding-bottom: 3em;
+
+			@include mobile {
+				display: block;
+				padding-top: 0;
+				padding-bottom: 0;
+				position: relative;
+				z-index: $topic-tab-item;
+			}
+
+			&.carousel {
+				margin: 0;
+			}
+
+			&:before{
+				@include border-radius(100px / 5px);
+				@include shadow(0 0 35px rgba(0,0,0,0.6));
+				content: "";
+				height: 10px;
+				left: 12.5%;
+				position: absolute;
+				top: -10px;
+				width: 75%;
+				z-index: $topic-tab-item-behind;
+			}
+
+			@include mobile {
+				&:before{
+					display: none;
+				}
+			}
+
+			// Slick Carousel Dots
+			.slick-dots {
+				li {
+					padding: 0 0 25px 0;
+					position: relative;
+					height: 14px;
+					margin: 0 5px;
+					top: 4px;
+					width: 14px;
+
+					@include mobile {
+						height: 10px;
+						width: 10px;
+					}
+
+					button {
+						background-color: transparent;
+						border: 1px solid #fff;
+						border-radius: 100px;
+						height: 14px;
+						opacity: 1;
+						width: 14px;
+
+						@include mobile {
+							height: 10px;
+							width: 10px;
+						}
+
+						&:before {
+							display: none;
+							height: 0px;
+							width: 0px;
+						}
+
+					}
+
+					&.slick-active {
+						position: relative;
+
+						&:before {
+							border-style: solid;
+							border-width: 0 8px 9px 8px;
+							border-color: transparent transparent #333 transparent;
+							bottom: -2px;
+							content: '';
+							height: 0;
+							left: -2px;
+							position: absolute;
+							width: 0;
+						}
+
+						&:after {
+							border-style: solid;
+							border-width: 0 4px 4px 4px;
+							border-color: transparent transparent #fff transparent;
+							bottom: -2px;
+							content: '';
+							height: 0;
+							left: 2px;
+							position: absolute;
+							width: 0;
+						}
+
+						button {
+							background-color: #fff;
+							border-radius: 100px;
+							border: 2px solid #fff;
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+
+		&__item {
+			@include flex(1, 1, 33%);
+
+			padding: 2em 7.5% 0 2.5%;
+			position: relative;
+			outline: none;
+
+			&:before {
+				border-right-color: #6F6F6F;
+				border-right-style: dotted;
+				border-right-width: 1px;
+			   	content: '';
+				height: inherit;
+				position: absolute;
+				right: 1px;
+				top: 0;
+
+				@include mobile {
+					height: 0;
+				}
+			}
+
+			@include  mobile {
+				background-image: none !important;
+				border: none;
+				padding: 2em 1.5% 0 1.5%;
+			}
+
+			&__content {
+
+				&__graphic {
+					display: block;
+					height: 100px;
+					width: 100px;
+				}
+
+				&__grip {
+					position: absolute;
+					right: 2.5%;
+					top: 10%;
+
+					span {
+						background: transparent url(/etc/designs/pall/img/item-grip.png) no-repeat left center;
+						display: block;
+						height: 27px;
+						width: 30px;
+
+						@include mobile {
+							background-image: url(/etc/designs/pall/img/item-grip-mobile.png);
+							height: 30px;
+							width: 27px;
+						}
+					}
+				}
+
+				&__title {
+					font-size: 40px;
+					line-height: 34px;
+					margin-top: 1em;
+
+					@include mobile {
+						font-size: 20px;
+						line-height: 24px;
+					}
+				}
+
+				&__description {
+					font-size: 14px;
+					line-height: 24px;
+
+					@include mobile {
+						font-size: 12px;
+						line-height: 18px;
+						margin-bottom: 25px;
+					}
+
+					p {
+						margin: 0 0 10px;
+					}
+
+					a.btn {
+						@include mobile {
+							display: none;
+						}
+					}
+				}
+
+			}//__content
+		}//__item
+
+		&__shared {
+			display: none;
+
+			@include mobile {
+				display: block;
+			}
+
+			&__learn-more {
+				padding: 1.25em 0;
+				text-align: center;
+			}
+		}//#shared
+
+	}//__topic
+}

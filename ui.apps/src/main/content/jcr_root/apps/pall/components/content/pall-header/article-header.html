@@ -1,0 +1,30 @@
+<template data-sly-template.renderHeader="${ @ header, industry }">
+    <div class="header-basic header-basic--article 
+        ${header.pallPage.resourceType == 'WEBINAR' ? 'header-basic--webinar' : ''}
+        ${header.pallPage.resourceType == 'PRESSRELEASE' ? 'header-basic--news' : ''}">
+        <section class="header-basic__content bg-${industry.color.cssClass}">
+            <sly data-sly-test="${header.pallPage.resourceType != 'WEBINAR'}" data-sly-unwrap>
+                <img class="header-basic__content main-header__image" src="${industry.bannerImage}">
+            </sly>
+            <section class="header-basic__content__text-box pall-layout">
+                <div class="header-basic__content__text-box__container">
+                    <h2 class="header-basic__content__text-box__title">${pageProperties.jcr:title}</h2>
+                    <span class="header-basic__content__text-box__text">
+                        <sly data-sly-test="${header.pallPage.resourceType == 'EVENT'}" data-sly-unwrap>
+                            <strong>${'lblEvents' @ i18n}:</strong>
+                        </sly>
+                        <sly data-sly-test="${header.pallPage.resourceType == 'WEBINAR'}" data-sly-unwrap>
+                            <strong>${'lblWebinar' @ i18n}:</strong>
+                        </sly>
+                        <sly data-sly-test="${header.pallPage.resourceType == 'PRESSRELEASE'}" data-sly-unwrap>
+                            <strong>${'lblNews' @ i18n}:</strong>
+                        </sly>
+                        ${industry.pageContent.title}
+                    </span>  
+                </div>
+                <span data-sly-test="${header.pallPage.resourceType == 'WEBINAR'}" class="header-basic--webinar__icon icon-${industry.color.cssClass}">
+                </span>
+            </section>
+        </section>
+    </div>
+</template>

@@ -1,0 +1,23 @@
+<!--/*
+
+  Parallax component.
+
+  Parallax component
+	Need to be able to check the size of the image to make sure it works for small or large format otherwise there is an error.
+	Small or large version. Need to be able to show text or no text, the text is never off the screen, it starts at the bottom and scrolls to the top of the image. Speed is determined by text.
+ 	Would like to be able to choose the color of the title and subtitle text. (white, charcoal or BU color)
+
+	For parallax section, need the solution story or item block component to be able to overlap.
+
+*/-->
+
+<div data-sly-test="${wcmmode.edit}">[ Configure ${component.title} Component ]</div>
+<div data-sly-use.parallax="${'com.pall.dotcom.service.models.Parallax'}" data-sly-test="${parallax.imagePath}" class="parallax-component parallax-component--${properties.imageSize || 'small'}">
+	<div class="parallax-component__image" data-type="background" data-image-src="${parallax.imagePath}"></div>
+	<sly data-sly-test="${properties.title != '' && properties.subtitle != ''}">
+		<div class="parallax-component__text" data-type="content">
+			<h1 class="parallax-component__text__title color-${parallax.color} ">${properties.title}</h1>
+			<h5 class="parallax-component__text__subtitle color-${parallax.color} ">${properties.subtitle}</5>
+		</div>
+	</sly>
+</div>

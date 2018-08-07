@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Webinar Details Section"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    mode="edit">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <general
+                jcr:primaryType="nt:unstructured"
+                jcr:title="General"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured"
+                        sling:hideChildren="[location,city,booth,summary,information]">
+                            <time
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/datepicker"
+                                fieldLabel="Webinar Time"
+                                fieldDescription="Time of the webinar"
+                                name="./webinartime"
+                                type="time"
+                                required="{Boolean}true"
+                                displayedFormat="hh:mm a"
+                                cq:showOnCreate="{Boolean}true"/>
+                            <whatlearn
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                fieldLabel="What will I learn text"
+                                required="{Boolean}true"
+                                name="./whatlearn"/>
+                            <mainLink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Register Link"
+                                name="./mainLink"
+                                rootPath="/content/pall"/>                                
+                            <linkSubtitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                maxlength="29"
+                                fieldDescription="Subtitle for the link"
+                                fieldLabel="Link Subtitle"
+                                name="./linkSubtitle"/>
+
+                        </items>
+                    </columns>
+                </items>
+            </general>
+        </items>
+    </content>
+</jcr:root>

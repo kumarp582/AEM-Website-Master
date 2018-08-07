@@ -1,0 +1,22 @@
+<div data-sly-test="${wcmmode.edit}">[ Configure ${component.title} Component ]
+</div>
+<section data-sly-use.videoPlayer="${'com.pall.dotcom.service.models.VideoPlayer'}" class="external-video-player__container bg-${videoPlayer.color.cssClass}">
+	<img class="external-video-player__container__background-image img-responsive" src="${properties.backgroundImage}">
+	<div class="external-video-player__container__content pall-layout">
+		<div class="external-video-player__container__content__responsive-video">
+		  <sly data-sly-test="${properties.playerType == 'youtube' && properties.youTubeVideo && properties.youTubeVideo != ''}">
+		    <iframe id="youtube-iframe" width="560" height="349" src="https://www.youtube.com/embed/${properties.youTubeVideo}?enablejsapi=1&rel=0&hd=1" frameborder="0" allowfullscreen></iframe>
+		  </sly>
+		  <sly data-sly-test="${properties.playerType == 'youtube' && !properties.youTubeVideo && properties.youTubePlaylist != ''}">
+		  	<iframe id="youtube-iframe" width="560" height="349" src="https://www.youtube.com/embed/videoseries?list=${properties.youTubePlaylist}&enablejsapi=1&rel=0&hd=1" frameborder="0" allowfullscreen></iframe>
+		  </sly>
+		  <sly data-sly-test="${properties.playerType == 'vimeo' && properties.vimeoVideo != ''}">
+		  	<iframe src="https://player.vimeo.com/video/${properties.vimeoVideo}?badge=0&byline=0&title=0&portrait=0" width="560" height="349" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		  </sly>
+		</div>
+		<div data-sly-test="${properties.hideTitle != 'true' && properties.playerType == 'youtube'}" class="external-video-player__container__content__text-box">
+			<h3 class="external-video-player__container__content__text-box__title"></h3>
+			<p class="external-video-player__container__content__text-box__text dot-ellipsis dot-height-78 dot-resize-update"></p>
+		</div>
+	</div>
+</section>

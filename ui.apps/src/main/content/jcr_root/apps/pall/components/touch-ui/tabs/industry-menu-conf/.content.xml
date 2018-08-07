@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Industry Menu Configuration"
+    sling:resourceType="granite/ui/components/foundation/section">
+    <layout
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+        margin="{Boolean}false"/>
+    <items jcr:primaryType="nt:unstructured">
+        <column
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/container">
+            <items jcr:primaryType="nt:unstructured">         
+                <menuindustry
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Industry Menu Configuration"
+                    sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                    <items jcr:primaryType="nt:unstructured">	              
+	                    <columns
+	                        jcr:primaryType="nt:unstructured"
+	                        sling:resourceType="granite/ui/components/foundation/container">
+	                        <items jcr:primaryType="nt:unstructured">
+	                            <image
+	                                jcr:primaryType="nt:unstructured"
+	                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+	                                fieldLabel="Industry Image Menu"
+	                                name="./industryimage"
+	                                rootPath="/content/dam/pall"/>
+                            	<i2
+		                        jcr:primaryType="nt:unstructured"
+		                        jcr:title="Service Links Configuration"
+		                        sling:resourceType="granite/ui/components/foundation/section">
+		                        <layout
+		                            jcr:primaryType="nt:unstructured"
+		                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+		                            margin="{Boolean}false"/>
+				                        <items jcr:primaryType="nt:unstructured">
+				                            <column
+				                                jcr:primaryType="nt:unstructured"
+				                                sling:resourceType="granite/ui/components/foundation/container">
+				                                <items jcr:primaryType="nt:unstructured">
+				                                    <iproperties2
+				                                        jcr:primaryType="nt:unstructured"
+				                                        jcr:title="Service Links"
+				                                        sling:resourceType="granite/ui/components/foundation/form/fieldset">
+				                                        <items jcr:primaryType="nt:unstructured"> 
+								                             <column
+								                                jcr:primaryType="nt:unstructured"
+								                                sling:resourceType="granite/ui/components/foundation/container">
+								                                <items jcr:primaryType="nt:unstructured">
+								                                    <items
+								                                        jcr:primaryType="nt:unstructured"
+								                                        sling:resourceType="/apps/pall/components/content/touchmultifield"
+								                                        class="full-width"
+								                                        fieldDescription="Click 'Add field' to add a new item"
+								                                        fieldLabel="Links">
+						                                        		<field
+								                                            jcr:primaryType="nt:unstructured"
+								                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+								                                            name="./serviceLinks">
+								                                            <layout
+								                                                jcr:primaryType="nt:unstructured"
+								                                                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+								                                                method="absolute"/>
+								                                            	<items jcr:primaryType="nt:unstructured">
+								                                                <column
+								                                                    jcr:primaryType="nt:unstructured"
+								                                                    sling:resourceType="granite/ui/components/foundation/container">
+								                                                    <items jcr:primaryType="nt:unstructured">
+								                                                       <title
+								                                                            jcr:primaryType="nt:unstructured"
+								                                                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+								                                                            fieldLabel="Title"
+								                                                            name="./title"/>        							                                                        
+								                                                        <link
+								                                                            jcr:primaryType="nt:unstructured"
+								                                                            sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+								                                                            fieldLabel="Link"
+								                                                            name="./link"
+								                                                            width="100%"
+								                                                            rootPath="/content"/>					                                                       
+						                                                    			</items>
+						                                                			</column>
+						                                            			</items>
+						                                        			</field>
+						                                    			</items>
+						                                			</items>
+						                            			</column>
+                           							 		</items>
+                            							</iproperties2>
+                           					 		</items>
+                            					</column>
+                            				</items>
+                           				</i2>
+                            	<i3
+		                        jcr:primaryType="nt:unstructured"
+		                        jcr:title="Industry Information Links Configuration"
+		                        sling:resourceType="granite/ui/components/foundation/section">
+		                        <layout
+		                            jcr:primaryType="nt:unstructured"
+		                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+		                            margin="{Boolean}false"/>
+				                        <items jcr:primaryType="nt:unstructured">
+				                            <column
+				                                jcr:primaryType="nt:unstructured"
+				                                sling:resourceType="granite/ui/components/foundation/container">
+				                                <items jcr:primaryType="nt:unstructured">
+				                                    <iproperties3
+				                                        jcr:primaryType="nt:unstructured"
+				                                        jcr:title="Industry Links"
+				                                        sling:resourceType="granite/ui/components/foundation/form/fieldset">
+				                                        <items jcr:primaryType="nt:unstructured">
+								                             <column
+								                                jcr:primaryType="nt:unstructured"
+								                                sling:resourceType="granite/ui/components/foundation/container">
+								                                <items jcr:primaryType="nt:unstructured">
+								                                    <items
+								                                        jcr:primaryType="nt:unstructured"
+								                                        sling:resourceType="/apps/pall/components/content/touchmultifield"
+								                                        class="full-width"
+								                                        fieldDescription="Click 'Add field' to add a new item"
+								                                        fieldLabel="Links">
+						                                        		<field
+								                                            jcr:primaryType="nt:unstructured"
+								                                            sling:resourceType="granite/ui/components/foundation/form/fieldset"
+								                                            name="./industryLinks">
+								                                            <layout
+								                                                jcr:primaryType="nt:unstructured"
+								                                                sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+								                                                method="absolute"/>
+								                                            	<items jcr:primaryType="nt:unstructured">
+								                                                <column
+								                                                    jcr:primaryType="nt:unstructured"
+								                                                    sling:resourceType="granite/ui/components/foundation/container">
+								                                                    <items jcr:primaryType="nt:unstructured">
+								                                                       <title
+								                                                            jcr:primaryType="nt:unstructured"
+								                                                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+								                                                            fieldLabel="Title"
+								                                                            name="./title"/>        							                                                        
+								                                                        <link
+								                                                            jcr:primaryType="nt:unstructured"
+								                                                            sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+								                                                            fieldLabel="Link"
+								                                                            name="./link"
+								                                                            width="100%"
+								                                                            rootPath="/content"/>					                                                       
+						                                                    			</items>
+						                                                			</column>
+						                                            			</items>
+						                                        			</field>
+						                                    			</items>
+						                                			</items>
+						                            			</column>
+                           							 		</items>
+                            							</iproperties3>
+                           					 		</items>
+                            					</column>
+                            				</items>
+                           				</i3>
+                        			</items>
+                    			</columns>
+               		 		</items>
+            			
+                </menuindustry>
+            </items>
+        </column>
+    </items>
+</jcr:root>

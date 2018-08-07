@@ -1,0 +1,68 @@
+<div data-sly-test="${wcmmode.edit}">[ Configure ${component.title} Component ]
+</div>
+<sly data-sly-use.industry="${'com.pall.dotcom.service.models.PallIndustryPage'}" data-sly-unwrap></sly>
+<section class="featured-solutions__container bg-${industry.color.cssClass}">
+    <img class="featured-solutions__container__background-image img-responsive" src="${properties.backgroundImage}">
+    <img class="featured-solutions__container__tactile-graphic" src="${industry.tactileGraphic}">
+    <div class="featured-solutions__container__content pall-layout">
+        <div class="featured-solutions__container__content__text-box">
+            <h1 class="featured-solutions__container__content__text-box__title dot-ellipsis dot-height-130 dot-resize-update">${properties.mainTitle}</h1>
+            <h4 class="featured-solutions__container__content__text-box__subtitle">${properties.mainSubTitle}</h4>
+            <p class="featured-solutions__container__content__text-box__text dot-ellipsis dot-height-140 dot-resize-update">${properties.mainDescription}</p>
+            <div class="featured-solutions-cta">
+
+                <div class="mobile-hidden">
+                    <a href="${properties.mainLink}.html" class="btn">
+                        <div>
+                            <span class="icon-arrow"></span>
+                            <span>
+                                <span>
+                                     ${'lblLearnMore' @ i18n }
+                                    <span>${properties.mainLinkSubtitle}</span>
+                                </span>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="desktop-hidden">
+                    <a href="${properties.mainLink}.html" class="btn btn--small" target="_blank">
+                        <span class="icon-arrow"></span>
+                        <span>
+                            <span>${'lblLearnMore' @ i18n }</span>
+                        </span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <div class="featured-solutions__container__content__blocks-container" >
+            <sly data-sly-use.container="${'com.pall.dotcom.service.models.FeaturedSolutionsBlockContainer'}">
+                <div class="featured-solutions__container__content__blocks-container__block">
+                    <sly data-sly-test="${container.block1.blockType == 'product-block1'}">
+                        <sly data-sly-use.displayblock="product-block.html"
+                             data-sly-call="${ displayblock.renderBlock @ productsolutionblock=container.block1, industry=industry }"
+                             data-sly-unwrap></sly>
+                    </sly>
+                    <sly data-sly-test="${container.block1.blockType == 'segment-block1'}">
+                        <sly data-sly-use.displayblock="segment-block.html"
+                             data-sly-call="${ displayblock.renderBlock @ segmentsolutionblock=container.block1, industry=industry }"
+                             data-sly-unwrap></sly>
+                    </sly>
+                </div>
+                <div class="featured-solutions__container__content__blocks-container__block segment">
+                    <sly data-sly-test="${container.block2.blockType == 'product-block2'}">
+                        <sly data-sly-use.displayblock="product-block.html"
+                             data-sly-call="${ displayblock.renderBlock @ productsolutionblock=container.block2, industry=industry }"
+                             data-sly-unwrap></sly>
+                    </sly>
+                    <sly data-sly-test="${container.block2.blockType == 'segment-block2'}">
+                        <sly data-sly-use.displayblock="segment-block.html"
+                             data-sly-call="${ displayblock.renderBlock @ segmentsolutionblock=container.block2, industry=industry }"
+                             data-sly-unwrap></sly>
+                    </sly>
+                </div>
+            </sly>
+        </div>
+    </div>
+</section>

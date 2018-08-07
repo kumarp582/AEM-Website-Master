@@ -1,0 +1,68 @@
+.event-details {
+	background-color: $color-article-bg;
+	height: 240px;
+	margin-bottom: 34px;
+	//@include shadow(0 10px 6px -6px black);
+	@include mobile {
+		height: 100%;
+	}
+	@include desktop {
+		height: 254px;
+	}
+	&__tactile-graphic {
+		position: absolute;
+		right: 0;
+		top: -25px;
+	}
+	&__event-label {
+		color: $color-white;
+		font-family: 'proxima-nova-bold';
+		font-weight: bold;
+		text-transform: uppercase;
+		@include mobile {
+			font-size: 20px;
+		}
+		@include desktop {
+			font-size: 50px;
+		}
+	}
+	&__section {
+		&__item {
+			@include flexbox;
+			@include mobile {
+				border-bottom: 1.5px dotted $color-white;
+				@include flex-direction(column);
+				padding: 4% 0;
+			}
+			@include desktop {
+				padding-bottom: 4%;
+			}
+			label {
+				color: $color-white;
+				&:nth-child(1) {
+					font-family: 'proxima-nova-bold';
+					font-weight: bold;
+					@include mobile {
+						padding-bottom: 5px;
+					}
+					@include desktop {
+						width: 25%;
+					}
+				}
+				&:nth-child(2) {
+					@include mobile {
+						font-size: 12px;
+						line-height: 18px;
+					}
+					@include desktop {
+						font-size: 14px;
+						width: 75%;
+					}
+				}
+				a {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}

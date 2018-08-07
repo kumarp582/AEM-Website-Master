@@ -1,0 +1,54 @@
+<sly data-sly-use.contactus="contactus.js" data-sly-use.contact="com.pall.dotcom.service.models.ContactUs">
+   <sly data-sly-test="${wcmmode.edit}" >
+      Configure Contact Us Component
+      <sly data-sly-list="${contact.subMenuLinks}">
+         <h1> configure ${item.industryPage.pageTitle} Form</h1>
+         <sly   data-sly-use.formInclude="formInclude.html"
+            data-sly-call="${ formInclude.formInclude @ form=item, index=itemList.index }" ></sly>
+      </sly>
+   </sly>
+   <div data-sly-test="${!wcmmode.edit}" id="contact-us" style="background-image:url(${properties.backgroundimage @ context='unsafe'}">
+      <div class="container">
+         <div id="industry-contact">
+            <div class="formRow">
+               <div class="intro">
+                  <div class="tabheading">
+                     <h2>Contact Us</h2>
+                     <p><strong>Select an industry</strong></p>
+                  </div>
+                  <div class="industry-tabs">
+                     <sly data-sly-list="${contact.subMenuLinks}">
+                        <a data-color="${item.industryPage.color.rgbCode}" onmouseover="this.style.background='${item.industryPage.color.rgbCode @ context='unsafe' }'" onmouseout="this.style.background='#FFF'" href="#" data-industry="${item.industryPage.pageTitle}"><span style="background-color:${item.industryPage.color.rgbCode @ context='unsafe'}" class="icon-${item.industryPage.color.cssClass @ context='unsafe'}"></span> <span>${item.industryPage.pageTitle}</span> <i class="icon-arrow-right-dotted"></i></a>
+                     </sly>
+                     <div class="industry-select-dropdown select-control">
+                        <select class="select form-control" id="industry-select">
+                           <sly data-sly-list="${contact.subMenuLinks}">
+                              <option value="${item.industryPage.pageTitle}">${item.industryPage.pageTitle}</option>
+                           </sly>
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <div class="industry-contact-us-wrapper">
+                  <sly data-sly-list="${contact.subMenuLinks}">
+                     <div data-industry="${item.industryPage.pageTitle}" style="background-color:${item.industryPage.color.rgbCode @ context='unsafe'}" class="industry-contact-us">
+                        <span class="icon-${item.industryPage.color.cssClass @ context='unsafe'}"></span>
+                        <div class="formRow">
+                           <div class="formGroup">
+                              <div class="formorder">
+                                 <sly   data-sly-use.formInclude="formInclude.html"
+                                    data-sly-call="${ formInclude.formInclude @ form=item, index=itemList.index }" ></sly>
+                              </div>
+                           </div>
+                           <div class="formdescription">
+                              ${properties.description @ context='html'}
+                           </div>
+                        </div>
+                     </div>
+                  </sly>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</sly>

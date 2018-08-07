@@ -1,0 +1,192 @@
+$icomoon-font-path: "../fonts/icon-set" !default;
+$icon-user: "\e90d";
+$icon-pall: "\e91b";
+$icon-arrow-right-dotted: "\e91a";
+$icon-arrow-next: "\e918";
+$icon-arrow-previous: "\e919";
+$icon-aerospace: "\e915";
+$icon-arrow: "\e907";
+$icon-biopharm: "\e914";
+$icon-checkmark: "\e904";
+$icon-chemical: "\e900";
+$icon-download: "\e905";
+$icon-foodandbev: "\e916";
+$icon-industrialman: "\e912";
+$icon-laboratory: "\e901";
+$icon-location: "\e908";
+$icon-login: "\e902";
+$icon-mail: "\e90a";
+$icon-medical: "\e911";
+$icon-microelectronics: "\e910";
+$icon-newcustomer1: "\e90e";
+$icon-newcustomer2: "\e90d";
+$icon-oilandgas: "\e917";
+$icon-phone1: "\e90c";
+$icon-phone2: "\e90b";
+$icon-power: "\e913";
+$icon-print: "\e906";
+$icon-search: "\e90f";
+$icon-share: "\e909";
+$icon-shop: "\e903";
+
+@include font-face('pall-iconset', '#{$icomoon-font-path}/pall-iconset', normal, normal);
+
+[class*=" icon-"],
+[class^="icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'pall-iconset' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-user {
+  &:before {
+    content: $icon-user;
+  }
+}
+.icon-pall {
+  &:before {
+    content: $icon-pall;
+  }
+}
+.icon-arrow-right-dotted {
+  &:before {
+    content: $icon-arrow-right-dotted;
+  }
+}
+.icon-arrow-next {
+  &:before {
+    content: $icon-arrow-next;
+  }
+}
+.icon-arrow-previous {
+  &:before {
+    content: $icon-arrow-previous;
+  }
+}
+.icon-chemicals {
+    &:before {
+        content: $icon-chemical;
+    }
+}
+.icon-laboratory {
+    &:before {
+        content: $icon-laboratory;
+    }
+}
+.icon-login {
+    &:before {
+        content: $icon-login;
+    }
+}
+.icon-shop {
+    &:before {
+        content: $icon-shop;
+    }
+}
+.icon-checkmark {
+    &:before {
+        content: $icon-checkmark;
+    }
+}
+.icon-download {
+    &:before {
+        content: $icon-download;
+    }
+}
+.icon-print {
+    &:before {
+        content: $icon-print;
+    }
+}
+.icon-arrow {
+    &:before {
+        content: $icon-arrow;
+    }
+}
+.icon-location {
+    &:before {
+        content: $icon-location;
+    }
+}
+.icon-share {
+    &:before {
+        content: $icon-share;
+    }
+}
+.icon-mail {
+    &:before {
+        content: $icon-mail;
+    }
+}
+.icon-phone2 {
+    &:before {
+        content: $icon-phone2;
+    }
+}
+.icon-phone1 {
+    &:before {
+        content: $icon-phone1;
+    }
+}
+.icon-newcustomer2 {
+    &:before {
+        content: $icon-newcustomer2;
+    }
+}
+.icon-newcustomer1 {
+    &:before {
+        content: $icon-newcustomer1;
+    }
+}
+.icon-search {
+    &:before {
+        content: $icon-search;
+    }
+}
+.icon-microelec {
+    &:before {
+        content: $icon-microelectronics;
+    }
+}
+.icon-medical {
+    &:before {
+        content: $icon-medical;
+    }
+}
+.icon-industrial {
+    &:before {
+        content: $icon-industrialman;
+    }
+}
+.icon-power {
+    &:before {
+        content: $icon-power;
+    }
+}
+.icon-biopharma {
+    &:before {
+        content: $icon-biopharm;
+    }
+}
+.icon-aerospace {
+    &:before {
+        content: $icon-aerospace;
+    }
+}
+.icon-food {
+    &:before {
+        content: $icon-foodandbev;
+    }
+}
+.icon-oilgas {
+    &:before {
+        content: $icon-oilandgas;
+    }
+}

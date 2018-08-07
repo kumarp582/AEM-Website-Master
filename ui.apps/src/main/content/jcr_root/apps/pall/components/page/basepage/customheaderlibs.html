@@ -1,0 +1,9 @@
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" data-sly-unwrap></sly>
+<sly data-sly-call="${clientlib.css @ categories='pall-frontend.design,pall-frontend.vendor'}" data-sly-unwrap></sly>
+<sly data-sly-use.pallConfig="com.pall.dotcom.service.models.PallConfig"/>
+
+<script>
+    var PallConfig = {};
+    PallConfig.youTubeAPIKey = "${pallConfig.youTubeAPIKey @ context='scriptString'}";
+</script>

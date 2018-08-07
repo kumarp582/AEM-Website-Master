@@ -1,0 +1,37 @@
+<!--/*
+
+  Topics Tab - Tab component.
+
+*/-->
+<div data-sly-test="${wcmmode.edit}">[ Configure
+   ${component.title} Component ]
+</div>
+<div id="${ topicstab.nodeName }" class="topics-tab__topic${wcmmode.edit ? '__edit-mode' : ''}" data-sly-use.topicstab="${'com.pall.dotcom.service.models.TopicsTab'}">
+    <div class="topics-tab__topic__title color-${topicsTab.activeFontColor}">${ topicstab.tabName }</div>
+    <div class="topics-tab__topic__item__wrapper carousel">
+        <sly data-sly-use.displaytopic="display-topic.html"
+             data-sly-call="${ displaytopic.renderTopic @ topic=topicstab.topic1, fontColor=topicsTab.activeFontColor }"
+             data-sly-unwrap></sly>
+        <sly data-sly-use.displaytopic="display-topic.html"
+             data-sly-call="${ displaytopic.renderTopic @ topic=topicstab.topic2, fontColor=topicsTab.activeFontColor }"
+             data-sly-unwrap></sly>
+        <sly data-sly-use.displaytopic="display-topic.html"
+             data-sly-call="${ displaytopic.renderTopic @ topic=topicstab.topic3, fontColor=topicsTab.activeFontColor }"
+             data-sly-unwrap></sly>
+    </div>
+    <div class="topics-tab__topic__shared">
+        <div class="topics-tab__topic__shared__learn-more bg-darken-${topicstab.backgroundColor}">
+            <a href="#" class="btn btn--small" target="_blank">
+                <span class="icon-arrow"></span>
+                <span>
+                    <span>
+                         ${'lblLearnMore' @ i18n }
+                    </span>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+<div data-sly-test="${wcmmode.edit}">[ End of
+   ${component.title} Component ]
+</div>

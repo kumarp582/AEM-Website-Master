@@ -1,0 +1,3 @@
+#base=.
+
+external-video-player.js

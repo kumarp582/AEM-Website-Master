@@ -1,0 +1,22 @@
+<div data-sly-test="${wcmmode.edit}">[ Configure ${component.title} Component ]
+</div>
+<sly data-sly-use.header="${'com.pall.dotcom.service.models.PallHeader'}" 
+     data-sly-use.industry="${'com.pall.dotcom.service.models.PallIndustryPage'}">
+    <sly data-sly-test="${header.isArticle}" data-sly-use.solutionHeader="article-header.html"
+        data-sly-call="${ solutionHeader.renderHeader @ header=header, industry=industry }" 
+        data-sly-unwrap>
+    </sly>
+    <sly data-sly-test="${header.isSolutionDetail}" data-sly-use.solutionHeader="solution-header.html"
+        data-sly-call="${ solutionHeader.renderHeader @ header=header, industry=industry }" 
+        data-sly-unwrap>
+    </sly>
+    <sly data-sly-test="${header.isBasic && !header.isSolutionDetail && !header.isArticle}" data-sly-use.basicHeader="basic-header.html"
+        data-sly-call="${ basicHeader.renderHeader @ header=header, industry=industry }" 
+        data-sly-unwrap>
+    </sly>
+    <sly data-sly-test="${!header.isBasic}" 
+         data-sly-use.ribbonHeader="ribbon-header.html"
+        data-sly-call="${ ribbonHeader.renderHeader @ header=header, industry=industry }" 
+        data-sly-unwrap>
+    </sly>
+</sly>

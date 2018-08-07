@@ -1,0 +1,62 @@
+<div data-sly-test="${wcmmode.edit}">[ Configure ${component.title} Component ]
+</div>
+<div class="event-details webinar" data-sly-use.industry="${'com.pall.dotcom.service.models.PallIndustryPage'}"
+data-sly-use.eventDetail="${'com.pall.dotcom.service.models.WebinarDetail'}">
+    <img class="event-details__tactile-graphic mobile-hidden" src="${industry.tactileGraphic}">
+    <aside class="col-25">
+        <!-- event date component goes here -->
+        <div data-sly-resource="${'article-date' @ resourceType='pall/components/content/article-date'}">
+          </div>
+        <span class="event-details__event-label">${'lblWebinar' @ i18n}</span>
+    </aside>
+    <section class="col-75 event-details__section">
+
+        <div class="event-details__section__item time">
+            <label>${'lblTime' @ i18n}</label>
+            <label>${eventDetail.time}</label>
+        </div>
+        <div class="event-details__section__item">
+            <label>${'lblWhatLearn' @ i18n}</label>
+            <label class="dot-ellipsis dot-height-60 dot-resize-update">${properties.whatlearn}</label>
+        </div>
+        <div class="event-details__section__item">
+            <label>${'lblRegister' @ i18n}</label>
+            <div class="mobile-hidden">
+               <a href="${properties.mainLink}.html" class="btn">
+                    <div>
+                        <span class="icon-arrow"></span>
+                        <span>
+                            <span>
+                                 ${'lblRegister' @ i18n }
+                                <span>${properties.linkSubtitle}</span>
+                            </span>
+                        </span>
+                    </div>
+                </a>
+            </div>
+            <div class="desktop-hidden">
+            	<a href="${properties.mainLink}.html" class="btn btn--small">
+                    <span class="icon-arrow"></span>
+                    <span>
+                        <span>${'lblRegister' @ i18n }</span>
+                    </span>
+                </a>
+           </div>
+        </div>
+    </section>
+</div>
+<div class="event-separator">
+
+</div>
+<div class="event-countdown" data-sly-use.eventDetail="${'com.pall.dotcom.service.models.EventDetail'}">
+    <aside class="event-countdown__banner col-25">
+        <span class="event-countdown__banner__event-label">
+            <strong>${'lblCountdown' @ i18n}</strong>
+            <br>${'lblToWebinar' @ i18n}
+        </span>
+    </aside>
+    <section class="event-countdown__countdown col-75">
+        <span class="event-countdown__event-date hide">${eventDetail.countDownDate}</span>
+        <div class="event-countdown__countdown__graph"></div>
+    </section>
+</div>

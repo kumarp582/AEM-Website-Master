@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Topics Tabs - Tab"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    helpPath="https://www.adobe.com/go/aem6_2_docs_component_en#Text &amp; Image - Sightly">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <general
+                jcr:primaryType="nt:unstructured"
+                jcr:title="General Configuration"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <tabName
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Topic tab name"
+                                fieldLabel="Tab Name"
+                                name="./tabName"/>
+                            <activeFontColor
+                                cq:showOnCreate="{Boolean}true"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="pall/components/touch-ui/widget/colorpicker"
+                                fieldDescription="Font Color for active topic"
+                                fieldLabel="Font Color for active state"
+                                freestylePaletteType="{Boolean}true"
+                                name="./activeFontColor"/>
+                            <nonActiveFontColor
+                                cq:showOnCreate="{Boolean}true"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="pall/components/touch-ui/widget/colorpicker"
+                                fieldDescription="Font Color for inactive topic"
+                                fieldLabel="Font Color for inactive state"
+                                freestylePaletteType="{Boolean}true"
+                                name="./nonActiveFontColor"/>
+                        </items>
+                    </columns>
+                </items>
+            </general>
+            <topic1
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Topic1 Properties"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <file
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                allowUpload="{Boolean}false"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldLabel="Icon / Image for the topic"
+                                fileReferenceParameter="./topic1/image/fileReference"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                name="./topic1/image/file"
+                                title="Icon / Image for the topic"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true"/>
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Title / Headline of the topic"
+                                fieldLabel="Title"
+                                name="./topic1/title"/>
+                            <description
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                fieldDescription="Short Description of the topic"
+                                fieldLabel="Description"
+                                name="./topic1/description"/>
+                            <link
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Learn More Link"
+                                name="./topic1/link"
+                                rootPath="/content/pall"/>
+                        </items>
+                    </columns>
+                </items>
+            </topic1>
+            <topic2
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Topic2 Properties"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <file
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                allowUpload="{Boolean}false"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldLabel="Icon / Image for the topic"
+                                fileReferenceParameter="./topic2/image/fileReference"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                name="./topic2/image/file"
+                                title="Icon / Image for the topic"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true"/>
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Title / Headline of the topic"
+                                fieldLabel="Title"
+                                name="./topic2/title"/>
+                            <description
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                fieldDescription="Short Description of the topic"
+                                fieldLabel="Description"
+                                name="./topic2/description"/>
+                            <tactile
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                allowUpload="{Boolean}false"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldLabel="Tactile Image for the topic"
+                                fileReferenceParameter="./topic2/tactile/fileReference"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                name="./topic2/tactile/file"
+                                title="Tactile Image for the topic"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true"/>
+                            <link
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Learn More Link"
+                                name="./topic2/link"
+                                rootPath="/content/pall"/>
+                        </items>
+                    </columns>
+                </items>
+            </topic2>
+            <topic3
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Topic3 Properties"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <file
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                allowUpload="{Boolean}false"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldLabel="Icon / Image for the topic"
+                                fileReferenceParameter="./topic3/image/fileReference"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                name="./topic3/image/file"
+                                title="Icon / Image for the topic"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true"/>
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Title / Headline of the topic"
+                                fieldLabel="Title"
+                                name="./topic3/title"/>
+                            <description
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                fieldDescription="Short Description of the topic"
+                                fieldLabel="Description"
+                                name="./topic3/description"/>
+                            <tactile
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                allowUpload="{Boolean}false"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldLabel="Tactile Image for the topic"
+                                fileReferenceParameter="./topic3/tactile/fileReference"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                name="./topic3/tactile/file"
+                                title="Tactile Image for the topic"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true"/>
+                            <link
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Learn More Link"
+                                name="./topic3/link"
+                                rootPath="/content/pall"/>
+                        </items>
+                    </columns>
+                </items>
+            </topic3>
+        </items>
+    </content>
+</jcr:root>

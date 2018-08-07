@@ -1,0 +1,93 @@
+.header-industry {
+	position: relative;
+	&,
+	.bg-image {
+		@include mobile {
+			height: auto;
+		}
+		@include desktop {
+			height: 500px;
+		}
+	}
+	.bg-image {
+		width: auto;
+	}
+	&.layout-basic {
+		height: auto;
+		max-height: 486px;
+	}
+	&__content {
+		bottom: 0;
+		width: 100%;
+		@include desktop {
+			@include flexbox;
+			position: absolute;
+			height: 240px;
+		}
+		&.layout-basic {
+			@include desktop {
+				height: 200px;
+			}
+			@include mobile {
+				bottom: 0;
+				display: block;
+				position: relative;
+			}
+		}
+		&__tactile-graphic {
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		&__icon {
+			font-size: 70px;
+			&.disable {
+				display: none;
+			}
+		}
+		&__text-box {
+			color: $color-white;
+			@include mobile {
+				padding-bottom: 4%;
+				padding-top: 4%;
+			}
+			@include desktop {
+				@include flexbox;
+				margin-top: 4%;
+			}
+			&__container {
+				@include mobile {
+					max-width: 100%;
+				}
+				@include desktop {
+					max-width: 75%;
+				}
+			}
+			&__title {
+				font-weight: bold;
+				padding-bottom: 3%;
+				text-transform: uppercase;
+				@include mobile {
+					font-size: 24px;
+					line-height: 14px;
+				}
+				@include desktop {
+					font-size: 50px;
+					line-height: 24px;
+					padding-top: 7px;
+				}
+			}
+			&__text {
+				@include mobile {
+					font-size: 12px;
+					font-weight: bold;
+					line-height: 18px;
+				}
+				@include desktop {
+					font-size: 20px;
+					line-height: 28px;
+				}
+			}
+		}
+	}
+}

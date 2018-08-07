@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/pall"/>
+    <filter root="/etc/clientlibs/pall">
+        <exclude pattern="/etc/clientlibs/pall/sass" />
+        <exclude pattern="/etc/clientlibs/pall/styles" />
+    </filter>
+    <filter root="/etc/designs/pall">
+        <include pattern="/etc/designs/pall/jcr:content"/>
+        <include pattern="/etc/designs/pall/img"/>
+    </filter>
+    <filter root="/etc/i18n/pall-dotcom" mode="update"/>
+    <filter root="/etc/languages"/>
+    <filter root="/etc/pall" mode="merge"/>
+</workspaceFilter>

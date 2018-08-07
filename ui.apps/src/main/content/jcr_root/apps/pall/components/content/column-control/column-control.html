@@ -1,0 +1,12 @@
+<div data-sly-test="${wcmmode.edit}">[ Configure ${component.title} Component ]</div>
+<div class="col-control clear-fix" data-sly-use.columnControl="${'com.pall.dotcom.service.models.ColumnControl'}">
+    <div class="col-control col-${columnControl.layout.col1Width}">
+        <div data-sly-resource="${'content-col1' @ resourceType='wcm/foundation/components/parsys'}"></div>
+    </div>
+    <div class="col-control col-${columnControl.layout.col2Width}">
+        <div data-sly-resource="${'content-col2' @ resourceType='wcm/foundation/components/parsys'}"></div>
+    </div>
+    <div data-sly-test="${properties.numberOfColumns == '3-col'}" class="col-control col-${columnControl.layout.col3Width}">
+        <div data-sly-resource="${'content-col3' @ resourceType='wcm/foundation/components/parsys'}"></div>
+    </div>
+</div>

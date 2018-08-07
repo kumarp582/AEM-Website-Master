@@ -1,0 +1,25 @@
+<sly data-sly-test="${wcmmode.edit}"
+    data-sly-use.emptyForm="emptyForm.html" data-sly-call="${emptyForm.empty}">
+</sly>
+<div class="long-form-content-block clear-fix" data-sly-use.contentBlock="${'com.pall.dotcom.service.models.LongFormContentBlock'}">
+    <sly data-sly-test="${!properties.numberOfColumns || properties.numberOfColumns == '3-col'}">
+        <div class="long-form-content-block__column-left col-${contentBlock.layout.col1Width}">
+            <h2 data-sly-test="${properties.title}" class="long-form-content-block__column-left__title">
+                ${properties.title}
+            </h2>
+        </div>
+    </sly>
+        <div class="long-form-content-block__column-middle col-${!properties.numberOfColumns || properties.numberOfColumns == '3-col' ? contentBlock.layout.col2Width : contentBlock.layout.col1Width}">
+            <h2 data-sly-test="${properties.title && properties.numberOfColumns != '3-col'}" class="long-form-content-block__column-middle__title">
+                ${properties.title}
+            </h2>
+            <h3 data-sly-test="${properties.subtitle}" class="long-form-content-block__column-middle__subtitle">
+                ${properties.subtitle}
+            </h3>
+            <div data-sly-resource="${'content-col1' @ resourceType='wcm/foundation/components/parsys'}"></div>
+        </div>
+        <div class="long-form-content-block__column-right col-${!properties.numberOfColumns || properties.numberOfColumns == '3-col' ? contentBlock.layout.col1Width : contentBlock.layout.col2Width}">
+            <div data-sly-resource="${'content-col2' @ resourceType='wcm/foundation/components/parsys'}"></div>
+        </div>
+    </sly>
+</div>

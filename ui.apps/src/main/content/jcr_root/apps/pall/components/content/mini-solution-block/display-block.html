@@ -1,0 +1,49 @@
+<template data-sly-template.renderBlock="${ @ solutionblock }">
+<div class="mini-solution-block__container__solution__icon-product">
+    <a href="${solutionblock.industry.url}" title="${solutionblock.industry.pageContent.title}"
+        class="mini-solution-block__container__solution__icon bg-darken-${solutionblock.industry.color.cssClass}" data-bgcolor="${solutionblock.industry.color.cssClass}">
+            <span class="icon-${solutionblock.industry.color.cssClass}"></span> ${solutionblock.industry.pageContent.title}
+    </a>
+    <div class="mini-solution-block__container__solution__product">
+        <img src="${solutionblock.prodImagePath}" alt="${solutionblock.title}"
+            class="mini-solution-block__container__solution__product__image img-responsive">
+        <div class="mini-solution-block__container__solution__product__button">
+            <a href="${solutionblock.viewProductLink}.html" class="btn btn--small no-icon">
+                <div>
+                    <span>${'lblViewProduct' @ i18n }</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="mini-solution-block__container__solution__details ${solutionblock.bgImagePath && solutionblock.bgImagePath != '' ? 'bg-image-helper' : ''}"
+    data-image-src="${solutionblock.bgImagePath}">
+    <img class="mini-solution-block__container__solution__details__tactile-graphic" src="${solutionblock.industry.tactileGraphic}">
+    <h1 class="mini-solution-block__container__solution__details__title">${solutionblock.title}</h1>
+    <div class="mini-solution-block__container__solution__details__body">
+        <p>${solutionblock.description}</p>
+
+        <div class="mobile-hidden">
+            <a href="${solutionblock.learnMoreLink}.html" class="btn">
+                <div>
+                    <span class="icon-arrow"></span>
+                    <span>
+                        <span>
+                            ${'lblLearnMore' @ i18n }<span>${solutionblock.learnMoreLinkSubtitle}</span>
+                        </span>
+                    </span>
+                </div>
+            </a>
+        </div>
+
+        <div class="desktop-hidden">
+            <a href="${solutionblock.learnMoreLink}.html" class="btn btn--small" target="_blank">
+                <span class="icon-arrow"></span>
+                <span>
+                    <span>${'lblLearnMore' @ i18n }</span>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+</template>

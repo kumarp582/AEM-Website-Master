@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Featured Solutions"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    mode="edit">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <general
+                jcr:primaryType="nt:unstructured"
+                jcr:title="General"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <mainTitle
+                               jcr:primaryType="nt:unstructured"
+                               sling:resourceType="granite/ui/components/foundation/form/textfield"
+                               fieldLabel="Main title"
+                               name="./mainTitle"/>
+                            <mainSubTitle
+                               jcr:primaryType="nt:unstructured"
+                               sling:resourceType="granite/ui/components/foundation/form/textfield"
+                               fieldLabel="Main Sub title"
+                               name="./mainSubTitle"/>
+                            <mainDecription
+                               jcr:primaryType="nt:unstructured"
+                               sling:resourceType="granite/ui/components/foundation/form/textarea"
+                               fieldLabel="Main description"
+                               name="./mainDescription"/>
+                            <mainLink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Learn More Link"
+                                name="./mainLink"
+                                rootPath="/content/pall"/>
+                            <mainLinkSubtitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                maxlength="29"
+                                fieldDescription="Subtitle for the Learn More link"
+                                fieldLabel="Link Subtitle"
+                                name="./mainLinkSubtitle"/>
+                            <backgroundImage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Background Image"
+                                name="./backgroundImage"
+                                rootPath="/content/dam/pall"/>
+                        </items>
+                    </columns>
+                </items>
+            </general>
+            <block-one
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Block One"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <blockType
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".featured-solutions-block1-showhide-target"
+                                fieldLabel="Select Block Type"
+                                name="./block1/blockType">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <product
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Product"
+                                        value="product-block1"/>
+                                    <segment
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Segment"
+                                        value="segment-block1"/>
+                                </items>
+                            </blockType>
+                            <productBlock1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide featured-solutions-block1-showhide-target"
+                                showhidetargetvalue="product-block1">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <productName
+                                       jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                       fieldLabel="Name"
+                                       name="./block1/productName"/>
+                                    <productDescription
+                                       jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                       fieldLabel="Description"
+                                       name="./block1/productDescription"/>
+                                    <productPartNumber
+                                       jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                       fieldLabel="Part Number"
+                                       name="./block1/productPartNumber"/>
+                                    <productPrice
+                                       jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                       fieldLabel="Price"
+                                       name="./block1/productPrice"/>
+                                    <productButtonLink
+                                       jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                       fieldLabel="Button Link"
+                                       name="./block1/productButtonLink"/>
+                                    <productImagePath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                        fieldLabel="Product Image Path"
+                                        name="./block1/productImagePath"
+                                        rootPath="/content/dam/pall/products"/>
+                                </items>
+                            </productBlock1>
+                            <segmentBlock1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide featured-solutions-block1-showhide-target"
+                                showhidetargetvalue="segment-block1">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <segmentTitle
+                                       jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                       fieldLabel="Title"
+                                       name="./block1/segmentName"/>
+                                    <segmentDescription
+                                       jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                       fieldLabel="Description"
+                                       name="./block1/segmentDescription"/>
+                                    <segmentLink
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                        fieldLabel="Learn More Link"
+                                        name="./block1/learnMoreLink"
+                                        rootPath="/content/pall"/>
+                                    <segmentLinkSubtitle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldDescription="Subtitle for the Learn More link"
+                                        fieldLabel="Link Subtitle"
+                                        name="./block1/learnMoreLinkSubtitle"/>
+                                </items>
+                            </segmentBlock1>
+                        </items>
+                    </columns>
+                </items>
+            </block-one>
+            <block-two
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Block Two"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <blockType
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".featured-solutions-block2-showhide-target"
+                                fieldLabel="Select Block Type"
+                                name="./block2/blockType">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <product
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Product"
+                                        value="product-block2"/>
+                                    <segment
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Segment"
+                                        value="segment-block2"/>
+                                </items>
+                            </blockType>
+                            <productBlock2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide featured-solutions-block2-showhide-target"
+                                showhidetargetvalue="product-block2">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <productName
+                                       jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                       fieldLabel="Name"
+                                       name="./block2/productName"/>
+                                    <productDescription
+                                       jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                       fieldLabel="Description"
+                                       name="./block2/productDescription"/>
+                                    <productPartNumber
+                                       jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                       fieldLabel="Part Number"
+                                       name="./block2/productPartNumber"/>
+                                    <productPrice
+                                       jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                       fieldLabel="Price"
+                                       name="./block2/productPrice"/>
+                                    <productButtonLink
+                                       jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                       fieldLabel="Button Link"
+                                       name="./block2/productButtonLink"/>
+                                    <productImagePath
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                        fieldLabel="Product Image Path"
+                                        name="./block2/productImagePath"
+                                        rootPath="/content/dam/pall/products"/>
+                                </items>
+                            </productBlock2>
+                            <segmentBlock2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide featured-solutions-block2-showhide-target"
+                                showhidetargetvalue="segment-block2">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <segmentTitle
+                                       jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                       fieldLabel="Title"
+                                       name="./block2/segmentName"/>
+                                    <segmentDescription
+                                       jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                       fieldLabel="Description"
+                                       name="./block2/segmentDescription"/>
+                                    <segmentLink
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                        fieldLabel="Learn More Link"
+                                        name="./block2/learnMoreLink"
+                                        rootPath="/content/pall"/>
+                                    <segmentLinkSubtitle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldDescription="Subtitle for the Learn More link"
+                                        fieldLabel="Link Subtitle"
+                                        name="./block2/learnMoreLinkSubtitle"/>
+                                </items>
+                            </segmentBlock2>
+                        </items>
+                    </columns>
+                </items>
+            </block-two>
+        </items>
+    </content>
+</jcr:root>

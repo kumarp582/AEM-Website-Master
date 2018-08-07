@@ -1,0 +1,13 @@
+<div data-sly-test="${wcmmode.edit}">[ Configure
+   ${component.title} Component ]
+</div>
+<div data-sly-test="${wcmmode.edit}" class="quilt-container-edit" data-sly-use.product="${'com.pall.dotcom.service.models.QuiltProduct'}">
+   	<img style="height: 200px;width: 312px;" src="${product.productImagePath}" class="${product.isVideo?'product-video':''}" alt="${product.productTitle}">
+   	<sly data-sly-test="${product.icon}"><img src="${product.icon}" alt="${product.productTitle}"></sly>
+    <h3>${product.productTitle}</h3>
+    <p>${product.productDesc}</p>
+    <sly data-sly-test="${product.buttonTitle}">
+       <span class="icon-${product.buttonStyle}">${product.buttonTitle}</span>
+    </sly>
+    <br>
+</div>

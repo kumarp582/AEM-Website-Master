@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Quilt Level2 Container"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    helpPath="https://www.adobe.com/go/aem6_2_docs_component_en#Text &amp; Image - Sightly">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <tab1
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Layout"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <layout
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/foundation/form/radiogroup"
+                                fieldDescription="Choose a layout"
+                                class="cq-dialog-tiles-radiogroup"
+                                fieldLabel="Layout"
+                                required="{Boolean}true"
+                                name="./layout">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <_x0036_
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/foundation/form/radio"
+                                        id="6"
+                                        text="6 Tiles - 3 (2X2), 2 (2X1), 1 (1X1)"
+                                        value="6 Tiles - 3 (2X2), 2 (2X1), 1 (1X1)"/>
+                                    <_x0037_
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/foundation/form/radio"
+                                        id="7"
+                                        text="7 Tiles - 3 (2X2), 1 (2X1), 3 (1X1)"
+                                        value="7 Tiles - 3 (2X2), 1 (2X1), 3 (1X1)"/>
+                                    <_x0038_
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/foundation/form/radio"
+                                        id="8"
+                                        text="8 Tiles - 2 (2X2), 2 (2X1), 1 (1X2), 3 (1X1)"
+                                        value="8 Tiles - 2 (2X2), 2 (2X1), 1 (1X2), 3 (1X1)"/>
+                                    <_x0039_a
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/foundation/form/radio"
+                                        id="9a"
+                                        text="9 Tiles - 2 (2X2), 2 (1X2), 5 (1X1)"
+                                        value="9a Tiles - 2 (2X2), 2 (1X2), 5 (1X1)"/>
+                                    <_x0039_b
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/foundation/form/radio"
+                                        id="9b"
+                                        text="9 Tiles - 1 (2X2), 2 (2X1), 3 (1X2), 3 (1X1)"
+                                        value="9b Tiles - 1 (2X2), 2 (2X1), 3 (1X2), 3 (1X1)"/>
+                                    <_x0031_0
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/foundation/form/radio"
+                                        id="10"
+                                        text="10 Tiles - 1 (2X2), 3 (2X1), 1 (1X2), 5 (1X1)"
+                                        value="10 Tiles - 1 (2X2), 3 (2X1), 1 (1X2), 5 (1X1)"/>
+                                    <_x0031_1
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/foundation/form/radio"
+                                        id="11"
+                                        text="11 Tiles - 1 (2X2), 1 (2X1), 2 (1X2), 7 (1X1)"
+                                        value="11 Tiles - 1 (2X2), 1 (2X1), 2 (1X2), 7 (1X1)"/>
+                                    <_x0031_2a
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/foundation/form/radio"
+                                        id="12a"
+                                        text="12 Tiles - 1 (2X2), 1 (2X1), 1 (1X2), 9 (1X1)"
+                                        value="12a Tiles - 1 (2X2), 1 (2X1), 1 (1X2), 9 (1X1)"/>
+                                    <_x0031_2b
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/foundation/form/radio"
+                                        id="12b"
+                                        text="12 Tiles - 1 (2X2), 2 (1X2), 9 (1X1)"
+                                        value="12b Tiles - 1 (2X2), 2 (1X2), 9 (1X1)"/>
+                                </items>
+                            </layout>
+                        </items>
+                    </columns>
+                </items>
+            </tab1>
+        </items>
+    </content>
+</jcr:root>

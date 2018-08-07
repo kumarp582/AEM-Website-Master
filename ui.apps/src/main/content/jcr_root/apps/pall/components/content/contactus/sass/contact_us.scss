@@ -1,0 +1,526 @@
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+.formRow {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+#contact-us {
+    .container {
+        @include desktop {
+            width: 1176px;
+        }
+        @include mobile {
+            width: 970px;
+        }
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .container:before,
+    .container:after {
+        @include desktop {
+            width: 1176px;
+        }
+        @include mobile {
+            width: 970px;
+        }
+        content: " ";
+        display: table;
+    }
+    font-family: 'proxima-nova-regular';
+  font-weight: 400;
+    background: #f7f7f7 url(../images/bg-contact-us.jpg) no-repeat center top;
+    background-size: cover;
+    padding: 3em 0 5em 0;
+    h2 {
+       font-family: 'proxima-nova-bold';
+         font-weight: 700;
+        margin: 0;
+    }
+    h3 {
+        font-family: 'proxima-nova-bold';
+         font-weight: 700;
+        margin-top: 0;
+    }
+    p {
+        font-size: 12px;
+    }
+    #industry-contact {
+        margin-left: -15px;
+        margin-right: -15px;
+        .intro {
+            @include mobile {
+                padding: 15px;
+            }
+            .tabheading {
+                @include desktop {
+                    width: 100%;
+                    float: left;
+                    position: relative;
+                    min-height: 1px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+            }
+        }
+        .select-control {
+            position: relative;
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0.5em;
+                right: 3.5em;
+                z-index: 5;
+                width: 1px;
+                height: 35px;
+                background-color: #fff;
+                pointer-events: none;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                top: 1.5em;
+                right: 1.125em;
+                z-index: 5;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 9px 9px 0 9px;
+                border-color: #fff transparent transparent transparent;
+                pointer-events: none;
+            }
+        }
+    }
+    .industry-tabs {
+        @include desktop {
+            float: left;
+            position: relative;
+            min-height: 1px;
+            padding-left: 0px;
+            padding-right: 0;
+        }
+        @include desktop {
+            width: 33.33333%;
+        }
+        //background-color: #fff;
+        @include mobile {
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 2em;
+        }
+        a {
+            position: relative;
+            display: block;
+            background: linear-gradient(-35deg, rgba(200, 200, 200, 1) 0%, rgba(255, 255, 255, 1) 15%);
+            border-bottom: 1px solid #ccc;
+            color: #292929;
+            text-decoration: none;
+            vertical-align: middle;
+            transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+            @include mobile {
+                display: none;
+            }
+            &:hover,
+            &.active {
+                color: #fff;
+                i {
+                    color: #fff;
+                }
+            }
+            span {
+                display: inline-block;
+                position: relative;
+                top: -4px;
+                &[class*='icon-'] {
+                    position: relative;
+                    top: 0;
+                    display: inline-block;
+                    background-color: $pall;
+                    color: #fff;
+                    font-size: 22px;
+                    padding: 0.6em;
+                    margin-right: 0.5em;
+                }
+            }
+            i {
+                position: absolute;
+                top: 1em;
+                right: 1em;
+                font-size: 16px;
+            }
+            &[data-industry='pall']:hover,
+            &[data-industry='pall'].active,
+            &[data-industry='pall'] span[class*='icon-'] {
+                background: $pall;
+            }
+            &[data-industry='microelectronics']:hover,
+            &[data-industry='microelectronics'].active,
+            &[data-industry='microelectronics'] span[class*='icon-'] {
+                background: $microelectronics;
+            }
+            &[data-industry='aerospace-defense']:hover,
+            &[data-industry='aerospace-defense'].active,
+            &[data-industry='aerospace-defense'] span[class*='icon-'] {
+                background: $aerospace-defense;
+            }
+            &[data-industry='oil-gas']:hover,
+            &[data-industry='oil-gas'].active,
+            &[data-industry='oil-gas'] span[class*='icon-'] {
+                background: $oil-gas;
+            }
+            &[data-industry='laboratory']:hover,
+            &[data-industry='laboratory'].active,
+            &[data-industry='laboratory'] span[class*='icon-'] {
+                background: $laboratory;
+            }
+            &[data-industry='biopharmaceutical']:hover,
+            &[data-industry='biopharmaceutical'].active,
+            &[data-industry='biopharmaceutical'] span[class*='icon-'] {
+                background: $biopharmaceutical;
+            }
+            &[data-industry='food-beverage']:hover,
+            &[data-industry='food-beverage'].active,
+            &[data-industry='food-beverage'] span[class*='icon-'] {
+                background: $food-beverage;
+            }
+            &[data-industry='medical']:hover,
+            &[data-industry='medical'].active,
+            &[data-industry='medical'] span[class*='icon-'] {
+                background: $medical;
+            }
+            &[data-industry='industrial-manufacturing']:hover,
+            &[data-industry='industrial-manufacturing'].active,
+            &[data-industry='industrial-manufacturing'] span[class*='icon-'] {
+                background: $industrial-manufacturing;
+            }
+            &[data-industry='power-utilities']:hover,
+            &[data-industry='power-utilities'].active,
+            &[data-industry='power-utilities'] span[class*='icon-'] {
+                background: $power-utilities;
+            }
+            &[data-industry='chemicals-polymers']:hover,
+            &[data-industry='chemicals-polymers'].active,
+            &[data-industry='chemicals-polymers'] span[class*='icon-'] {
+                background: $chemicals-polymers;
+            }
+        }
+        .industry-select-dropdown {
+            display: none;
+            @include mobile {
+                display: block;
+            }
+        }
+        select {
+            color: #fff;
+            background-color: #aaaaaa;
+            appearance: none;
+            font-size: 16px;
+            padding: 0.5em;
+            height: auto;
+        }
+    } //.industry-tabs
+    .industry-contact-us-wrapper {
+        position: relative;
+        padding-left: 0;
+        @include desktop {
+            width: 66.66667%;
+            float: left;
+            min-height: 1px;
+            padding-right: 15px;
+        }
+        .formRow {
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+        @include mobile {
+            padding-left: 15px;
+            padding-right: 15px;
+            background: $pall;
+            position: relative;
+            z-index: 1;
+            margin-top: 60px;
+            &.pall {
+                background-color: $pall;
+            }
+            &.microelectronics {
+                background-color: $microelectronics;
+            }
+            &.aerospace-defense {
+                background-color: $aerospace-defense;
+            }
+            &.oil-gas {
+                background-color: $oil-gas;
+            }
+            &.laboratory {
+                background-color: $laboratory;
+            }
+            &.biopharmaceutical {
+                background-color: $biopharmaceutical;
+            }
+            &.food-beverage {
+                background-color: $food-beverage;
+            }
+            &.medical {
+                background-color: $medical;
+            }
+            &.industrial-manufacturing {
+                background-color: $industrial-manufacturing;
+            }
+            &.power-utilities {
+                background-color: $power-utilities;
+            }
+            &.chemicals-polymers {
+                background-color: $chemicals-polymers;
+            }
+            &:before,
+            &:after {
+                background: inherit;
+                content: '';
+                display: block;
+                height: 50%;
+                position: absolute;
+                right: 0;
+                z-index: -1;
+                -webkit-backface-visibility: hidden;
+            }
+            &:before {
+                top: 0;
+                left: 0;
+                transform: skewY(25deg);
+                transform-origin: 15% 0;
+            }
+            &:after {
+                top: -10%;
+                left: 0;
+                transform: skewY(-4deg);
+                transform-origin: 125%;
+            }
+        }
+        @include desktop {
+            &:before {
+                top: 0;
+                left: 0;
+                transform: skewY(30deg);
+                transform-origin: 25% 0;
+            }
+            &:after {
+                top: -10%;
+                left: 0;
+                transform: skewY(-8deg);
+                transform-origin: 125%;
+            }
+        }
+        #pall-contact-form {
+            background-color: $pall;
+        }
+        #pall-contact-form {
+            background-color: $pall;
+        }
+        #microelectronics-contact-form {
+            background-color: $microelectronics;
+        }
+        #aerospace-defense-contact-form {
+            background-color: $aerospace-defense;
+        }
+        #oil-gas-contact-form {
+            background-color: $oil-gas;
+        }
+        #laboratory-contact-form {
+            background-color: $laboratory;
+        }
+        #biopharmaceutical-contact-form {
+            background-color: $biopharmaceutical;
+        }
+        #food-beverage-contact-form {
+            background-color: $food-beverage;
+        }
+        #medical-contact-form {
+            background-color: $medical;
+        }
+        #industrial-manufacturing-contact-form {
+            background-color: $industrial-manufacturing;
+        }
+        #power-utilities-contact-form {
+            background-color: $power-utilities;
+        }
+        #chemicals-polymers-contact-form {
+            background-color: $chemicals-polymers;
+        }
+        .industry-contact-us {
+            position: relative;
+            overflow: hidden;
+            padding: 3em;
+            color: #fff;
+            @include mobile {
+                padding: 1em 15px;
+            }
+            &> span[class*='icon'] {
+                content: '';
+                position: absolute;
+                bottom: -10%;
+                right: 0%;
+                font-size: 350px;
+                color: rgba(255, 255, 255, 0.1)
+            }
+        }
+        .formdescription {
+            @include desktop {
+                width: 50%;
+                float: left;
+                position: relative;
+                min-height: 1px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+        .formGroup {
+            @include desktop {
+                width: 50%;
+                float: left;
+                position: relative;
+                min-height: 1px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .formorder {
+                form {
+                   
+                    .form-group {
+                        margin-bottom: 15px;
+                        position: relative;
+                        
+                        select {
+                          color: #fff !important;
+						   
+						    -webkit-appearance: none !important;
+						    -moz-appearance: none !important;
+						    appearance: none !important;
+						    padding: 1.2em !important;
+						    height: auto !important;
+                    }
+                    .submit {
+                        text-align: right;
+                        @include mobile {
+                            text-align: left;
+                        }
+                    }
+                        .form-control  {
+                               width: 100%;
+							    height: 34px;
+							    padding: 6px 12px;
+							    background-color: #fff;
+							    background-image: none;
+							    border: 1px solid #ccc;
+							    border-radius: 4px;
+							    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+							    -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+							    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                        
+                               option {
+							    color: #fff;
+							    background-color: hsla(0, 0%, 100%, .1);
+							    -webkit-appearance: none;
+							    -moz-appearance: none;
+							    appearance: none;
+							    padding: 1em;
+							    height: auto;
+							    }
+									}
+                        label {
+                            position: absolute;
+                            top: 1em;
+                            left: 1em;
+                            transition: all 250ms ease-in;
+                        }
+                        .input-filled {
+                            label {
+                                top: 0.33em;
+                                left: 1.33em;
+                                font-size: 11px;
+                            }
+                        }
+                        input,
+                        textarea {
+                            color: #fff;
+                            background-color: rgba(255, 255, 255, 0.10);
+                            padding: 1.33em 1em 0.55em 1em;
+                            height: auto;
+                            width: 100%;
+                            background-image: none;
+                            border: 1px solid #ccc;
+                            border-radius: 4px;
+                            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+                            -webkit-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+                            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+                        }
+                    }
+                    label {
+                        position: absolute;
+                        top: 1em;
+                        left: 1em;
+                        transition: all 250ms ease-in;
+                    }
+                    .input-filled {
+                        label {
+                            top: 0.33em;
+                            left: 1.33em;
+                            font-size: 11px;
+                        }
+                    }
+                    input,
+                    textarea {
+                        color: #fff;
+                        background-color: rgba(255, 255, 255, 0.10);
+                        padding: 1.33em 1em 0.55em 1em;
+                        height: auto;
+                        width: 100%;
+                        background-image: none;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+                        -webkit-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+                        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+                    }
+                    select {
+                        color: #fff;
+                        background-color: rgba(255, 255, 255, 0.10);
+                        appearance: none;
+                        padding: 1em;
+                        height: auto;
+                    }
+                    .submit {
+                        text-align: right;
+                        @include mobile {
+                            text-align: left;
+                        }
+                    }
+                } //form
+            }
+        }
+    } //.industry-contact-us
+}
+
+/*.form-group input:focus + label{
+    top: 0em !important;
+    opacity: 0.4 !important;
+    pointer-events: none;
+    position: absolute;
+    transform: translate3d(0, 22px, 0) scale(1);
+    transform-origin: left top;
+    transition: 240ms;
+}
+.form-group input:focus control-label {
+    opacity: 1;
+    transform: scale(0.75);
+}*/
+.hidden {
+    display: none;
+}
+.show {
+    display: block;
+}

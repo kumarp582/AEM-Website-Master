@@ -1,0 +1,9 @@
+<div data-sly-use.tile="${'com.pall.dotcom.service.models.QuiltTile'}" data-sly-test="${wcmmode.edit}">[ Configure
+   ${component.title} - ${tile.size} Component ]
+</div>
+<div data-sly-test="${wcmmode.edit}"  data-sly-use.tile="${'com.pall.dotcom.service.models.QuiltTile'}" class="quilt-container__second-level__tile size-${tile.size}">
+    <div class="quilt__tile__top-title">${tile.heading}</div>
+    <img style="height: 200px;width: 312px;" src="${tile.bgImagePath}" alt="${tile.title}">
+    <a href="${properties.link}.html"> <h3>${tile.title}</h3></a>
+    <p data-sly-test="${tile.size != '1-1'}">${tile.desc}</p>
+</div>

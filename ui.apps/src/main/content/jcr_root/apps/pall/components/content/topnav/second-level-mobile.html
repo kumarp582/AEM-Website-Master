@@ -1,0 +1,37 @@
+<template data-sly-template.secondLevelMobile="${ @ topNav }">
+    <li class="topnav__nav__container--mobile__subnav__item topnav__nav__container--mobile__subnav__item--back bg-charcoal3">
+        <span class="topnav__nav__container--mobile__icon icon-newcustomer1 bg-pallblue"></span>
+        <span>My account</span>
+        <span class="topnav__nav__container--mobile__icon icon-arrow bg-pallblue"></span>
+    </li>
+    <li class="topnav__nav__container--mobile__subnav__item">
+        <a href="#" class="topnav__nav__container--mobile__subnav__item__link">
+            <span class="topnav__nav__container--mobile__icon icon-shop bg-pallblue"></span>
+            <span>${'lblShop' @ i18n } all products</span>
+        </a>
+    </li>
+    <li class="topnav__nav__container--mobile__subnav__item subnav__hook">
+        <a href="#" class="topnav__nav__container--mobile__subnav__item__link">
+            <span class="topnav__nav__container--mobile__icon icon-arrow bg-pallblue"></span>
+            <span class="topnav__nav__container--mobile__items__item--industries__link__container__text">
+                <span>${'lblIndustries' @ i18n}</span>
+            </span>
+        </a>
+        <ul class="topnav__nav__container--mobile__subnav layer1 bg-charcoal1">
+            <sly data-sly-use.industriesLevel="industries-level-mobile.html"
+                data-sly-call="${ industriesLevel.industriesLevelMobile @ topNav=topNav}" 
+                data-sly-unwrap>
+            </sly>
+            <div class="topnav__nav__overlay--mobile topnav__nav__overlay--mobile--2"></div>
+        </ul>
+    </li>
+    <sly data-sly-list="${topNav.links}">
+        <li class="topnav__nav__container--mobile__subnav__item">
+            <a href="${item.linkHref}.html" class="topnav__nav__container--mobile__subnav__item__link">
+                <span class="topnav__nav__container--mobile__icon icon-arrow bg-pallblue"></span>
+                <span>${item.linkText}</span>
+            </a>
+        </li>
+    </sly>
+    <div class="topnav__nav__overlay--mobile"></div>
+</template>

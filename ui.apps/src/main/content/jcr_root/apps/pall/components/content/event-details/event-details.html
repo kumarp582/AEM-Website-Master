@@ -1,0 +1,48 @@
+<div data-sly-test="${wcmmode.edit}">[ Configure ${component.title} Component ]
+</div>
+<div class="event-details" data-sly-use.industry="${'com.pall.dotcom.service.models.PallIndustryPage'}">
+    <img class="event-details__tactile-graphic mobile-hidden" src="${industry.tactileGraphic}">
+    <aside class="col-25">
+        <!-- event date component goes here -->
+        <div data-sly-resource="${'article-date' @ resourceType='pall/components/content/article-date'}">
+        </div>
+        <span class="event-details__event-label">${'lblEvent' @ i18n}</span>
+    </aside>
+    <section class="col-75 event-details__section">
+        <div class="event-details__section__item">
+            <label>${'lblLocation' @ i18n}</label>
+            <label>${properties.location}</label>
+        </div>
+        <div class="event-details__section__item">
+            <label>${'lblCityAndState' @ i18n}</label>
+            <label>${properties.city}</label>
+        </div>
+        <div class="event-details__section__item">
+            <label>${'lblBooth' @ i18n}</label>
+            <label>${properties.booth}</label>
+        </div>
+        <div class="event-details__section__item">
+            <label>${'lblEventSummary' @ i18n}</label>
+            <label class="dot-ellipsis dot-height-28 dot-resize-update">${properties.summary}</label>
+        </div>
+        <div class="event-details__section__item">
+            <label>${'lblEventInformation' @ i18n}</label>
+            <label><a href="${properties.information}" target="_blank">${properties.information}</a></label>
+        </div>
+    </section>
+</div>
+<div class="event-separator">
+
+</div>
+<div class="event-countdown" data-sly-use.eventDetail="${'com.pall.dotcom.service.models.EventDetail'}">
+    <aside class="event-countdown__banner col-25">
+        <span class="event-countdown__banner__event-label">
+            <strong>${'lblCountdown' @ i18n}</strong>
+            <br>${'lblToEvent' @ i18n}
+        </span>
+    </aside>
+    <section class="event-countdown__countdown col-75">
+        <span class="event-countdown__event-date hide">${eventDetail.countDownDate}</span>
+        <div class="event-countdown__countdown__graph"></div>
+    </section>
+</div>

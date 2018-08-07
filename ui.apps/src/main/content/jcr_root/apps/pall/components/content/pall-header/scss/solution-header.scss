@@ -1,0 +1,23 @@
+.header-basic--solution {
+	.solution__icon {
+		color: $color-white;
+		opacity: 0.8;
+		font-size: 80px;
+		padding-right: 7%;
+		position: absolute;
+		right: 0;
+		@include mobile {
+			display: none;
+		}
+	}
+	.header-basic__content__tactile-graphic {
+		@include mobile {
+			right: -100px;
+		}
+	}
+	.header-basic__content__text-box__title {
+		@include mobile {
+			padding-top: 2%;
+		}	
+	}
+}

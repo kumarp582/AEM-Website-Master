@@ -1,0 +1,103 @@
+/* Main Columns */
+.col {
+    width: 98%;
+    @include mobile {
+        float: none;
+        //padding: 0 1% 2%;
+        padding: 0;
+    }
+    @include desktop {
+        float: left;
+        padding: 0 1%;
+    }
+}
+.col-15 {
+    @extend .col;
+    @include desktop {
+        width: 13%;
+    }
+}
+.col-20 {
+    @extend .col;
+    @include desktop {
+        width: 18%;
+    }
+}
+.col-25 {
+    @extend .col;
+    @include desktop {
+        width: 23%;
+    }
+}
+.col-30 {
+    @extend .col;
+    @include desktop {
+        width: 28%;
+    }
+}
+.col-33 {
+    @extend .col;
+    @include desktop {
+        width: 31%;
+    }
+}
+.col-40 {
+    @extend .col;
+    @include desktop {
+        width: 38%;
+    }
+}
+.col-45 {
+    @extend .col;
+    @include desktop {
+        width: 43%;
+    }
+}
+.col-50 {
+    @extend .col;
+    @include desktop {
+        width: 48%;
+    }
+}
+.col-55 {
+    @extend .col;
+    @include desktop {
+        width: 53%;
+    }
+}
+.col-60 {
+    @extend .col;
+    @include desktop {
+        width: 58%;
+    }
+}
+.col-75 {
+    @extend .col;
+    @include desktop {
+        width: 73%;
+    }
+}
+/* Main Container */
+.pall-layout {
+    margin: auto;
+    @include not-fit-container {
+        width: 92%;
+        padding: 0 4%;
+    }
+    @include fit-container {
+        width: $main-container-width;
+    }
+    .col-20:nth-child(2) {
+        padding-left: 0;
+    }
+    .col-25:nth-child(2) {
+        padding-left: 0;
+    }
+    .footer & {
+        .footer__content__row {
+            .col-45:first-child {
+                padding-left: 0;
+            }
+        }
+    }
+}

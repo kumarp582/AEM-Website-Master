@@ -1,0 +1,14 @@
+<template data-sly-template.renderHeader="${ @ header, industry }">
+    <div class="header-basic">
+        <section class="header-basic__content bg-${industry.color.cssClass} ${properties.backgroundImage && properties.backgroundImage != '' ? 'bg-image-helper' : ''}" data-image-src="${properties.backgroundImage}">
+            <img data-sly-test="${header.showTactile && industry.tactileGraphic}" 
+                 class="header-basic__content__tactile-graphic mobile-hidden" src="${industry.tactileGraphic}"/>
+            <section class="header-basic__content__text-box pall-layout">
+                <div class="header-basic__content__text-box__container">
+                    <h2 class="header-basic__content__text-box__title">${pageProperties.jcr:title}</h2>
+                    <p class="header-basic__content__text-box__text">${properties.description || pageProperties.jcr:description}</p>    
+                </div>
+            </section>
+        </section>
+    </div>
+</template>

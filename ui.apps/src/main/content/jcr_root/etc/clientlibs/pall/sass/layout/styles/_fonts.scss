@@ -1,0 +1,227 @@
+$fallbackFonts: 'Helvetica', arial, sans-serif;
+
+@mixin ProximaNova() {
+  font-family: 'proxima-nova', $fallbackFonts;
+  font-weight: 400;
+}
+
+@mixin ProximaNovaBold() {
+  font-family: 'proxima-nova', $fallbackFonts;
+  font-weight: 700;
+}
+
+@mixin OpenSans() {
+  font-family: 'open-sans', $fallbackFonts;
+  font-weight: 400;
+}
+
+@mixin OpenSansBold() {
+  font-family: 'open-sans', $fallbackFonts;
+  font-weight: 700;
+}
+
+@mixin FranklinGothicCondensedDemi() {
+  font-family: 'franklin-gothic-urw-comp', $fallbackFonts;
+  font-weight: 700;
+}
+
+
+// Webfont Icon Set
+$icomoon-font-path: $icon-font-path;
+
+$icon-pall: "\e91b";
+$icon-arrow-right-dotted: "\e91a";
+$icon-arrow-next: "\e918";
+$icon-arrow-previous: "\e919";
+$icon-chemical: "\e900";
+$icon-laboratory: "\e901";
+$icon-login: "\e902";
+$icon-shop: "\e903";
+$icon-checkmark: "\e904";
+$icon-download: "\e905";
+$icon-print: "\e906";
+$icon-arrow: "\e907";
+$icon-location: "\e908";
+$icon-share: "\e909";
+$icon-mail: "\e90a";
+$icon-phone2: "\e90b";
+$icon-phone1: "\e90c";
+$icon-newcustomer2: "\e90d";
+$icon-newcustomer1: "\e90e";
+$icon-search: "\e90f";
+$icon-microelectronics: "\e910";
+$icon-medical: "\e911";
+$icon-industrialman: "\e912";
+$icon-power: "\e913";
+$icon-biopharm: "\e914";
+$icon-aerospace: "\e915";
+$icon-foodandbev: "\e916";
+$icon-oilandgas: "\e917";
+
+
+@font-face {
+  font-family: 'pall-iconset';
+  src:  url('#{$icomoon-font-path}/pall-iconset.eot?on1j19');
+  src:  url('#{$icomoon-font-path}/pall-iconset.eot?on1j19#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/pall-iconset.ttf?on1j19') format('truetype'),
+    url('#{$icomoon-font-path}/pall-iconset.woff?on1j19') format('woff'),
+    url('#{$icomoon-font-path}/pall-iconset.svg?on1j19#pall-iconset') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'pall-iconset' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pall {
+  &:before {
+    content: $icon-pall;
+  }
+}
+.icon-arrow-right-dotted {
+  &:before {
+    content: $icon-arrow-right-dotted;
+  }
+}
+.icon-arrow-next {
+  &:before {
+    content: $icon-arrow-next;
+  }
+}
+.icon-arrow-previous {
+  &:before {
+    content: $icon-arrow-previous;
+  }
+}
+.icon-chemical {
+  &:before {
+    content: $icon-chemical;
+  }
+}
+.icon-laboratory {
+  &:before {
+    content: $icon-laboratory;
+  }
+}
+.icon-login {
+  &:before {
+    content: $icon-login;
+  }
+}
+.icon-shop {
+  &:before {
+    content: $icon-shop;
+  }
+}
+.icon-checkmark {
+  &:before {
+    content: $icon-checkmark;
+  }
+}
+.icon-download {
+  &:before {
+    content: $icon-download;
+  }
+}
+.icon-print {
+  &:before {
+    content: $icon-print;
+  }
+}
+.icon-arrow {
+  &:before {
+    content: $icon-arrow;
+  }
+}
+.icon-location {
+  &:before {
+    content: $icon-location;
+  }
+}
+.icon-share {
+  &:before {
+    content: $icon-share;
+  }
+}
+.icon-mail {
+  &:before {
+    content: $icon-mail;
+  }
+}
+.icon-phone2 {
+  &:before {
+    content: $icon-phone2;
+  }
+}
+.icon-phone1 {
+  &:before {
+    content: $icon-phone1;
+  }
+}
+.icon-newcustomer2 {
+  &:before {
+    content: $icon-newcustomer2;
+  }
+}
+.icon-newcustomer1 {
+  &:before {
+    content: $icon-newcustomer1;
+  }
+}
+.icon-search {
+  &:before {
+    content: $icon-search;
+  }
+}
+.icon-microelectronics {
+  &:before {
+    content: $icon-microelectronics;
+  }
+}
+.icon-medical {
+  &:before {
+    content: $icon-medical;
+  }
+}
+.icon-industrialman {
+  &:before {
+    content: $icon-industrialman;
+  }
+}
+.icon-power {
+  &:before {
+    content: $icon-power;
+  }
+}
+.icon-biopharm {
+  &:before {
+    content: $icon-biopharm;
+  }
+}
+.icon-aerospace {
+  &:before {
+    content: $icon-aerospace;
+  }
+}
+.icon-foodandbev {
+  &:before {
+    content: $icon-foodandbev;
+  }
+}
+.icon-oilandgas {
+  &:before {
+    content: $icon-oilandgas;
+  }
+}

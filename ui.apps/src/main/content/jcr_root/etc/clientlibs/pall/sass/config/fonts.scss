@@ -1,0 +1,19 @@
+$font-path: "../fonts";
+
+// PROXIMA NOVA
+@include font-face('proxima-nova-bold', '#{$font-path}/proxima-nova/ProximaNova-Bold', normal, normal);
+@include font-face('proxima-nova-bold-italic', '#{$font-path}/proxima-nova/ProximaNova-BoldIt', normal, normal);
+@include font-face('proxima-nova-regular', '#{$font-path}/proxima-nova/ProximaNova-Reg', normal, normal);
+@include font-face('proxima-nova-regular-italic', '#{$font-path}/proxima-nova/ProximaNova-RegIt', normal, normal);
+
+// OPEN SANS
+@include font-face('opens-sans-bold', '#{$font-path}/open-sans/OpenSans-Bold', normal, normal);
+@include font-face('opens-sans-bold-italic', '#{$font-path}/open-sans/OpenSans-BoldItalic', normal, normal);
+@include font-face('opens-sans-bold-extra', '#{$font-path}/open-sans/OpenSans-ExtraBold', normal, normal);
+@include font-face('opens-sans-bold-extra-italic', '.#{$font-path}/open-sans/OpenSans-ExtraBoldItalic', normal, normal);
+@include font-face('opens-sans-italic', '#{$font-path}/open-sans/OpenSans-Italic', normal, normal);
+@include font-face('opens-sans-light', '#{$font-path}/open-sans/OpenSans-Light', normal, normal);
+@include font-face('opens-sans-light-italic', '#{$font-path}/open-sans/OpenSans-LightItalic', normal, normal);
+@include font-face('opens-sans-regular', '#{$font-path}/open-sans/OpenSans-Regular', normal, normal);
+@include font-face('opens-sans-bold-semi', '#{$font-path}/open-sans/OpenSans-SemiBold', normal, normal);
+@include font-face('opens-sans-bold-semi-italic', '#{$font-path}/open-sans/OpenSans-SemiboldItalic', normal, normal);

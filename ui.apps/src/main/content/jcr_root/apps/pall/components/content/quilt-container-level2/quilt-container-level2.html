@@ -1,0 +1,23 @@
+<div data-sly-test="${wcmmode.edit}" data-sly-use.container="${'com.pall.dotcom.service.models.QuiltContainerLevel2'}">[ Configure
+   ${component.title} Component ]
+   <p> Selected Layout : ${container.layoutText}</p>
+</div>
+<section class="quilt-container-level2" data-sly-use.industry="${'com.pall.dotcom.service.models.PallIndustryPage'}"  
+    data-sly-use.container="${'com.pall.dotcom.service.models.QuiltContainerLevel2'}">
+    <div id="second-level" class="quilt-container__second-level">
+           <sly data-sly-test="${!wcmmode.edit}">
+               <sly data-sly-list.tile="${container.tiles}">
+                <div class="quilt-container__second-level__tile size-${tile.size}">
+                    <div class="quilt__tile__top-title">${tile.heading}</div>
+                    <img src="${tile.bgImagePath}" alt="${tile.title}">
+                    <a href="${properties.link}.html"> <h3>${tile.title}</h3></a>
+                    <p data-sly-test="${tile.size != '1x1'}">${tile.desc}</p>
+                </div>
+               </sly>
+           </sly>
+        <sly data-sly-resource="${'.' @ resourceType='foundation/components/parsys'}"></sly>
+    </div>
+</section>
+<div data-sly-test="${wcmmode.edit}">[ End of
+   ${component.title} Component ]
+</div>

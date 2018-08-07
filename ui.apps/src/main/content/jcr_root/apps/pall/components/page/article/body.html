@@ -1,0 +1,18 @@
+<body>
+	<sly data-sly-include="gtmbody.html"></sly>
+  
+    <div class="article">
+        <sly data-sly-include="header.html"></sly>
+
+        <div data-sly-include="redirect.html" data-sly-unwrap></div>
+
+        <main role="main" class="content-main">
+            <sly data-sly-include="content.html" data-sly-unwrap></sly>
+        </main>
+    </div>
+
+
+    <sly data-sly-include="footer.html"></sly>
+
+    <sly data-sly-include="customfooterlibs.html"></sly>
+</body>

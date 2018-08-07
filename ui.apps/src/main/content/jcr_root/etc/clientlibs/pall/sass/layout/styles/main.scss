@@ -1,0 +1,364 @@
+$icon-font-path: '../fonts/';
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+
+// Imports
+@import '_fonts';
+@import '_flexbox';
+@import '_business-colors';
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// START DEFAULTS FOR DEMO PURPOSES
+body {
+  background-color: #fff;
+  color: #292929;
+}
+
+img { max-width: 100%; }
+
+@media (min-width: $screen-lg-min) {
+  .container { width: 1260px; }
+}
+
+@media (max-width: $screen-xs-max) {
+  .container { padding: 0 }
+}
+
+// END DEFAULTS FOR DEMO PURPOSES
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// Fancy GLobal Learn More Button
+@import '_buttons';
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+// Contact Us
+
+#contact-us {
+  @include ProximaNova();
+  background: #f7f7f7 url(../images/bg-contact-us.jpg) no-repeat center top;
+  background-size: cover;
+  padding: 3em 0 5em 0;
+
+  h2 {
+    @include ProximaNovaBold();
+    margin: 0;
+  }
+
+  h3 {
+    @include ProximaNovaBold();
+    margin-top: 0;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  #industry-contact {
+    .intro {
+      @media(max-width: $screen-sm-max) {
+        padding: 15px;
+      }
+    }
+
+    .select-control {
+      position: relative;
+
+      &:before {
+        content:'';
+        position: absolute;
+        top: 0.5em;
+        right: 3.5em;
+        z-index: 5;
+        width: 1px;
+        height: 35px;
+        background-color: #fff;
+        pointer-events: none;
+      }
+
+      &:after {
+        content:'';
+        position: absolute;
+        top: 1.5em;
+        right: 1.125em;
+        z-index: 5;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 9px 9px 0 9px;
+        border-color: #fff transparent transparent transparent;
+        pointer-events: none;
+      }
+    }
+
+  }
+
+  .industry-tabs {
+    padding-right: 0;
+    //background-color: #fff;
+
+    @media(max-width: $screen-sm-max) {
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-bottom: 2em;
+    }
+
+    a {
+      position: relative;
+      display: block;
+      background: linear-gradient(-35deg, rgba(200,200,200,1) 0%,rgba(255,255,255,1) 15%);
+      border-bottom: 1px solid #ccc;
+      color: #292929;
+      text-decoration: none;
+      vertical-align: middle;
+      transition: background-color 250ms ease-in-out,
+                  color 250ms ease-in-out;
+
+      @media(max-width: $screen-sm-max) {
+        display: none;
+      }
+
+      &:hover, &.active {
+        color: #fff;
+
+        i {
+          color: #fff;
+        }
+      }
+
+      span {
+        display: inline-block;
+        position: relative;
+        top: -4px;
+
+        &[class*='icon-'] {
+          position: relative;
+          top: 0;
+          display: inline-block;
+          background-color: $pall;
+          color: #fff;
+          font-size: 22px;
+          padding: 0.6em;
+          margin-right: 0.5em;
+        }
+      }
+
+      i {
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        font-size: 16px;
+      }
+
+      &[data-industry='pall']:hover, &[data-industry='pall'].active,
+      &[data-industry='pall'] span[class*='icon-'] { background: $pall; }
+
+      &[data-industry='microelectronics']:hover, &[data-industry='microelectronics'].active,
+      &[data-industry='microelectronics'] span[class*='icon-'] { background: $microelectronics; }
+
+      &[data-industry='aerospace-defense']:hover, &[data-industry='aerospace-defense'].active,
+      &[data-industry='aerospace-defense'] span[class*='icon-'] { background: $aerospace-defense; }
+
+      &[data-industry='oil-gas']:hover, &[data-industry='oil-gas'].active,
+      &[data-industry='oil-gas'] span[class*='icon-'] { background: $oil-gas; }
+
+      &[data-industry='laboratory']:hover, &[data-industry='laboratory'].active,
+      &[data-industry='laboratory'] span[class*='icon-'] { background: $laboratory; }
+
+      &[data-industry='biopharmaceutical']:hover, &[data-industry='biopharmaceutical'].active,
+      &[data-industry='biopharmaceutical'] span[class*='icon-'] { background: $biopharmaceutical; }
+
+      &[data-industry='food-beverage']:hover, &[data-industry='food-beverage'].active,
+      &[data-industry='food-beverage'] span[class*='icon-'] { background: $food-beverage; }
+
+      &[data-industry='medical']:hover, &[data-industry='medical'].active,
+      &[data-industry='medical'] span[class*='icon-'] { background: $medical; }
+
+      &[data-industry='industrial-manufacturing']:hover, &[data-industry='industrial-manufacturing'].active,
+      &[data-industry='industrial-manufacturing'] span[class*='icon-'] { background: $industrial-manufacturing; }
+
+      &[data-industry='power-utilities']:hover, &[data-industry='power-utilities'].active,
+      &[data-industry='power-utilities'] span[class*='icon-'] { background: $power-utilities; }
+
+      &[data-industry='chemicals-polymers']:hover, &[data-industry='chemicals-polymers'].active,
+      &[data-industry='chemicals-polymers'] span[class*='icon-'] { background: $chemicals-polymers; }
+    }
+
+    .industry-select-dropdown {
+      display: none;
+
+      @media(max-width: $screen-sm-max) {
+        display: block;
+      }
+    }
+
+    select {
+      color: #fff;
+      background-color: #aaaaaa;
+      appearance: none;
+      font-size: 16px;
+      padding: 0.5em;
+      height: auto;
+    }
+
+  }//.industry-tabs
+
+
+  .industry-contact-us-wrapper {
+    position: relative;
+    padding-left: 0;
+
+    @media(max-width: $screen-sm-max) {
+      padding-left: 15px;
+      padding-right: 15px;
+      background: $pall;
+      position: relative;
+      z-index: 1;
+      margin-top: 60px;
+
+      &.pall { background-color: $pall; }
+      &.microelectronics { background-color: $microelectronics; }
+      &.aerospace-defense { background-color: $aerospace-defense; }
+      &.oil-gas { background-color: $oil-gas; }
+      &.laboratory { background-color: $laboratory; }
+      &.biopharmaceutical { background-color: $biopharmaceutical; }
+      &.food-beverage { background-color: $food-beverage; }
+      &.medical { background-color: $medical; }
+      &.industrial-manufacturing { background-color: $industrial-manufacturing; }
+      &.power-utilities { background-color: $power-utilities; }
+      &.chemicals-polymers { background-color: $chemicals-polymers; }
+
+      &:before,
+      &:after {
+        background: inherit;
+        content: '';
+        display: block;
+        height: 50%;
+        position: absolute;
+        right: 0;
+        z-index: -1;
+        -webkit-backface-visibility: hidden;
+      }
+
+      &:before {
+        top: 0;
+        left: 0;
+        transform: skewY(25deg);
+        transform-origin: 15% 0;
+      }
+
+      &:after {
+        top: -10%;
+        left: 0;
+        transform: skewY(-4deg);
+        transform-origin: 125%;
+      }
+    }
+
+    @media(max-width: $screen-xs) {
+      &:before {
+        top: 0;
+        left: 0;
+        transform: skewY(30deg);
+        transform-origin: 25% 0;
+      }
+
+      &:after {
+        top: -10%;
+        left: 0;
+        transform: skewY(-8deg);
+        transform-origin: 125%;
+      }
+    }
+
+    #pall-contact-form { background-color: $pall; }
+    #pall-contact-form { background-color: $pall; }
+    #microelectronics-contact-form { background-color: $microelectronics; }
+    #aerospace-defense-contact-form { background-color: $aerospace-defense; }
+    #oil-gas-contact-form { background-color: $oil-gas; }
+    #laboratory-contact-form { background-color: $laboratory; }
+    #biopharmaceutical-contact-form { background-color: $biopharmaceutical; }
+    #food-beverage-contact-form { background-color: $food-beverage; }
+    #medical-contact-form { background-color: $medical; }
+    #industrial-manufacturing-contact-form { background-color: $industrial-manufacturing; }
+    #power-utilities-contact-form { background-color: $power-utilities; }
+    #chemicals-polymers-contact-form { background-color: $chemicals-polymers; }
+
+    .industry-contact-us {
+      position: relative;
+      overflow: hidden;
+      padding: 3em;
+      color: #fff;
+
+      @media(max-width: $screen-sm-max) {
+        padding: 1em 15px;
+      }
+
+      &> span[class*='icon'] {
+        content: '';
+        position: absolute;
+        bottom: -10%;
+        right: 0%;
+        font-size: 350px;
+        color: rgba(255,255,255,0.1)
+      }
+    }
+
+    form {
+      margin-bottom: 2em;
+
+      .form-group {
+        position: relative;
+
+        label {
+          position: absolute;
+          top: 1em;
+          left: 1em;
+          transition: all 250ms ease-in;
+        }
+
+        .input-filled {
+          label {
+            top: 0.33em;
+            left: 1.33em;
+            font-size: 11px;
+          }
+        }
+
+        input, textarea {
+          color: #fff;
+          background-color: rgba(255,255,255,0.10);
+          padding: 1.33em 1em 0.55em 1em;
+          height: auto;
+        }
+
+        select {
+          color: #fff;
+          background-color: rgba(255,255,255,0.10);
+          appearance: none;
+          padding: 1em;
+          height: auto;
+        }
+
+      }//.form-group
+
+      .submit {
+        text-align:right;
+
+        @media(max-width: $screen-sm-max) {
+          text-align:left;
+        }
+      }
+
+    }//form
+
+  }//.industry-contact-us
+}

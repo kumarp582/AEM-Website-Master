@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Contact US"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    helpPath="https://www.adobe.com/go/aem6_2_docs_component_en#Text &amp; Image - Sightly">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <general
+                jcr:primaryType="nt:unstructured"
+                jcr:title="General"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <link
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Background Image"
+                                name="./backgroundimage"/>
+                            <description
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                fieldLabel="AeroSpace Description"
+                                name="./aerospacedesc"
+                                useFixedInlineToolbar="{Boolean}true"/>
+                        </items>
+                    </columns>
+                </items>
+            </general>
+            <aerospace
+                jcr:primaryType="nt:unstructured"
+                jcr:title="AeroSpace"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <aerospacedesc
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                fieldLabel="AeroSpace Description"
+                                name="./aerospacedesc"
+                                useFixedInlineToolbar="{Boolean}true"/>
+                        </items>
+                    </columns>
+                </items>
+            </aerospace>
+            <biopharmaceuticals
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Biopharmaceuticals"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <biopharmaceuticals
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                fieldLabel="Biopharmaceuticals Description"
+                                name="./biopharmaceuticals"
+                                useFixedInlineToolbar="{Boolean}true"/>
+                        </items>
+                    </columns>
+                </items>
+            </biopharmaceuticals>
+            <foodbeverage
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Food Bevarage"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <foodbeverage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                fieldLabel="Foodbeverage Description"
+                                name="./foodbeveragedesc"
+                                useFixedInlineToolbar="{Boolean}true"/>
+                        </items>
+                    </columns>
+                </items>
+            </foodbeverage>
+            <powerutilities
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Power Utilities"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <powerutilities
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                fieldDescription="Power Utilities Description"
+                                fieldLabel="Power Utilities Description"
+                                name="./powerutilitiesdesc"
+                                useFixedInlineToolbar="{Boolean}true"/>
+                        </items>
+                    </columns>
+                </items>
+            </powerutilities>
+            <laboratory
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Laboratory"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <laboratory
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                fieldLabel="Laboratory Description"
+                                name="./laboratorydesc"
+                                useFixedInlineToolbar="{Boolean}true"/>
+                        </items>
+                    </columns>
+                </items>
+            </laboratory>
+            <industrialmanufacturing
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Industrial &amp; Manufacturing"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <industrialmanufacturing
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                fieldLabel="IndustrialmanufacturingDescription"
+                                name="./industrialmanufacturingdesc"
+                                useFixedInlineToolbar="{Boolean}true"/>
+                        </items>
+                    </columns>
+                </items>
+            </industrialmanufacturing>
+            <oilgas
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Oil &amp; Gas"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <oilgas
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                fieldLabel="Oil &amp; Gas Description"
+                                name="./oilgasdesc"
+                                useFixedInlineToolbar="{Boolean}true"/>
+                        </items>
+                    </columns>
+                </items>
+            </oilgas>
+            <medical
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Medical"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <medical
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                fieldLabel="Medical Form Description"
+                                name="./medicaldesc"
+                                useFixedInlineToolbar="{Boolean}true"/>
+                        </items>
+                    </columns>
+                </items>
+            </medical>
+            <microelectronics
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Microelectronics"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <microelectronics
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                fieldLabel="Microelectronics Description"
+                                name="./microelectronics"
+                                useFixedInlineToolbar="{Boolean}true"/>
+                        </items>
+                    </columns>
+                </items>
+            </microelectronics>
+            <chemicalspolymers
+                jcr:primaryType="nt:unstructured"
+                jcr:title="ChemicalsPolymers"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <chemical
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                fieldLabel="Chemicalspolymers Description"
+                                name="./chemicalspolymersdesc"
+                                useFixedInlineToolbar="{Boolean}true"/>
+                        </items>
+                    </columns>
+                </items>
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+            </chemicalspolymers>
+            <pall
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Pall Form"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <generaldesc
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                fieldLabel="Pall Form Description"
+                                name="./generaldesc"
+                                useFixedInlineToolbar="{Boolean}true"/>
+                        </items>
+                    </columns>
+                </items>
+            </pall>
+        </items>
+    </content>
+</jcr:root>

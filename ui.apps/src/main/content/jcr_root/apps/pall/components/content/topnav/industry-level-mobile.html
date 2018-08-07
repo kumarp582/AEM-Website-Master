@@ -1,0 +1,59 @@
+<template data-sly-template.industryLevelMobile="${ @ item, selectedItem }">
+    <li data-sly-test="${!selectedItem}" class="topnav__nav__container--mobile__subnav__item topnav__nav__container--mobile__subnav__item--back bg-charcoal3">
+        <span class="button-back topnav__nav__container--mobile__icon fa fa-arrow-left bg-pallblue"></span>
+        <span class="">Back</span>
+        <span class="topnav__nav__container--mobile__icon icon-arrow bg-pallblue"></span>
+    </li>
+    <li class="topnav__nav__container--mobile__subnav__item">
+        <a href="${item.industryPage.pageContent.id}.html" class="topnav__nav__container--mobile__subnav__item__link bg-${item.industryPage.color.cssClass}">
+            <span class="topnav__nav__container--mobile__icon icon-${item.industryPage.color.cssClass} bg-${item.industryPage.color.cssClass}"></span>
+            <span>${item.industryPage.pageContent.title}</span>
+        </a>
+    </li>
+    <li class="topnav__nav__container--mobile__subnav__item">
+        <a href="#" class="topnav__nav__container--mobile__subnav__item__link bg-${item.industryPage.color.cssClass}">
+            <span class="topnav__nav__container--mobile__icon icon-shop bg-${item.industryPage.color.cssClass}"></span>
+            <span>Shop ${item.industryPage.pageContent.title} Products</span>
+        </a>
+    </li>
+    <li class="topnav__nav__container--mobile__subnav__item subnav__hook">
+        <a href="#" class="topnav__nav__container--mobile__subnav__item__link bg-${item.industryPage.color.cssClass}">
+            <span class="topnav__nav__container--mobile__icon icon-${item.industryPage.color.cssClass} bg-${item.industryPage.color.cssClass}"></span>
+            <span>Segments</span>
+        </a>
+        <ul class="topnav__nav__container--mobile__subnav layer3">
+            <li class="topnav__nav__container--mobile__subnav__menu__item topnav__nav__container--mobile__subnav__item--back bg-charcoal3">
+                <span class="button-back topnav__nav__container--mobile__icon fa fa-arrow-left bg-pallblue"></span>
+                <span class="">Back</span>
+                <span class="topnav__nav__container--mobile__icon icon-shop bg-pallblue"></span>
+            </li>
+            <sly data-sly-list.segments="${item.industryPage.segments}">
+                <li class="topnav__nav__container--mobile__subnav__item bg-${item.industryPage.color.cssClass}">
+                    <a href="${segments.pageContent.url}" class="topnav__nav__container--mobile__subnav__item__link bg-${item.industryPage.color.cssClass}">
+                        <span class="topnav__nav__container--mobile__icon icon-${item.industryPage.color.cssClass} bg-${item.industryPage.color.cssClass}"></span>
+                        <span>${segments.pageContent.title}</span>
+                    </a>
+                </li>
+            </sly>
+            <div class="topnav__nav__overlay--mobile topnav__nav__overlay--mobile--4"></div>
+        </ul>
+    </li>
+    <sly data-sly-list.sections="${item.industryPage.industryLinks}">
+        <li class="topnav__nav__container--mobile__subnav__item">
+            <a href="${sections.link}.html" class="topnav__nav__container--mobile__subnav__item__link bg-${item.industryPage.color.cssClass}">
+                <span class="topnav__nav__container--mobile__icon icon-${item.industryPage.color.cssClass} bg-${item.industryPage.color.cssClass}"></span>
+                <span>${sections.title}</span>
+            </a>
+        </li>
+    </sly>
+
+    <sly data-sly-list.sections="${item.industryPage.serviceLinks}">
+        <li class="topnav__nav__container--mobile__subnav_item">
+            <a href="${sections.link}.html" class="topnav__nav__container--mobile__subnav__item__link bg-${item.industryPage.color.cssClass}">
+                <span class="topnav__nav__container--mobile__icon icon-${item.industryPage.color.cssClass} bg-${item.industryPage.color.cssClass}"></span>
+                <span>${sections.title}</span>
+            </a>
+        </li>
+    </sly>
+
+</template>

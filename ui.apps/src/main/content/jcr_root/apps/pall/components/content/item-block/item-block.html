@@ -1,0 +1,33 @@
+<!--/*
+
+  Item Block component.
+
+*/-->
+<div data-sly-test="${wcmmode.edit}">[ Configure
+   ${component.title} Component ]
+</div>
+<section data-sly-use.container="${'com.pall.dotcom.service.models.ItemBlockContainer'}" class="items-block bg-${container.color.cssClass}">
+    <div class="items-block__container pall-layout" data-sly-use.industry="${'com.pall.dotcom.service.models.PallIndustryPage'}">
+        <sly data-sly-test="${container.block1.resource.itemType == 'product'}" data-sly-use.displayblock="display-product.html"
+             data-sly-call="${ displayblock.renderBlock @ block=container.block1, industry=industry }"
+             data-sly-unwrap></sly>
+        <sly data-sly-test="${container.block1.resource.itemType == 'application'}" data-sly-use.displayblock="display-application.html"
+             data-sly-call="${ displayblock.renderBlock @ block=container.block1, industry=industry }"
+             data-sly-unwrap></sly>
+        <sly data-sly-test="${container.block2.resource.itemType == 'product'}" data-sly-use.displayblock="display-product.html"    
+             data-sly-call="${ displayblock.renderBlock @ block=container.block2, industry=industry }"
+             data-sly-unwrap></sly>
+        <sly data-sly-test="${container.block2.resource.itemType == 'application'}" data-sly-use.displayblock="display-application.html"
+             data-sly-call="${ displayblock.renderBlock @ block=container.block2, industry=industry }"
+             data-sly-unwrap></sly>
+        <sly data-sly-test="${container.block3.resource.itemType == 'product'}" data-sly-use.displayblock="display-product.html"
+             data-sly-call="${ displayblock.renderBlock @ block=container.block3, industry=industry }"
+             data-sly-unwrap></sly>
+        <sly data-sly-test="${container.block3.resource.itemType == 'application'}" data-sly-use.displayblock="display-application.html"
+             data-sly-call="${ displayblock.renderBlock @ block=container.block3, industry=industry }"
+             data-sly-unwrap></sly>
+    </div>
+</section>
+<div data-sly-test="${wcmmode.edit}">[ End of
+   ${component.title} Component ]
+</div>

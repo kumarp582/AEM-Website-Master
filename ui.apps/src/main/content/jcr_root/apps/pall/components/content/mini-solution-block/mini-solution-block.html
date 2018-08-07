@@ -1,0 +1,27 @@
+<!--/*
+
+      Mini Solutions Block 
+    Industry icon on left, when you roll over there is a color change and icon gets larger.
+    Product on left has a hover with a view product
+    Right side includes title, description, learn more and a saturated background with the background image path
+
+    Mobile: solutions story on top with view product on left and the product stacks below on the left and 
+    the icon on the right. 
+    The view product button shows automatically since there is no hover
+
+*/-->
+
+<div data-sly-test="${wcmmode.edit}">[ Configure ${component.title} Component ]</div>
+<div class="mini-solution-block bg-${container.color.cssClass}" data-sly-use.container="${'com.pall.dotcom.service.models.MiniSolutionBlockContainer'}">
+    <div class="mini-solution-block__container pall-layout">
+        <div class="mini-solution-block__container__solution bg-${container.block1.industry.color.cssClass}"
+            data-sly-use.displayblock="display-block.html"
+            data-sly-call="${ displayblock.renderBlock @ solutionblock=container.block1 }"
+            ></div>
+        <div class="mini-solution-block__container__solution bg-${container.block2.industry.color.cssClass}"
+            data-sly-use.displayblock="display-block.html"
+            data-sly-call="${ displayblock.renderBlock @ solutionblock=container.block2 }"
+            ></div>
+        </div>
+    </div>
+</div>

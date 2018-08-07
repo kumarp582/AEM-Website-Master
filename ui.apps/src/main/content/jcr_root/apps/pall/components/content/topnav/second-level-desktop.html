@@ -1,0 +1,53 @@
+<template data-sly-template.secondLevelDesktop="${ @ item, firstElement }">
+    <a href="${item.industryPage.pageContent.id}.html" class="topnav__nav__container__items__item--industries__subnav__item__link">
+        <span>${item.industryPage.pageTitle}</span>
+        <span data-sly-test="${firstElement == 'true'}" class="fa fa-chevron-right"></span>
+    </a>
+    <div class="topnav__nav__container__items__item--industries__subnav__item__third-level"
+        style="border-bottom-color: ${item.industryPage.color.hexCode @ context='styleToken'};">
+        <h2 class="topnav__nav__container__items__item--industries__subnav__item__third-level__link">
+            <span class="topnav__nav__container__items__item--industries__subnav__item__third-level__link__icon icon-shop color-${item.industryPage.color.cssClass}"></span>
+            <span class="topnav__nav__container__items__item--industries__subnav__item__third-level__link__text">${'lblShop' @ i18n } ${item.industryPage.pageTitle}</span>
+        </h2>
+        <div class="topnav__nav__container__items__item--industries__subnav__item__third-level__block">
+            <h3 class="topnav__nav__container__items__item--industries__subnav__item__third-level__block__title color-${item.industryPage.color.cssClass}" data-sly-test="${item.industryPage.segments}">
+                ${'lblSegments' @ i18n }
+            </h3>
+            <ul class="topnav__nav__container__items__item--industries__subnav__item__third-level__block__list">
+                <sly data-sly-list.segments="${item.industryPage.segments}">
+                    <li>
+                       <a href="${segments.pageContent.url}.html">${segments.pageContent.title}</a>
+                    </li>
+                </sly>
+            </ul>
+        </div>
+        <div class="topnav__nav__container__items__item--industries__subnav__item__third-level__block">
+            <h3 class="topnav__nav__container__items__item--industries__subnav__item__third-level__block__title color-${item.industryPage.color.cssClass}" data-sly-test="${item.industryPage.industryLinks}">
+                 ${'lblIndustryInformation' @ i18n }
+            </h3>
+            <ul class="topnav__nav__container__items__item--industries__subnav__item__third-level__block__list">
+                <sly data-sly-list.sections="${item.industryPage.industryLinks}">
+                    <li>
+                        <a href="${sections.link}.html">${sections.title}</a>
+                    </li>
+                </sly>
+            </ul>
+        </div>
+        <div class="topnav__nav__container__items__item--industries__subnav__item__third-level__block">
+            <h3 class="topnav__nav__container__items__item--industries__subnav__item__third-level__block__title color-${item.industryPage.color.cssClass}" data-sly-test="${item.industryPage.serviceLinks}">
+                ${'lblServices' @ i18n }
+            </h3>
+            <ul class="topnav__nav__container__items__item--industries__subnav__item__third-level__block__list">
+                <sly data-sly-list.sections="${item.industryPage.serviceLinks}">
+                    <li>
+                        <a href="${sections.link}.html">${sections.title}</a>
+                    </li>
+                </sly>
+            </ul>
+        </div>
+        <!-- <div class="topnav__nav__container__items__item--industries__subnav__item__third-level__footer-bar bg-${item.industryPage.color.cssClass}">
+        </div> -->
+        <img class="topnav__nav__container__items__item--industries__subnav__item__third-level__image img-responsive"
+        src="${item.industryPage.industryimage}">
+    </div>
+</template>

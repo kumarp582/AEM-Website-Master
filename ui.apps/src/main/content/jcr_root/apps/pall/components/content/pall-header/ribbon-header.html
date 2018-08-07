@@ -1,0 +1,18 @@
+<template data-sly-template.renderHeader="${ @ header, industry }">
+    <div class="header-industry layout-${header.template} ribbon-${header.ribbonState}">
+        <img class="header-industry__bg-image img-responsive" src="${properties.backgroundImage}">
+        <section class="header-industry__content layout-${header.template} bg-opacity-${industry.color.cssClass}">
+            <img data-sly-test="${header.showTactile && industry.tactileGraphic}" 
+                 class="header-industry__content__tactile-graphic mobile-hidden" src="${industry.tactileGraphic}"/>
+            <section class="header-industry__content__text-box pall-layout">
+                <div data-sly-test="${industry.icon}" class="header-industry__content__icon mobile-hidden ${header.ribbonState}">
+                    <span class="header-industry__content__icon icon-${industry.color.cssClass} mobile-hidden ${header.ribbonState}"></span>
+                </div>
+                <div class="header-industry__content__text-box__container">
+                    <h2 class="header-industry__content__text-box__title">${pageProperties.jcr:title}</h2>
+                    <p class="header-industry__content__text-box__text">${properties.description || pageProperties.jcr:description}</p>
+                </div>
+            </section>
+        </section>
+    </div>
+</template>

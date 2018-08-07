@@ -1,0 +1,280 @@
+
+<style>
+    .youtube-player >h1 {
+        padding-top:8px;
+        padding-bottom:8px;
+        font-size:22px  
+
+    }
+    .youtube-player >h2 {
+        padding-top:8px;
+        padding-bottom:8px;
+        font-size:18px;    
+
+    }
+    .youtube-player >h3 {
+        padding-top:8px;
+        padding-bottom:8px;
+        font-size:16px;    
+
+    }
+    .youtube-player >h4 {
+        padding-top:8px;
+        padding-bottom:8px;
+        font-size:14px;    
+
+    }.youtube-player >h5 {
+        padding-top:8px;
+        padding-bottom:8px;
+        font-size:12px;    
+
+    }
+    .youtube-player >h6 {
+        padding-top:8px;
+        padding-bottom:8px;
+        font-size:10px;    
+
+    }
+</style>
+<sly data-sly-use.video="youtubevideo.js">
+
+    <sly data-sly-test.isLink="${properties.vimeovideolink || properties.youtubevideolink || properties.youtubemultilink}"></sly>
+    <sly data-sly-test="${!isLink}">
+        <div data-sly-test="${wcmmode.edit}">Edit Youtube Video Component</div>
+    </sly>
+    <sly data-sly-test="${isLink}">
+        <sly data-sly-test.isFullPage="${properties.fullpage}"> </sly>
+        <sly data-sly-test.isVimeo="${properties.videoType=='vimeo'}"></sly>
+        <sly data-sly-test="${isFullPage} ">
+
+            <div data-sly-test="${isVimeo}">
+                <div style="${video.backgroundStyle @context='unsafe'}">
+                    <!--vimeo full page-->
+                    <div style="width:100%" isVimeo="true" class="youtube-player ${currentNode.name}">
+
+                        <iframe src='https://player.vimeo.com/video/${properties.vimeovideolink}?title=0&byline=0&portrait=0' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                        <h1 style="color:${properties.captioncolor @ context='styleToken' }" data-sly-element="${properties.headingtype}" data-sly-test="${properties.videoheading}" class="videoheading">${properties.videoheading}</h1>
+                         <p style="color:${properties.captioncolor @ context='styleToken' } " data-sly-test="${properties.embedvideodesc} ">${properties.embedvideodesc} </p>
+                    </div>
+
+                   
+                </div>
+            </div>
+            <sly data-sly-test="${!isVimeo}">
+                <div id="thevideo" class="videoWrapper">
+                    <!--youtube singe  full page-->
+                    <div style="${video.backgroundStyle @context='unsafe'}">
+                        <sly data-sly-test.isSingle="${properties.videoCategory=='single'}">
+
+                            <div class="youtube-player ${currentNode.name}" style="width:100%;" data-autoplay="${properties.autoplay?'1':'0'}" data-controls="${properties.controls?'0':'1'}" data-loop="${properties.loop?'1':'0'}" data-modestbranding="${properties.modestbranding?'1':'0'}" data-rel="${properties.rel?'0':'1'}" data-showinfo="${properties.showinfo?'0':'1'}" data-id="${properties.youtubevideolink}">
+                               <h1 style="color:${properties.captioncolor @ context='styleToken' }" data-sly-element="${properties.headingtype}" data-sly-test="${properties.videoheading}" class="videoheading">${properties.videoheading}</h1>
+                         <p style="color:${properties.captioncolor @ context='styleToken' } " data-sly-test="${properties.embedvideodesc} ">${properties.embedvideodesc} </p>
+                            
+                            </div>
+
+                        </sly>
+
+                        <sly data-sly-test="${!isSingle}">
+                            <!--youtube multi full page-->
+
+                            <div class="youtube-player ${currentNode.name}" style="width:100%;background-image:${properties.backgroundImage @ context='unsafe'};background-color:${properties.color @ context='styleToken'}" data-autoplay="${properties.autoplay?'1':'0'}" data-controls="${properties.controls?'0':'1'}" data-loop="${properties.loop?'1':'0'}" data-modestbranding="${properties.modestbranding?'1':'0'}" data-rel="${properties.rel?'0':'1'}" data-showinfo="${properties.showinfo?'0':'1'}" data-id="${video.firstVideo}" data-query="playlist=${video.playlist}">
+                           <h1 style="color:${properties.captioncolor @ context='styleToken' }"  data-sly-element="${properties.headingtype}" data-sly-test="${properties.videoheading}" class="videoheading">${properties.videoheading}</h1>
+                         <p style="color:${properties.captioncolor @ context='styleToken' } " data-sly-test="${properties.embedvideodesc} ">${properties.embedvideodesc} </p>
+                            </div>
+                                      
+                        </sly>
+                        
+                    </div>
+                </div>
+            </sly>
+        </sly>
+        <sly data-sly-test="${!isFullPage}">
+
+            <div data-sly-test.isVimeo="${isVimeo}" class="row-fluid">
+                <!--vimeo width page-->
+                <div style="${video.backgroundStyle @context='unsafe'}">
+                    <div isHeightRequired=${properties.heightRequired} heightValue="${properties.height}" isVimeo="true" class="youtube-player ${currentNode.name}" style="padding-top:${properties.paddingtop @ context='styleToken'}%;padding-bottom:${properties.paddingbottom @ context='styleToken'}%;width:${properties.width @ context='styleToken'}%;height:${properties.height @ context='styleToken'}%;background-image:${properties.backgroundImage @ context='styleToken'};margin:auto">
+                        <iframe width="100%" height="100%" src="https://player.vimeo.com/video/${properties.vimeovideolink}?title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        <h1 style="color:${properties.captioncolor @ context='styleToken' }"  data-sly-element="${properties.headingtype}" data-sly-test="${properties.videoheading}" class="videoheading">${properties.videoheading}</h1>
+                         <p style="color:${properties.captioncolor @ context='styleToken' } " data-sly-test="${properties.embedvideodesc} ">${properties.embedvideodesc} </p>
+                    </div>
+                    
+                </div>
+            </div>
+            <div data-sly-test="${!isVimeo}" class="row-fluid">
+                
+               
+                <div style="${video.backgroundStyle @context='unsafe'}">
+                    <div data-sly-test.isSingle="${properties.videoCategory=='single'}">
+                        <!--youtube single width page-->
+                        <div isHeightRequired=${properties.heightRequired} heightValue="${properties.height}" style="width:${properties.width @ context='styleToken'}%;padding-top:${properties.paddingtop @ context='styleToken'}%;padding-bottom:${properties.paddingbottom @ context='styleToken'}%; margin:auto" class="youtube-player ${currentNode.name}" data-autoplay="${properties.autoplay?'1':'0'}" data-controls="${properties.controls?'0':'1'}" data-loop="${properties.loop?'1':'0'}" data-modestbranding="${properties.modestbranding?'1':'0'}" data-rel="${properties.rel?'0':'1'}" data-showinfo="${properties.showinfo?'0':'1'}" data-id="${properties.youtubevideolink}">
+                   <h1 style="color:${properties.captioncolor @ context='styleToken' }"  data-sly-element="${properties.headingtype}" data-sly-test="${properties.videoheading}" class="videoheading">${properties.videoheading}</h1>
+                         <p style="color:${properties.captioncolor @ context='styleToken' } " data-sly-test="${properties.embedvideodesc} ">${properties.embedvideodesc} </p>
+                        </div>
+                    </div>
+                    <sly data-sly-test="${!isSingle}">
+                        <!--youtube multi width page-->
+                        <div isHeightRequired=${properties.heightRequired} heightValue="${properties.height}" style="width:${properties.width @ context='styleToken'}%; margin:auto;padding-top:${properties.paddingtop @ context='styleToken'}%;padding-bottom:${properties.paddingbottom @ context='styleToken'}%;" class=" youtube-player ${currentNode.name} " data-autoplay="${properties.autoplay? '1': '0'} " data-controls="${properties.controls? '0': '1'} " data-loop="${properties.loop? '1': '0'} " data-modestbranding="${properties.modestbranding? '1': '0'} " data-rel="${properties.rel? '0': '1'} " data-showinfo="${properties.showinfo? '0': '1'} " data-id="${video.firstVideo} " data-query="playlist=${video.playlist} ">
+                       <h1 style="color:${properties.captioncolor @ context='styleToken' }" data-sly-element="${properties.headingtype}" data-sly-test="${properties.videoheading}" class="videoheading">${properties.videoheading}</h1>
+                         <p style="color:${properties.captioncolor @ context='styleToken' } " data-sly-test="${properties.embedvideodesc} ">${properties.embedvideodesc} </p>
+                        </div>
+                        
+                    </sly>
+                   
+                </div>
+            </div>
+        </sly>
+    </sly>
+</sly>
+  <script>
+
+    /* Light YouTube Embeds by @labnol */
+    /* Web: http://labnol.org/?p=27941 */
+
+
+
+    document.addEventListener("DOMContentLoaded",
+        function() {
+            var div, n,isAutoPlayed="${properties.isAutoPlayed @context='scriptString'}",youtubeName = "${currentNode.name @context='scriptString'}";
+          youtubeName="."+youtubeName;
+        if(youtubeName.trim()!=''){
+                v = $(youtubeName+".youtube-player");
+            
+            var description = $(v).find("div");
+               
+            if($(v).attr('isHeightRequired') =='true'){
+            $(v).attr('style',$(v).attr('style')+";height:"+$(v).attr('heightvalue')+'px');
+            } else {
+                 $(v).width
+                var ratio = 16/9;
+var height = $(v).width()/ratio ;
+      $(v)
+        .height(height);
+                
+            }
+            
+
+                if($(v).attr('isVimeo')!='true'){
+            for (n = 0; n < v.length; n++) {
+                div = document.createElement("div");
+                div.setAttribute("data-id", v[n].dataset.id);
+         div.setAttribute("data-autoplay", v[n].dataset.autoplay);
+                div.setAttribute("class","playertemp");
+         div.setAttribute("data-controls", v[n].dataset.controls);
+         div.setAttribute("data-loop", v[n].dataset.loop);
+          div.setAttribute("data-modestbranding", v[n].dataset.modestbranding);
+          div.setAttribute("data-rel", v[n].dataset.rel);
+          div.setAttribute("data-showinfo", v[n].dataset.showinfo);
+                 div.setAttribute("data-query", v[n].dataset.query);
+                div.innerHTML = labnolThumb(v[n].dataset.id,$(v).width(),$(v).height());
+
+                div.onclick = labnolIframe;
+
+
+                $(v[n]).prepend(div);
+        if(isAutoPlayed=='true') {
+        div.click();
+            
+        }
+            }
+            }
+            }
+
+        });
+
+    function labnolThumb(id,width,height) {
+        var thumb = '<img width='+width+' height='+height+' src="https://i.ytimg.com/vi/ID/hqdefault.jpg">',
+            play = '<div class="play"></div>';
+        return thumb.replace("ID", id) + play;
+    }
+
+    function labnolIframe(parent) {
+        var iframe = document.createElement("iframe");
+        var embed = "https://www.youtube.com/embed/ID?autoplay=AUTOID&controls=CONTROLID&loop=LOOPID&modestbranding=MODESTID&rel=RELID&showinfo=INFOID&QUERY";
+        embed = embed.replace("ID", this.dataset.id).replace("AUTOID", this.dataset.autoplay).replace("CONTROLID", this.dataset.controls).replace("LOOPID", this.dataset.loop)
+    .replace("MODESTID", this.dataset.modestbranding).replace("RELID", this.dataset.rel).replace("INFOID", this.dataset.showinfo).replace("QUERY", this.dataset.query);
+        iframe.setAttribute("src", embed);
+   iframe.setAttribute("width", "100%");
+iframe.setAttribute("height", "100%");
+
+
+        iframe.setAttribute("frameborder", "0");
+        iframe.setAttribute("allowfullscreen", "1");
+       
+        $(this).parent().prepend(iframe);
+ if($(v).find('.playertemp').length>0) {      
+$(v).find('.playertemp').remove();
+     }
+      
+       
+    }
+     $(function() {
+     
+
+
+  // When the window is resized
+  // (You'll probably want to debounce this)
+  $(window).resize(function() {
+$allVideos = $("iframe[src^='http://www.youtube.com']");
+    $vimeoVideos = $("iframe[src^='https://player.vimeo.com']");
+if($allVideos.length==0) {
+  $allVideos = $("iframe[src^='https://www.youtube.com']");
+
+}
+
+
+    // Resize all videos according to their own aspect ratio
+    $allVideos.each(function() {
+
+      var $el = $(this);
+       $parent = $(this).closest('.youtube-player');
+        
+       if($parent.attr('isHeightRequired') =='true'){
+            $parent.attr('style',$parent.attr('style')+";height:"+$parent.attr('heightvalue')+'px');
+            }  else {
+       var ratio = 16/9;
+var height = $parent.width()/ratio;
+      $parent
+        .height(height);
+        $el
+        .width("100%")
+        .height("100%");
+            }
+
+    });
+
+    
+        
+
+   $vimeoVideos.each(function() {
+
+      var $el = $(this);
+       $parent = $(this).closest('.youtube-player');
+         
+        if($parent.attr('isHeightRequired') =='true'){
+            $parent.attr('style',$parent.attr('style')+";height:"+$parent.attr('heightvalue')+'px');
+            }  else {
+       var ratio = 16/9;
+var height = $parent.width()/ratio;
+      $parent
+        .height(height);
+        $el
+        .width("100%")
+        .height("100%");
+            }
+
+    });
+
+
+    
+
+
+
+  // Kick off one resize to fix all videos on page load
+  }).resize();
+
+});
+
+
+
+</script>

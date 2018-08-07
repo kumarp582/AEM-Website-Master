@@ -1,0 +1,38 @@
+.text-image {
+    @include flexbox;
+    //margin: 10px 15px;
+    width: 100%;
+    &--top {
+        @include flex-direction(column);
+    }
+    &--image {
+        &.left {
+            float: left;
+            padding-right: 15px;
+        }
+        &.right {
+            float: right;
+            padding-left: 15px;
+        }
+        &.top {
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        img {
+            margin: 0;
+            max-width: 100%;
+            height: auto
+        }
+    }
+    &--text {
+        font-family: 'proxima-nova-bold-italic';
+        @include mobile {
+            font-size: 12px;
+            line-height: 18px;
+        }
+        @include desktop {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+}

@@ -1,0 +1,85 @@
+.form-connector {
+  display: block;
+  &__input__text, &__select {
+  	width: 100%;
+  	border-radius: 5px;
+  	border-style: solid;
+ 	border-width: 1px;
+ 	margin-bottom: 16px;
+    margin-right: 6px;
+    margin-top: 2px;
+    padding: .5rem .75rem;
+        padding-top: 0.5rem;
+        padding-right: 0.75rem;
+        padding-bottom: 0.5rem;
+        padding-left: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    -webkit-background-clip: padding-box;
+ 	border-color: $color-btn-border;
+  	box-sizing: border-box;	
+  }
+
+  &__textearea {
+     width: 100%;
+  	margin-bottom: 16px;
+    margin-right: 6px;
+    margin-top: 2px;
+    padding: .5rem .75rem;
+        padding-top: 0.5rem;
+        padding-right: 0.75rem;
+        padding-bottom: 0.5rem;
+        padding-left: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    background-image: none;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border-radius: 5px;
+  	border-style: solid;
+ 	border-width: 1px;
+ 	border-color: $color-btn-border;
+  	border-radius: .25rem;
+  	box-sizing: border-box;	
+  }
+
+  &__checkbox {
+    display    : inline-block;
+    margin-bottom: 16px;
+    margin-right: 6px;
+    margin-top: 2px;
+    padding-left : 28px;
+    line-height  : 24px;	
+  }
+  
+  &__checkbox__label {
+    display: inline-block;
+    padding-left: 1.25rem;
+    margin-bottom: 0;
+    cursor: pointer;
+  }
+
+  &__submit__button {
+    border-radius: 3px;
+    color: $color-white;
+    background-color: $color-btn-default;
+    width: 184px;
+    height: 40px;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+  }
+}
+

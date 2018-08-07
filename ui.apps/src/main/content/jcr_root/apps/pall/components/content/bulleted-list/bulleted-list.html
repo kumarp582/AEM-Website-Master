@@ -1,0 +1,46 @@
+<!--/*
+
+  Bulleted List component.
+
+  Bulleted List Product/Segment  Component:
+    Title, short description
+    Left image or right image alignment
+    3-4 icon bullets items, up to x lines of copy.
+    Can have a bottom background image that is optional
+
+    Mobile: image stacks at the bottom and so does background image. Title and description first, then segment icons
+
+*/-->
+<div data-sly-test="${wcmmode.edit}">[ Configure ${component.title} Component ]</div>
+<sly data-sly-use.bulletlist="${'com.pall.dotcom.service.models.BulletList'}"
+    data-sly-use.container="${'com.pall.dotcom.service.models.BulletContainer'}"
+    data-background-img="${bulletlist.bgImagePath}">
+
+    <aside data-sly-test="${properties.alignment == 'left' || properties.alignment == ''}" class="bulleted-list__image col-45 mobile-hidden">
+        <img src="${bulletlist.imagePath}" alt="${properties.title}"/>
+    </aside>
+    <section class="bulleted-list__bullets col-55">
+        <div class="bulleted-list__bullets__title">${properties.title}</div>
+        <div class="bulleted-list__bullets__desc">${properties.description}</div>
+        <ul class="bulleted-list__bullets__items">
+            	<sly data-sly-use.bulletblock="bullet.html"
+					         data-sly-call="${ bulletblock.renderBullet @ bullet=container.bullet1, icon=bulletlist.icon1, color=bulletlist.industry.color.cssClass, rgbColor=bulletlist.industry.color.rgbColor }"
+					         data-sly-unwrap></sly>
+                <sly data-sly-use.bulletblock="bullet.html"
+					         data-sly-call="${ bulletblock.renderBullet @ bullet=container.bullet2, icon=bulletlist.icon2, color=bulletlist.industry.color.cssClass, rgbColor=bulletlist.industry.color.rgbColor }"
+					         data-sly-unwrap></sly>
+            	<sly data-sly-use.bulletblock="bullet.html"
+					         data-sly-call="${ bulletblock.renderBullet @ bullet=container.bullet3, icon=bulletlist.icon3, color=bulletlist.industry.color.cssClass, rgbColor=bulletlist.industry.color.rgbColor }"
+					         data-sly-unwrap></sly>					                                  
+        </ul>
+    </section>
+    <aside data-sly-test="${properties.alignment == 'right'}" class="bulleted-list__image col-45 mobile-hidden">
+        <img src="${bulletlist.imagePath}" alt="${properties.title}"/>
+    </aside>
+    <aside class="bulleted-list__image col-45 desktop-hidden">
+        <img src="${bulletlist.imagePath}" alt="${properties.title}"/>
+    </aside>
+    <div class="bulleted-list__bottom-image mobile-hidden">
+        <img src="${bulletlist.bgImagePath}" alt="${properties.title}"/>
+    </div>
+</sly>

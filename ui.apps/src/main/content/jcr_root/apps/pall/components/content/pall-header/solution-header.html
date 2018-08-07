@@ -1,0 +1,15 @@
+<template data-sly-template.renderHeader="${ @ header, industry }">
+    <div class="header-basic header-basic--solution">
+        <section class="header-basic__content bg-${industry.color.cssClass}">
+            <img class="header-basic__content__tactile-graphic" src="${industry.tactileGraphic}"/>
+            <section class="header-basic__content__text-box pall-layout">
+                <div class="header-basic__content__text-box__container">
+                    <h2 class="header-basic__content__text-box__title">${pageProperties.jcr:title}</h2>
+                    <p class="header-basic__content__text-box__text">${properties.description || pageProperties.jcr:description}</p>    
+                </div>
+                <span class="solution__icon icon-${industry.color.cssClass}">
+                </span>
+            </section>
+        </section>
+    </div>
+</template>

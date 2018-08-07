@@ -1,0 +1,39 @@
+<template data-sly-template.industriesLevelMobile="${ @ topNav }">
+    <li class="topnav__nav__container--mobile__subnav__item topnav__nav__container--mobile__subnav__item--back bg-charcoal3">
+        <span class="button-back topnav__nav__container--mobile__icon fa fa-arrow-left bg-pallblue"></span>
+        <span class="">Back</span>
+        <span class="topnav__nav__container--mobile__icon icon-arrow bg-pallblue"></span>
+    </li>
+
+    <sly data-sly-test="${topNav.hasSelectedItem}" data-sly-unwrap>
+        <sly data-sly-use.industryLevel="industry-level-mobile.html"
+            data-sly-call="${ industryLevel.industryLevelMobile @ item=topNav.selectedItem, selectedItem='true'}" 
+            data-sly-unwrap></sly>
+        <sly data-sly-list.topNavItem="${topNav.subMenuLinks}">
+            <li class="topnav__nav__container--mobile__subnav__item subnav__hook">
+                <a href="${topNavItem.industryPage.pageContent.id}.html" class="topnav__nav__container--mobile__subnav__item__link">
+                    <span class="topnav__nav__container--mobile__icon icon-${topNavItem.industryPage.color.cssClass} bg-${topNavItem.industryPage.color.cssClass}"></span>
+                    <span>${topNavItem.industryPage.pageContent.title}</span>
+                </a>
+            </li>
+        </sly>
+    </sly>
+
+    <sly data-sly-test="${!topNav.hasSelectedItem}" data-sly-unwrap>
+        <sly data-sly-list="${topNav.subMenuLinks}">
+            <li class="topnav__nav__container--mobile__subnav__item subnav__hook">
+                <a href="#" class="topnav__nav__container--mobile__subnav__item__link">
+                    <span class="topnav__nav__container--mobile__icon icon-${item.industryPage.color.cssClass} bg-${item.industryPage.color.cssClass}"></span>
+                    <span>${item.industryPage.pageContent.title}</span>
+                </a>
+                <ul class="topnav__nav__container--mobile__subnav layer2">
+                    <sly data-sly-use.industryLevel="industry-level-mobile.html"
+                        data-sly-call="${ industryLevel.industryLevelMobile @ item=item, selectedItem='false'}" 
+                        data-sly-unwrap>
+                    </sly>
+                    <div class="topnav__nav__overlay--mobile topnav__nav__overlay--mobile--3"></div>
+                </ul>
+            </li>
+        </sly>
+    </sly>
+</template>

@@ -1,0 +1,19 @@
+<sly data-sly-test="${wcmmode.edit}"
+   data-sly-use.textImage="textImage.js"
+   data-sly-use.emptyRenderer="emptyTextImage.html"
+   data-sly-call="${emptyRenderer.emptyTextImageTemplate @ textImage=textImage}" />
+
+<sly data-sly-test ="${properties.alignment == 'bottom' || properties.alignment == 'right'}" data-sly-unwrap>
+   <div class="text-image--text"
+      data-sly-resource="${'.' @ resourceType='wcm/foundation/components/text', wcmmode='disabled'}"></div>
+   <div class="text-image--image ${properties.alignment || 'left'}"
+      data-sly-resource="${'image' @ resourceType='wcm/foundation/components/image', wcmmode='disabled'}"></div>
+</sly>
+<sly data-sly-test="${!properties.alignment || properties.alignment == 'left' || properties.alignment == 'top' || properties.alignment == ''}" data-sly-unwrap>
+   <div class="text-image--${properties.alignment || 'left'}">
+      <div class="text-image--image ${properties.alignment || 'left'}"
+         data-sly-resource="${'image' @ resourceType='wcm/foundation/components/image', wcmmode='disabled'}"></div>
+      <div class="text-image--text"
+         data-sly-resource="${'.' @ resourceType='wcm/foundation/components/text', wcmmode='disabled'}"></div>
+   </div>
+<sly>

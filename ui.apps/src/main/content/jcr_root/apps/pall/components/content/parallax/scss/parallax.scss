@@ -1,0 +1,64 @@
+.parallax-component {
+    overflow: hidden;
+    @extend .full-width;
+    &--large {
+        @include mobile {
+            height: 170px;
+        }
+        @include desktop {
+            height: 608px;
+        }
+    }
+    &--small {
+        @include mobile {
+            height: 170px;
+        }
+        @include desktop {
+            height: 334px;
+        }
+    }
+    &__text {
+        @include flexbox;
+        @include flex-direction(column);
+        @include flex-wrap(nowrap);
+        @include justify-content(center);
+        height: 100%;
+        margin: 0 auto;
+        max-width: 70%;
+        position: relative;
+        text-align: center;
+        width: 100%;
+        z-index: $parallax-top;
+        &__subtitle,
+        &__title {
+            text-align: center;
+            text-transform: uppercase;
+        }
+        &__title {
+            margin-bottom: 5px;
+            @include mobile {
+                font-size: 24px;
+            }
+            @include desktop {
+                font-size: 80px;
+            }
+        }
+        &__subtitle {
+            @include mobile {
+                font-size: 16px;
+            }
+            @include desktop {
+                font-size: 40px;
+            }
+        }
+    }
+    &__image {
+        //@extend .full-width;
+        background-attachment: fixed;
+        background-size: cover;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        z-index: $parallax-middle;
+    }
+}

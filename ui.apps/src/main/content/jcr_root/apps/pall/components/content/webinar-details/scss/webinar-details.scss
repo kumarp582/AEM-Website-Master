@@ -1,0 +1,32 @@
+.webinar{
+	.article-date {
+	    &__day {
+	    	@include desktop {
+	        	padding: 7px 54px;
+			}
+	    }
+	    &__year-month {
+			@include desktop {
+				padding: 7px 22px;
+			}	
+		}
+	}
+	.event-details__event-label {
+		@include desktop {
+			font-size: 44px; 
+		}
+	}
+	.event-details__section{
+		@include mobile {
+			    padding-top: 4%;
+		}
+	}
+	.event-details__section__item{
+		&.time{
+			@include mobile {
+			    padding-top: 4%;
+		 		border-top: 1.5px dotted #fff;
+			}
+		}
+	}
+}

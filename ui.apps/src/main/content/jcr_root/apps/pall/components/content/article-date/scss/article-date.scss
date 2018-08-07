@@ -1,0 +1,37 @@
+.article-date {
+    font-family: 'proxima-nova-regular';
+    font-size: 12px;
+    padding-bottom: 5%;
+    text-transform: uppercase;
+    &__day,
+    &__year-month {
+        display: inline-block;
+        text-align: center;
+    }
+    &__year-month {
+        color: $color-white;
+        padding: 4px 15px;
+        -webkit-clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+        &.date-period {
+            padding: 10px 20px;
+        }
+    }
+    &__day {
+        background-color: $color-calendar-day;
+        color: $color-white;
+        margin-left: -15px;
+        padding: 1px 40px;
+        &.date-period-to {
+            padding: 10px 12px 10px 24px;
+        }
+        &.date-period-from {
+            padding: 10px 20px;
+        }
+    }
+    &__em {
+        display: block;
+        font-family: 'proxima-nova-bold';
+        font-size: 18px;
+        line-height: 20px;
+    }
+}

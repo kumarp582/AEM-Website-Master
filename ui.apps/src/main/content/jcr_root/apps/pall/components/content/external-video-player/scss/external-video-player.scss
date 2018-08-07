@@ -1,0 +1,41 @@
+.external-video-player {
+	&__container {
+		@extend .full-width;
+	    padding-top: 5%;
+	    padding-bottom: 5%;
+	   	&__background-image {
+    		position: absolute;
+	        right: 0;
+	        top: 0;
+	        width: auto;
+    	}
+	    &__content {
+		    &__responsive-video {
+				@include responsive-player;
+			}
+			&__text-box {
+				color: $color-white;
+				&__title {
+					padding-top: 15px;
+					@include desktop {
+						font-size: 18px;
+						line-height: 24px;	
+					}
+				}
+				&__text {
+					padding-top: 15px;
+					@include mobile {
+						font-size: 12px;
+						line-height: 18px;	
+					}
+					@include desktop {
+						font-size: 14px;
+						line-height: 24px;	
+					}
+				}
+			}
+	    }
+	}
+}
+
+

@@ -1,0 +1,23 @@
+{
+  "name": "pall-corp-aem",
+  "version": "1.0.0",
+  "description": "AEM Pall Corp Project",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Truchet <david.truchet@3sharecorp.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-slang": "^1.0.1",
+    "gulp-sourcemaps": "^1.7.3",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.10",
+    "jshint": "^2.9.3"
+  }
+}

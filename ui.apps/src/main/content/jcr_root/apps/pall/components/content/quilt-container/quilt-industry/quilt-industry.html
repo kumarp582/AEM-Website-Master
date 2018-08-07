@@ -1,0 +1,64 @@
+<div data-sly-test="${wcmmode.edit}">[ Configure ${component.title} Component ]
+</div>
+
+<div data-sly-test="${wcmmode.edit}" class="quilt-container-edit" data-sly-use.industry="${'com.pall.dotcom.service.models.QuiltIndustry'}">
+    <img style="height: 200px;width: 312px;" src="${industry.industryImagePath}" alt="${industry.industryTitle}">
+    <h3>${industry.industryTitle}</h3>
+    <p>${industry.industryDesc}</p>
+    <br>
+</div>
+
+<sly data-sly-test="${!wcmmode.edit}" data-sly-use.industry="${'com.pall.dotcom.service.models.QuiltIndustry'}">
+    <div id="second-level-${industry.order}-desktop" class="quilt quilt--level-2 quilt--level-2--desktop inactive">
+        <div class="quilt__tile quilt__tile--level-2 quilt__tile--1x1 inactive quilt__return bg-${industry.industryColor}" data-color-key="bg-${industry.industryColor}">
+            <div class="quilt__tile__ribbon bg-darken-${industry.industryColor}">
+            </div>
+            <div class="quilt__tile__wrapper inactive">
+                <span class="quilt__tile__wrapper__icon icon-${industry.industryColor}">
+                </span>
+                <h3>${industry.industryTitle}</h3>
+            </div>
+        </div>
+        <sly data-sly-list="${industry.container.tiles}">
+            <div class="quilt__tile quilt__tile--level-2 quilt__tile--${item.size} inactive">
+                <div class="quilt__tile__wrapper inactive">
+                    <div class="quilt__tile__top-title">${item.heading ? item.heading : 'lblMarket' @ i18n}</div>
+                    <div class="quilt__tile__top-title quilt__tile__top-title--learn-more bg-${industry.industryColor}">${'lblLearnMore' @ i18n}</div>
+                    <img src="${item.bgImagePath}" alt="${item.title}">
+                    <div class="quilt__tile__level-2-text">
+                        <a href="${item.link}.html">
+                            <h3 class="color-${industry.industryColor} ${item.desc ? 'animate' : ''}">${item.title}</h3>
+                        </a>
+                        <p data-sly-test="${item.desc}">${item.desc}</p>
+                    </div>
+                </div>
+            </div>
+        </sly>
+    </div>
+    <div id="second-level-${industry.order}-mobile" class="quilt quilt--level-2 quilt--level-2--mobile inactive">
+        <div class="quilt__tile quilt__tile--level-2 inactive quilt__return quilt__return--mobile" data-color-key="bg-${industry.industryColor}">
+            <div class="quilt__return--mobile__back bg-${industry.industryColor}">
+                <div class="quilt__tile__ribbon bg-darken-${industry.industryColor}">
+                </div>
+            </div>
+            <div class="quilt__tile__wrapper inactive">
+                <span class="quilt__tile__wrapper__icon icon-${industry.industryColor}">
+                </span>
+                <h3>${industry.industryTitle}</h3>
+            </div>
+        </div>
+        <sly data-sly-list="${industry.container.mobileTiles}">
+            <div class="quilt__tile quilt__tile--level-2 quilt__tile--${item.size} inactive">
+                <div class="quilt__tile__wrapper inactive">
+                    <span class="quilt__tile__top-label bg-${industry.industryColor}">${item.mobileHeading ? item.mobileHeading : 'M'}</span>
+                    <img src="${item.bgImagePath}" alt="${item.title}">
+                    <div class="quilt__tile__level-2-text bg-${industry.industryColor}">
+                        <a href="${item.link}.html">
+                            <h3>${item.title}</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </sly>
+    </div>
+</sly>

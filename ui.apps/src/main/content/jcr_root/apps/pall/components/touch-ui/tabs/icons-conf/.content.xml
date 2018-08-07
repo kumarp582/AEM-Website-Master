@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Icons Menu Configuration"
+    sling:resourceType="granite/ui/components/foundation/section">
+    <layout
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+        margin="{Boolean}false"/>
+    <items jcr:primaryType="nt:unstructured">
+        <column
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/container">
+            <items jcr:primaryType="nt:unstructured">         
+                <menuindustry
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Icons Menu Configuration"
+                    sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                    <items jcr:primaryType="nt:unstructured">	              
+	                    <columns
+	                        jcr:primaryType="nt:unstructured"
+	                        sling:resourceType="granite/ui/components/foundation/container">
+	                        <items jcr:primaryType="nt:unstructured">
+                     			<icon1
+		                            jcr:primaryType="nt:unstructured"
+		                            sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+		                            fieldLabel="Icon 1"
+		                            name="./icon1"
+		                            rootPath="/content/pall"/>
+		                        <icon2
+		                            jcr:primaryType="nt:unstructured"
+		                            sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+		                            fieldLabel="Icon 2"
+		                            name="./icon2"
+		                            rootPath="/content/pall"/> 	
+		                        <icon3
+		                            jcr:primaryType="nt:unstructured"
+		                            sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+		                            fieldLabel="Icon 3"
+		                            name="./icon3"
+		                            rootPath="/content/pall"/>
+
+                        			</items>
+                    			</columns>
+               		 		</items>
+            			
+                </menuindustry>
+            </items>
+        </column>
+    </items>
+</jcr:root>

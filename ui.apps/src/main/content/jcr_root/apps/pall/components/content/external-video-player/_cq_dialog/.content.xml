@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="External Video Player"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    mode="edit">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <general
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Player Configuration"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <playerType
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".youtube-showhide-target"
+                                fieldLabel="Select Player Type"
+                                name="./playerType">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <youtube
+                                        jcr:primaryType="nt:unstructured"
+                                        text="YouTube"
+                                        value="youtube"/>
+                                    <threeColumns
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Vimeo"
+                                        value="vimeo"/>
+                                </items>
+                            </playerType>
+                            <youTubeVideo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide youtube-showhide-target"
+                                showhidetargetvalue="youtube">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <videoId
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="YouTube Video Id"
+                                        name="./youTubeVideo"/>
+                                    <playlistId
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="YouTube Playlist Id"
+                                        fieldDescription="If the YouTube video id field has a value the component will show the video instead of the playlist. Please remove the Video Id in order to display the YouTube playlist."
+                                        name="./youTubePlaylist"/>
+                                </items>
+                            </youTubeVideo>
+                            <vimeoVideo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide youtube-showhide-target"
+                                showhidetargetvalue="vimeo">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <videoId
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Vimeo Video Id"
+                                        name="./vimeoVideo"/>
+                                </items>
+                            </vimeoVideo>
+                        </items>
+                    </columns>
+                </items>
+            </general>
+            <style
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Style"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Background Image"
+                                name="./backgroundImage"
+                                rootPath="/content/dam/pall"/>
+                            <color
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="pall/components/touch-ui/widget/colorpicker"
+                                fieldLabel="Background Color"
+                                freestylePaletteType="{Boolean}true"
+                                name="./backgroundColor"/>
+                            <videoId
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                text="Hide Title and Description"
+                                title="Hide Title and Description"
+                                fieldDescription="Check to hide Title and Description of the Video"
+                                value="true"
+                                name="./hideTitle"/>
+                        </items>
+                    </columns>
+                </items>
+            </style>
+        </items>
+    </content>
+</jcr:root>

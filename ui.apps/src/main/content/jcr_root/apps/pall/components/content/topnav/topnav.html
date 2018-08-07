@@ -1,0 +1,135 @@
+<!--/*
+
+  TopNav component.
+
+  TopNav  Component:
+    This includes a top set of links and a search bar. There is also a secondary tier
+    navigation and a third tier navigation. Each subsequent tier has BU color coding
+    and the third tier also has an associated background image.
+    Mobile: Burger
+*/-->
+<div data-sly-test="${wcmmode.edit}">[ Configure
+    ${component.title} Component ]</div>
+
+<nav class="topnav__nav"
+    data-sly-use.topNav="${'com.pall.dotcom.service.models.TopNav'}"
+    style="border-bottom-color: ${topNav.industryPage.color.hexCode @ context='styleToken'};">
+    <div class="topnav__nav__black-container"></div>
+    <div class="topnav__nav__container--mobile">
+        <ul class="topnav__nav__container--mobile__items">
+            <li class="topnav__nav__container--mobile__items__item topnav__nav__container--mobile__items__item--menu first subnav__hook">
+                <span class="topnav__nav__container--mobile__items__item--menu__icon topnav__nav__container--mobile__icon fa fa-navicon"></span>
+                <ul class="topnav__nav__container--mobile__subnav first bg-charcoal1">
+                    <sly data-sly-use.secondLevel="second-level-mobile.html"
+                        data-sly-call="${ secondLevel.secondLevelMobile @ topNav=topNav}"
+                        data-sly-unwrap>
+                    </sly>
+                </ul>
+            </li>
+            <li class="topnav__nav__container--mobile__items__item topnav__nav__container--mobile__items__item--search">
+                <span class="topnav__nav__container--mobile__items__item--search__icon topnav__nav__container--mobile__icon icon-search"></span>
+                <div class="topnav__nav__container__search--mobile">
+                    <form class="topnav__nav__container__search__form cf">
+                        <input class="topnav__nav__container__search__form__input" type="text" placeholder="What can we help with?${topNav.helpText}" required>
+                        <button class="topnav__nav__container__search__form__button bg-${topNav.industryPage.color.cssClass}"
+                            type="submit" style="border-color: transparent ${topNav.industryPage.color.hexCode @ context='styleToken'} transparent;">
+                            <span class="icon-search"></span>
+                        </button>
+                    </form>
+                </div>
+            </li>
+            <li class="topnav__nav__container--mobile__items__item topnav__nav__container--mobile__items__item--logo">
+                <a href="${topNav.homepage.pageContent.id}.html">
+                    <div class="topnav__nav__container--mobile__logo">
+                        <div class="topnav__nav__container--mobile__logo__wrapper bg-pallblue">
+                            <img
+                                    class="topnav__nav__container--mobile__logo__img img-responsive"
+                                    data-sly-test="${topNav.mobileLogoImagePath}"
+                                    src="${topNav.mobileLogoImagePath}"
+                                    alt="${properties.altText}">
+                        <div class="topnav__nav__container--mobile__logo">
+                    </div>
+                </a>
+            </li>
+            <li data-sly-test="${topNav.hasSelectedItem}" class="topnav__nav__container--mobile__items__item topnav__nav__container--mobile__items__item--industry-icon bg-${topNav.selectedItem.industryPage.color.cssClass}">
+                <span class="icon-${topNav.selectedItem.industryPage.color.cssClass} bg-${topNav.selectedItem.industryPage.color.cssClass}"></span>
+            </li>
+            <li class="topnav__nav__container--mobile__items__item topnav__nav__container--mobile__items__item--shop  bg-charcoal3">
+                <a href="${properties.shopLink}" class="topnav__nav__container--mobile__items__item--shop__link">
+                    <span class="topnav__nav__container--mobile__icon icon-shop"></span>
+                    <span>${'lblShop' @ i18n }</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="topnav__nav__container pall-layout">
+        <ul class="topnav__nav__container__items">
+            <li class="topnav__nav__container__items__item topnav__nav__container__items__item--logo">
+                <div class="topnav__nav__container__logo">
+                    <a href="${topNav.homepage.pageContent.id}.html">
+                        <img
+                            class="topnav__nav__container__logo__img img-responsive"
+                            data-sly-test="${topNav.logoImagePath}"
+                            src="${topNav.logoImagePath}"
+                            alt="${properties.altText}">
+                    </a>
+                </div>
+            </li>
+            <li class="topnav__nav__container__items__item topnav__nav__container__items__item--industries bg-${topNav.industryPage.color.cssClass}">
+                <a href="#" class="topnav__nav__container__items__item topnav__nav__container__items__item--industries__link">
+                        <span class="topnav__nav__container__items__item--industries__link__container__text">
+                            <span class="topnav__icon icon-${topNav.industryPage.color.cssClass}"></span>
+                            <span>${topNav.sectionTitle && topNav.sectionTitle != '' ? topNav.sectionTitle : 'lblIndustries' @ i18n}</span>
+                        </span>
+                        <span class="topnav__nav__container__items__item--industries__link__container__icon-dropdown">
+                            <img src="/etc/designs/pall/img/arrow-down.png" class=""/>
+                        </span>
+                </a>
+                <ul class="topnav__nav__container__items__item--industries__subnav">
+                    <li data-sly-test="${topNav.hasSelectedItem}"
+                        class="topnav__nav__container__items__item--industries__subnav__item industry-item bg-${topNav.selectedItem.industryPage.color.cssClass}">
+                        <sly data-sly-use.secondLevel="second-level-desktop.html"
+                                data-sly-call="${ secondLevel.secondLevelDesktop @ item=topNav.selectedItem, firstElement='true'}"
+                                data-sly-unwrap>
+                        </sly>
+                    </li>
+                    <li data-sly-test="${topNav.hasSelectedItem}" class="topnav__nav__container__items__item--industries__subnav__item industry-item">
+                        <span class="topnav__nav__container__items__item--industries__subnav__item__separator">${'lblIndustries' @ i18n}</span>
+                    </li>
+                    <sly data-sly-list="${topNav.subMenuLinks}">
+                        <li class="topnav__nav__container__items__item--industries__subnav__item">
+                            <sly data-sly-use.secondLevel="second-level-desktop.html"
+                                data-sly-call="${ secondLevel.secondLevelDesktop @ item=item, firstElement='false'}"
+                                data-sly-unwrap>
+                            </sly>
+                        </li>
+                    </sly>
+                </ul>
+            </li>
+            <li class="topnav__nav__container__items__item">
+                <a href="${properties.shopLink}" class="topnav__nav__container__items__item__link topnav__nav__container__items__item__link--shop-link">
+                    <span class="topnav__nav__container__items__item__link--shop-link__icon icon-shop"></span>
+                    <span>${'lblShop' @ i18n }</span>
+                </a>
+            </li>
+            <sly data-sly-list="${topNav.links}">
+                <li class="topnav__nav__container__items__item">
+                    <a href="${item.linkHref}.html" class="topnav__nav__container__items__item__link">
+                        <span>${item.linkText}</span>
+                    </a>
+                </li>
+            </sly>
+            <li class="topnav__nav__container__items__item search">
+                <form class="topnav__nav__container__search__form cf">
+                    <input class="topnav__nav__container__search__form__input" type="text" placeholder="What can we help with?${topNav.helpText}" required>
+                    <button class="topnav__nav__container__search__form__button bg-${topNav.industryPage.color.cssClass}"
+                        type="submit" style="border-color: transparent ${topNav.industryPage.color.hexCode @ context='styleToken'} transparent;">
+                        <span class="icon-search"></span>
+                    </button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="topnav__nav__overlay"></div>

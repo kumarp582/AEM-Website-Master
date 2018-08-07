@@ -1,0 +1,34 @@
+<template data-sly-template.renderBlock="${ @ segmentsolutionblock, industry }">
+    <div class="featured-solutions__segment-story">
+        <img class="featured-solutions__segment-story__tactile-graphic" src="${industry.tactileGraphic}">
+        <div class="featured-solutions__segment-story__text-box">
+            <h1 class="featured-solutions__segment-story__text-box__title">${segmentsolutionblock.segmentName}</h1>
+            <p class="featured-solutions__segment-story__text-box__text dot-ellipsis dot-height-140 dot-resize-update">${segmentsolutionblock.segmentDescription}</p>
+        </div>
+        <div class="featured-solutions__segment-story__cta">
+
+            <div class="mobile-hidden">
+                <a href="${segmentsolutionblock.learnMoreLink}.html" class="btn">
+                    <div>
+                        <span class="icon-arrow"></span>
+                        <span>
+                            <span>
+                                ${'lblLearnMore' @ i18n }
+                                <span>${segmentsolutionblock.learnMoreLinkSubtitle}</span>
+                            </span>
+                        </span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="desktop-hidden">
+                <a href="${segmentsolutionblock.learnMoreLink}.html" class="btn btn--small" target="_blank">
+                    <span class="icon-arrow"></span>
+                    <span>
+                        <span>${'lblLearnMore' @ i18n }</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</template>

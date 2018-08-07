@@ -1,0 +1,43 @@
+<template data-sly-template.renderBlock="${ @ block, industry }">
+    <div data-sly-test="${block}" class="items-block__container__application-item bg-${industry.color.cssClass} col-33 ${block.bgImagePath && block.bgImagePath != '' ? 'bg-image-helper items-block__container__application-item__bg-image' : ''}"
+            data-image-src="${block.bgImagePath}">
+
+        <div class="items-block__container__application-item__content" data-tactile="${industry.tactileGraphic}">
+            <img class="items-block__container__application-item__content__tactile-graphic" src="${industry.tactileGraphic}">
+            <h1 class="items-block__container__application-item__content__title">${block.resource.title}</h1>
+            <div class="items-block__container__application-item__content__body">
+                <div class="read-more-wrapper">
+                    <input type="checkbox" class="read-more-state" id="application-1"/>
+                        ${block.resource.shortDesc @ context='html'}
+                    <label for="application-1" class="read-more-trigger desktop-hidden">${'lblReadMore' @ i18n}</label>
+                    <span class="read-more-mobile">
+                        ${block.resource.moreDesc @ context='html'}
+
+                        <div class="items-block__container__learn-more__button--desktop">
+                            <a data-sly-test="${block.resource.link}" href="${block.resource.link}.html" target="${block.resource.linkTarget}" class="btn">
+                                <div>
+                                    <span class="icon-arrow"></span>
+                                    <span>
+                                        <span>${'lblLearnMore' @ i18n}
+                                            <span>${block.resource.linkSubtitle}</span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="items-block__container__learn-more__button--mobile">
+                            <a href="${block.resource.link}.html" class="btn btn--small" target="_blank">
+                                <span class="icon-arrow"></span>
+                                <span>
+                                    <span>${'lblLearnMore' @ i18n}</span>
+                                </span>
+                            </a>
+                        </div>
+
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

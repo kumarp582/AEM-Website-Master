@@ -1,0 +1,67 @@
+$shadow-separator-height: 6px;
+.event-separator {
+	background: -webkit-linear-gradient(top, #000 0, $color-event-count-graph-bg 100%);
+	left: 0;
+	min-height: $shadow-separator-height;
+	position: absolute;
+	width: 100%;
+}
+.event-countdown {
+	@include flexbox;
+	background-color: $color-event-count-graph-bg;
+	color: $color-white;
+	margin-top: $shadow-separator-height - 1;
+	@extend .full-width;
+	@include mobile {
+		 @include flex-direction(column);
+		height: auto;
+	}
+	@include desktop {
+		 @include flex-direction(row);
+		height: 220px;
+	}
+	&__banner {
+		@include flexbox;
+		@include align-items(center);
+		@include justify-content(center);
+		background-color: $color-event-count-text-bg;
+		text-align: left;
+		@include mobile {
+			height: 120px;
+			-webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 50% 100%, 0 60%);
+		}
+		@include desktop {
+			height: auto;
+			-webkit-clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+		}
+		&__event-label {
+			font-size: 20px;
+			position: relative;
+			text-transform: uppercase;
+			strong {
+				font-family: 'proxima-nova-bold';
+			}
+		}
+	}
+	&__countdown {
+		@include flexbox;
+		@include align-items(center);
+		@include mobile {
+			margin-left: 0;
+			padding-bottom: 20px;
+		}
+		@include desktop {
+			margin-left: -5%;
+		}
+		&__graph {
+			@include mobile {
+				margin: 0 auto;
+				padding-top: 5%;
+			}
+			@include desktop {
+				margin-left: 15%;
+				padding-top: 0;
+			}
+		}
+	}
+}

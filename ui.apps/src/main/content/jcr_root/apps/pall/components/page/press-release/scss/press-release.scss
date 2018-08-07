@@ -1,0 +1,59 @@
+.article {
+    &__press {
+        background-color: $color-article-bg;
+        &__main-content {
+            color: $color-white;
+            padding-top: 5%;
+            @include mobile {
+                padding: 5% 0;
+            }
+            &__tactile-graphic {
+                position: absolute;
+                right: 0;
+                top: 286px;
+            }
+            &__label {
+                font-family: 'proxima-nova-bold';
+                font-weight: bold;
+                text-transform: uppercase;
+                @include mobile {
+                    font-size: 20px;
+                }
+                @include desktop {
+                    font-size: 50px;
+                }
+            }
+            .text {
+                @include mobile {
+                    font-size: 12px;
+                    line-height: 18px;
+                }
+                @include desktop {
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+            }
+            .title {
+                font-family: 'proxima-nova-bold';
+                font-weight: bold;
+                @include mobile {
+                    font-size: 14px;
+                    padding-top: 10px;
+                }
+                @include desktop {
+                    font-size: 18px;
+                }
+            }
+            .col-55 {
+                .text,
+                .text-image {
+                    padding-bottom: 2%;
+                    &:not(:last-child) {
+                        border-bottom: 1.5px dotted;
+                        margin-bottom: 2%;
+                    }
+                }
+            }
+        }
+    }
+}

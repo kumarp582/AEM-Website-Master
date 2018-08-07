@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Social Media Links"
+    sling:resourceType="granite/ui/components/foundation/section">
+    <layout
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+        margin="{Boolean}false"/>
+    <items jcr:primaryType="nt:unstructured">
+        <column
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/container">
+            <items jcr:primaryType="nt:unstructured">
+                <socials
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Social Media Links"
+                    sling:resourceType="granite/ui/components/foundation/form/fieldset">
+                    <items jcr:primaryType="nt:unstructured">
+                        <facebook
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                            fieldLabel="Facebook"
+                            name="./linkFacebook"/>
+                        <twitter
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                            fieldLabel="Twitter"
+                            name="./linkTwitter"/>
+                        <youtube
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                            fieldLabel="Youtube"
+                            name="./linkYoutube"/>
+                        <gplus
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                            fieldLabel="Google Plus"
+                            name="./linkGooglePlus"/>
+                        <linkedin
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/form/textfield"
+                            fieldLabel="Linkedin"
+                            name="./linkLinkedin"/>
+                    </items>
+                </socials>
+            </items>
+        </column>
+    </items>
+</jcr:root>

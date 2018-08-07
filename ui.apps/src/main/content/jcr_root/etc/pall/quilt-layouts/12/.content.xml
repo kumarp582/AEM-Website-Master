@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    text="12"
+    value="12"
+    sizes="[1_1,1_2,1_1,2_1,1_2,1_1,1_1,1_1,1_1,1_2,1_2,1_1]"/>

@@ -1,0 +1,31 @@
+.mobile-hidden {
+	@include mobile {
+		display: none;
+	}
+}
+.desktop-hidden {
+	@include desktop {
+		display: none;
+	}
+}
+.clear-fix {
+	@include clearfix;
+}
+.img-responsive {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+.hide {
+	left: -9999px;
+	position: absolute;
+	top: -9999px;
+}
+.full-width {
+	left: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	position: relative;
+	right: 50%;
+	width: 100vw;
+}

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0"
+    jcr:language="en"
+    jcr:mixinTypes="[mix:language]"
+    jcr:primaryType="sling:Folder">
+    <lblEvent
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblEvent"
+        sling:message="Event"/>
+    <lblEvents
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblEvents"
+        sling:message="Events"/>
+    <lblNews
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblNews"
+        sling:message="News"/>
+    <lblLocation
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblLocation"
+        sling:message="Location"/>
+    <lblCityAndState
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblCityAndState"
+        sling:message="City, State &amp; Country"/>
+    <lblBooth
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblBooth"
+        sling:message="Pall Booth"/>
+    <lblWhatLearn
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblWhatLearn"
+        sling:message="What Will I Learn"/>
+    <lblRegister
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblRegister"
+        sling:message="Register"/>
+    <lblTime
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblTime"
+        sling:message="Time"/>
+    <lblEventSummary
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblEventSummary"
+        sling:message="Event Summary"/>
+    <lblEventInformation
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblEventInformation"
+        sling:message="Event Information"/>
+    <lblCountdown
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblCountdown"
+        sling:message="Countdown"/>
+    <lblToEvent
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblToEvent"
+        sling:message="To Event"/>
+    <lblDays
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblDays"
+        sling:message="Days"/>
+    <lblHours
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblHours"
+        sling:message="Hours"/>
+    <lblMin
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblMin"
+        sling:message="Min"/>
+    <lblLearnMore
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblLearnMore"
+        sling:message="Learn More"/>  
+    <lblFooterLink1
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblFooterLink1"
+        sling:message="Pall"/>  
+    <lblFooterLink2
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblFooterLink2"
+        sling:message="Industries"/>
+    <lblTermsAndConditions
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblTermsAndConditions"
+        sling:message="Terms and Conditions of Use"/> 
+    <lblTopic
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblTopic"
+        sling:message="Topic"/>
+    <lblViewProduct
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblViewProduct"
+        sling:message="View Product"/>
+    <lblPartNumber
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblPartNumber"
+        sling:message="Part Number"/>
+    <lblPrice
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblPrice"
+        sling:message="Price"/>
+    <lblReadMore
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblReadMore"
+        sling:message="Read more ▾"/>
+    <lblIndustries
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblIndustries"
+        sling:message="Industries"/>
+    <lblAddToCart
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblAddToCart"
+        sling:message="Add to cart"/>
+    <lblMarket
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblMarket"
+        sling:message="Market"/>
+    <lblWebinar
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblWebinar"
+        sling:message="Webinar"/>
+    <lblToWebinar
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblToWebinar"
+        sling:message="To Webinar"/>             
+    <lblShop
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblShop"
+        sling:message="Shop"/>
+    <lblSegments
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblSegments"
+        sling:message="Segments"/>
+    <lblIndustryInformation
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblIndustryInformation"
+        sling:message="Industry Information"/>
+    <lblServices
+        jcr:primaryType="sling:MessageEntry"
+        sling:key="lblServices"
+        sling:message="Services"/>
+</jcr:root>

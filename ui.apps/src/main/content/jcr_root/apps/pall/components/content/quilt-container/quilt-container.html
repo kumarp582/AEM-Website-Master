@@ -1,0 +1,85 @@
+<div data-sly-test="${wcmmode.edit}">[ Configure ${component.title} Component ]
+</div>
+<div data-sly-use.container="${'com.pall.dotcom.service.models.QuiltContainer'}"
+    class="${wcmmode.edit ? '' :'quilt--background ribbon-enable'} ${container.bgImagePath && container.bgImagePath != '' && !wcmmode.edit ? 'bg-image-helper' : ''}"
+    data-image-src="${container.bgImagePath}">
+    <div class="${wcmmode.edit ? 'quilt-container-edit' : 'quilt-container'} pall-layout">
+        <div class="quilt-container__headline">
+            <aside data-sly-test="${properties.headingStart}" class="quilt-container__headline__text left">
+                <span>${properties.headingStart}</span>
+            </aside>
+            <section data-sly-test="${properties.headingMiddle}" class="quilt-container__headline__title">
+                <div class="mobile-hidden">
+                    <sly data-sly-list="${properties.headingMiddle}">
+                        <h2>${item}</h2>
+                    </sly>
+                </div>
+                <div class="desktop-hidden">
+                    <h2>
+                        <sly data-sly-list="${properties.headingMiddle}">
+                            ${item}<sly data-sly-test="${!itemList.last}">, </sly>
+                        </sly>
+                    </h2>
+                </div>
+            </section>
+            <aside data-sly-test="${properties.headingEnd}" class="quilt-container__headline__text right">
+                ${properties.headingEnd}
+            </aside>
+        </div>
+        <section class="${wcmmode.edit ? '' : 'quilt-main'}">
+            <div data-sly-test="${wcmmode.preview || wcmmode.disabled}" class="quilt quilt--level-1"
+                 data-sly-list="${container.children}">
+                <div data-sly-test="${item.isIndustry}" class="${wcmmode.edit ? '' : 'quilt__tile'} quilt__tile--level-1"  data-level-id-desktop="second-level-${item.order}-desktop" data-level-id-mobile="second-level-${item.order}-mobile">
+                    <div class="quilt__tile__wrapper">
+                        <img class="quilt__tile__image" data-sly-test="${item.industryImagePath}" src="${item.industryImagePath}" alt="${item.industryTitle}"/>
+                        <div class="quilt__tile__content bg-${item.industryColor}">
+                            <div class="quilt__tile__content quilt__tile__icon">
+                                <span class="icon-${item.industryColor}">
+                                </span>
+                            </div>
+                            <div class="quilt__tile__content quilt__tile__text">
+                                <h2 class="quilt__tile__title">
+                                    ${item.industryTitle}
+                                </h2>
+                                <div class="quilt__tile__description dot-ellipsis dot-height-95 dot-resize-update">
+                                    <p>${item.industryDesc}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-sly-test="${item.isProduct}" class="${wcmmode.edit ? '' : 'quilt__tile'} quilt__tile--level-1">
+                    <div class="quilt__tile__wrapper">
+                        <img class="quilt__tile__image" data-sly-test="${item.productImagePath}" src="${item.productImagePath}"/>
+                        <div class="quilt__tile__content bg-${item.productColor}">
+                            <div class="quilt__tile__content quilt__tile__icon">
+                                <span class="icon-${item.productColor}">
+                                </span>
+                            </div>
+                            <div class="quilt__tile__content quilt__tile__text">
+                                <h2 class="quilt__tile__title">
+                                    ${item.productTitle}
+                                </h2>
+                                <div class="quilt__tile__description dot-ellipsis dot-height-95 dot-resize-update">
+                                    <p>${item.productDesc}</p>
+                                </div>
+                                <div class="quilt__tile__button">
+                                    <a data-sly-test="${item.buttonTitle}" href="${item.productLink}.html" class="btn btn--small" target="_blank">
+                                        <span class="icon-${item.buttonStyle}"></span>
+                                        <span>
+                                            <span>${item.buttonTitle}</span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <sly data-sly-resource="${'.' @ resourceType='foundation/components/parsys'}"></sly>
+        </section>
+    </div>
+</div>
+<div data-sly-test="${wcmmode.edit}">[ End of
+   ${component.title} Component ]
+</div>

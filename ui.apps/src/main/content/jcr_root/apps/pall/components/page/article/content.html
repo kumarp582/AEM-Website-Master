@@ -1,0 +1,6 @@
+<div class="page article pall-layout"
+     data-sly-use.industry="${'com.pall.dotcom.service.models.PallIndustryPage'}">
+    <sly data-sly-use.maincontent="main-content.html"
+        data-sly-call="${ maincontent.articleMain @ isAuthoring=wcmmode.edit, industry=industry }"
+        data-sly-unwrap></sly>
+</div>

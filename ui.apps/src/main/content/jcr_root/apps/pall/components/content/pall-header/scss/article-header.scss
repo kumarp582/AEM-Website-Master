@@ -1,0 +1,87 @@
+.header-basic--article {
+    &.header-basic--news {
+        .header-basic__content {
+            &__text-box {
+                @include desktop {
+                    padding: 0;
+                }
+                &__title {
+                    @include mobile {
+                        font-size: 20px;
+                    }
+                    @include desktop {
+                        font-size: 40px;
+                        line-height: 33px;
+                    }
+                }
+                &__text {
+                    @include mobile {
+                        font-size: 12px;
+                    }
+                    @include desktop {
+                        font-size: 14px;
+                        line-height: 15px;
+                    }
+                }
+            }
+        }
+    }
+    .header-basic__content {
+        .main-header__image {
+            position: absolute;
+            right: 0;
+            width: auto;
+            z-index: $header-top;
+        }
+        &__text-box__container {
+            max-width: 80%;
+        }
+        &__text-box {
+            color: $color-white;
+            @include mobile {
+                padding: 5% 0;
+            }
+            @include desktop {
+                padding: 2% 0 0;
+            }
+            &__title {
+                padding-bottom: 1%;
+                @include mobile {
+                    font-size: 20px;
+                }
+                @include desktop {
+                    font-size: 50px;
+                }
+            }
+            &__text {
+                strong {
+                    font-family: 'proxima-nova-bold';
+                }
+                @include mobile {
+                    font-size: 12px;
+                }
+                @include desktop {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+}
+
+.header-basic--webinar{
+    @include desktop {
+        @include flexbox;
+    }
+    &__icon{
+        color: $color-white;
+        opacity: 0.8;
+        font-size: 80px;
+        padding-right: 7%;
+        position: absolute;
+        right: 0;
+        @include mobile {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+<template data-sly-template.renderBlock="${ @ productsolutionblock, industry }">
+    <div class="featured-solutions__product-story">
+        <div class="featured-solutions__product-story__left ${productsolutionblock.productImagePath ? '' : 'no-product-image'}"  data-tactile="${industry.tactileGraphic}">
+            <img class="featured-solutions__product-story__tactile-graphic" src="${industry.tactileGraphic}">
+            <div class="featured-solutions__product-story__text-box">
+                <h3 class="featured-solutions__product-story__text-box__title">${productsolutionblock.productName}</h3>
+                <div class="featured-solutions__product-story__text-box__description dot-ellipsis dot-height-140 dot-resize-update">
+                    <p>${productsolutionblock.productDescription}</p>
+                </div>
+                <div data-sly-test="${productsolutionblock.productPartNumber}" class="featured-solutions__product-story__text-box__part-number">
+                    <h2>${'lblPartNumber' @ i18n}:</h2>
+                    <p>${productsolutionblock.productPartNumber}</p>
+                </div>
+                <div data-sly-test="${productsolutionblock.productPrice}" class="featured-solutions__product-story__text-box__price">
+                    <h2>${'lblPrice' @ i18n}:</h2><p>$${productsolutionblock.productPrice}</p>
+                </div>
+            </div>
+            <div class="mobile-hidden">
+                <a data-sly-test="${productsolutionblock.productButtonLink}" href="${productsolutionblock.productButtonLink}" target="_blank" class="btn btn--small no-icon">
+                    <div>
+                        <span>${'lblViewProduct' @ i18n}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="featured-solutions__product-story__right ${productsolutionblock.productImagePath ? '' : 'no-product-image'} mobile-hidden">
+            <img class="featured-solutions__product-story__image img-responsive" data-sly-test="${productsolutionblock.productImagePath}" src="${productsolutionblock.productImagePath}" alt="${productsolutionblock.resource.title}"/>
+        </div>
+        <div class="featured-solutions__product-story__right__mobile-content desktop-hidden bg-darken-${industry.color.cssClass} ${productsolutionblock.productImagePath ? '' : 'no-product-image'}">
+            <img class="featured-solutions__product-story__right__mobile-content__image img-responsive" data-sly-test="${productsolutionblock.productImagePath}" src="${productsolutionblock.productImagePath}" alt="${productsolutionblock.resource.title}"/>
+            <div class="featured-solutions__product-story__right__mobile-content__link">
+                <a data-sly-test="${productsolutionblock.productButtonLink}" href="${productsolutionblock.productButtonLink}" target="_blank" class="btn btn--small no-icon">
+                    <div>
+                        <span>${'lblViewProduct' @ i18n}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</template>

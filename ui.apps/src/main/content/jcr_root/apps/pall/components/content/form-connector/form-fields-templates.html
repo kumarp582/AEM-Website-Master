@@ -1,0 +1,52 @@
+<!--/*
+  AEM Form Connector - fields teamplates definicions.
+*/-->
+
+<template data-sly-template.field="${@ title, name, type, options, default_value, required, rows}">
+
+	<!--/* Input Text/Email/Password Field Template */-->
+	<sly data-sly-test="${type == 'text' || type == 'email' || type == 'password'}">
+      <sly data-sly-test="${required == 'true'}">
+    	  <input type="${type}" name="${name}" id="${name}" rows="${rows}" placeholder="${title}" class="form-connector__input__text" required>
+      </sly>
+      <sly data-sly-test="${required == 'false'}">
+        <input type="${type}" name="${name}" id="${name}" rows="${rows}" placeholder="${title}" class="form-connector__input__text">
+      </sly>
+    </sly> 
+
+  <!--/* Input Text Area Template */-->
+  <sly data-sly-test="${type == 'textarea'}">
+    <sly data-sly-test="${required == 'false'}">
+      <textarea name="${name}" rows="${rows}" id="${name}" placeholder="${title}" class="form-connector__textearea"></textarea>
+    </sly>
+    <sly data-sly-test="${required == 'true'}">
+      <textarea name="${name}" rows="${rows}" id="${name}" placeholder="${title}" class="form-connector__textearea" required></textarea>
+    </sly>
+  </sly> 
+
+
+    <!--/* Select Field Template */-->
+	<sly data-sly-test="${type == 'dropdown'}">
+     <!--  ${title}<br> -->
+      	<select placeholder="${title}" name="${name}" class="form-connector__select">
+      		<sly data-sly-list="${options}">
+	      		<option value="${item.opValue}">${item.opText}</option>
+      		</sly>
+    	</select>
+    </sly> 
+
+    <!--/* CHECKBOX Field Template */-->
+	<sly data-sly-test="${type == 'checkbox'}">
+		 <!--  ${title}<br> -->
+      	<sly data-sly-list="${options}">
+          <label class="form-connector__checkbox__label">
+	      	<input type="checkbox" name="${name}" value="${item}" class="form-connector__checkbox"> ${item}</label>
+      	</sly>
+    </sly>
+
+  <!--/* Hidden Field Template */-->
+  <sly data-sly-test="${type == 'hidden'}">
+      <input type="hidden" name="${name}" value="${default_value}">
+  </sly>  
+
+</template> 

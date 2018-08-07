@@ -1,0 +1,27 @@
+@import 'config/colors';
+.heading {
+    color: $color-black;
+    font-family: 'proxima-nova-bold';
+}
+.header-primary {
+    @extend .heading;
+    font-size: 80px;
+    line-height: 65px;
+}
+.header-secondary {
+    @extend .heading;
+    font-size: 40px;
+    line-height: 34px;
+}
+.header-feature {
+    @extend .heading;
+    font-size: 20px;
+}
+.ribbon-enable {
+    @include mobile {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 100%, 0 95%);
+    }
+    @include desktop {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+    }
+}

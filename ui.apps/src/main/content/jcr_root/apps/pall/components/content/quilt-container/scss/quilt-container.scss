@@ -1,0 +1,608 @@
+$tile-height: 200px;
+$tile-width: 312px;
+$tile-margin: 4px;
+$tile-title-height: 44px;
+$animation-speed: 0.23s;
+$animation-type: ease-in-out;
+$text-speed: 0.4s;
+$image-speed: 0.25s;
+$tile-level-2-size: 205px;
+$tile-level-2-size-tablet-portrait: 109px; //109px;
+$tile-level-2-size-tablet-landscape: 145px;
+$tile-level-2-mobile-height: 100px;
+$container-level-2-width-small: 710px; //710px;
+$container-level-2-width-middle: 920px;
+/* pall mobile first approach ----------- */
+@mixin mobile-quilt {
+     @media only screen and (max-width : 767px){
+        @content;
+    }
+}
+/* pall desktop approach ----------- */
+@mixin desktop-quilt {
+     @media only screen and (min-width : 768px){
+        @content;
+    }
+}
+@mixin desktop-small-quilt {
+     @media only screen and (min-width : 768px) and (max-width : 1024px){
+        @content;
+    }
+}
+@mixin desktop-middle-quilt {
+     @media only screen and (min-width : 1025px) and (max-width : 1279px){
+        @content;
+    }
+}
+@mixin tablet-strict-quilt {
+     @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+        @content;
+    }
+}
+.quilt-container-edit {
+    color: $color-black;
+}
+.quilt-container {
+    color: $color-white;
+    position: relative;
+    &__headline {
+        padding: 2% 0;
+        @include mobile-quilt {
+            font-size: 15px;
+            @include flexbox;
+            @include flex-direction(column)
+        }
+         @include desktop-quilt{
+            font-size: 20px;
+            @include flexbox;
+        }
+        @include align-items(center);
+        @include justify-content(center);
+        &__text {
+            &.left {
+                @include mobile-quilt {
+                    display: inline-block;
+                    position: relative;
+                    span:after,
+                    span:before {
+                        content: "";
+                        position: absolute;
+                        border-top: 2px solid $color-pallblue;
+                        top: 10px;
+                        width: 108px;
+                    }
+                    span:before {
+                        right: 100%;
+                        margin-right: 12px;
+                    }
+                    span:after {
+                        left: 100%;
+                        margin-left: 12px;
+                    }
+                }
+                @include desktop-quilt {
+                    padding-right: 1%;
+                }
+            }
+            &.right {
+                @include mobile-quilt {
+                    padding-top: 1%;
+                }
+                @include desktop-quilt {
+                    padding-left: 1%;
+                }
+            }
+        }
+        &__title {
+            text-transform: uppercase;
+            @include mobile-quilt {
+                border-bottom: 2px solid;
+                border-bottom-color: $color-pallblue;
+                padding-top: 1%;
+            }
+            @include desktop-quilt {
+                border-left: 2px solid;
+                border-left-color: $color-white;
+                border-right: 2px solid;
+                border-right-color: $color-white;
+                padding-left: 1%;
+                padding-right: 1%;
+            }
+            h2 {
+                padding-bottom: 5px;
+            }
+        }
+    }
+}
+.quilt-main {
+    margin: 10px 0;
+    width: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    @include mobile-quilt {
+        max-height: 100%;
+        min-height: 100%;
+    }
+    @include desktop-quilt {
+        max-height: ($tile-height * 3) + ($tile-margin * 6);
+        min-height: ($tile-height * 3) + ($tile-margin * 6);
+    }
+    @include desktop-small-quilt {
+        max-height: ($tile-height * 6) + ($tile-margin * 30);
+        min-height: ($tile-height * 6) + ($tile-margin * 30);
+        &--level-2 {
+            max-height: ($tile-level-2-size * 3) + ($tile-margin * 6);
+            min-height: ($tile-level-2-size * 3) + ($tile-margin * 6);
+        }
+    }
+    @include desktop-middle-quilt {
+        max-height: ($tile-height * 4) + ($tile-margin * 20);
+        min-height: ($tile-height * 4) + ($tile-margin * 20);
+        &--level-2 {
+            max-height: ($tile-level-2-size * 3) + ($tile-margin * 6);
+            min-height: ($tile-level-2-size * 3) + ($tile-margin * 6);
+        }
+    }
+}
+.quilt {
+    opacity: 1;
+    @include desktop-quilt {
+         @include transition(all $animation-speed $animation-type);
+    }
+    &--background {
+        background-size: cover;
+        left: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        position: relative;
+        right: 50%;
+        width: 100vw;
+        &:before {
+            background-color: inherit;
+            bottom: 0;
+            content: ' ';
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        @include mobile-quilt {
+            padding-bottom: 50px;
+        }
+        @include desktop-quilt {
+            padding-bottom: 100px;
+            @include transition(all $animation-speed $animation-type);
+        }
+    }
+    &--background-level-2 {
+        min-height: 0;
+        padding-bottom: 40px;
+    }
+    &--level-1 {
+        @include flexbox;
+        @include flex-wrap(wrap);
+        @include justify-content(center);
+    }
+    &--level-2 {
+        margin: auto;
+        overflow: hidden;
+        @include desktop-small-quilt {
+            width: $container-level-2-width-small;
+        }
+        @include desktop-middle-quilt {
+            width: $container-level-2-width-middle;
+        }
+        &--mobile {
+            @include mobile-quilt {
+                margin: 1% 8%;
+            }
+            @include desktop-quilt {
+                margin: 0;
+            }
+            .quilt__tile {
+                float: left;
+                height: $tile-level-2-mobile-height;
+                margin: 1%;
+            }
+        }
+    }
+    &__tile {
+        color: $color-white;
+        display: block;
+        margin: $tile-margin;
+        overflow: hidden;
+        position: relative;
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(center);
+        @include desktop-quilt {
+             @include transition(all $animation-speed $animation-type);
+        }
+        &--level-1 {
+            @include mobile-quilt {
+                height: $tile-height / 2.3;
+                width: $tile-width / 2.3;
+            }
+            @include desktop-quilt {
+                height: $tile-height;
+                width: $tile-width;
+            }
+        }
+        &.inactive {
+            display: none;
+            height: 0;
+            width: 0;
+            @include desktop-quilt {
+                 @include transition(all $animation-speed $animation-type);
+            }
+        }
+        &__wrapper {
+            height: 100%;
+            overflow: hidden;
+            width: 100%;
+            @include desktop-quilt {
+                 @include transition(all $animation-speed $animation-type);
+            }
+            &.inactive {
+                height: 0;
+                width: 0;
+                @include desktop-quilt {
+                     @include transition(all $animation-speed $animation-type);
+                }
+                .quilt__tile__text {
+                    display: none;
+                }
+            }
+        }
+        &__content {
+            display: block;
+            position: absolute;
+            opacity: 0.9;
+            .quilt__tile__content {
+                @include desktop-quilt {
+                    top: 0;
+                }
+            }
+            @include mobile-quilt {
+                bottom: 0;
+                height: 30px;
+                padding: 3%;
+                top: auto;
+                width: 94%;
+            }
+            @include desktop-quilt {
+                height: 100%;
+                top: $tile-height - $tile-title-height;
+                width: 100%;
+                @include transition(top $text-speed ease-out);
+            }
+        }
+        &__image {
+            height: 100%;
+            width: auto;
+            @include desktop-quilt {
+                 @include transition(all $image-speed ease-out);
+            }
+        }
+        &__title {
+            height: 28px;
+            padding-top: 3px;
+            @include mobile-quilt {
+                font-size: 12px;
+            }
+            @include desktop-quilt {
+                font-size: 20px;
+            }
+        }
+        &__description {
+            font-family: 'proxima-nova-regular';
+            font-size: 14px;
+            line-height: 20px;
+            @include mobile-quilt {
+                display: none;
+            }
+            @include desktop-quilt {
+                display: block;
+            }
+        }
+        &__text {
+            @include mobile-quilt {
+                padding: 0;
+                width: auto;
+            }
+            @include desktop-quilt {
+                padding: 10px 10px 10px 50px;
+                width: 80%;
+            }
+        }
+        &__icon {
+            font-size: 26px;
+            padding: 10px;
+            @include mobile-quilt {
+                display: none;
+            }
+            @include desktop-quilt {
+                display: block;
+            }
+        }
+        &__button {
+            padding-top: 5px;
+            @include mobile-quilt {
+                display: none;
+            }
+            @include desktop-quilt {
+                display: block;
+            }
+        }
+        &__top-title {
+            color: $color-black;
+            letter-spacing: 5px;
+            padding-top: 5px;
+            position: absolute;
+            text-align: center;
+            text-transform: uppercase;
+            width: 100%;
+            &--learn-more {
+                color: $color-white;
+                height: 30px;
+                top: -35px;
+                z-index: $tile-learn-more;
+                -webkit-clip-path: polygon(0 0, 100% 0, 100% 65%, 50% 100%, 0 65%);
+            }
+        }
+        &__top-label {
+            font-size: 12px;
+            height: 28px;
+            padding-top: 2px;
+            position: absolute;
+            right: -1px;
+            text-indent: 15px;
+            top: -1px;
+            width: 30px;
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%);
+        }
+        &:hover {
+            cursor: pointer;
+            .quilt__tile__content {
+                height: 100%;
+                top: 0;
+                @include desktop-quilt {
+                     @include transition(all $text-speed ease-in);
+                }
+            }
+            .quilt__tile__image {
+                @include desktop-quilt {
+                     @include transform(scale(1.5));
+                    @include transition(all $image-speed ease-out);
+                }
+            }
+            .quilt__tile__top-title--learn-more {
+                top: 0;
+                @include desktop-quilt {
+                     @include transition(all $image-speed ease-out);
+                }
+            }
+        }
+        // second level blocks
+        &--level-2 {
+            img {
+                height: auto;
+                opacity: 0.3;
+                width: 100%;
+                @include grayscale(100%);
+                @include desktop-quilt {
+                     @include transition(all $image-speed ease-in);
+                }
+            }
+            .quilt__tile__level-2-text {
+                bottom: 0;
+                position: absolute;
+                @include mobile-quilt {
+                    color: $color-white;
+                    font-size: 12px;
+                    opacity: 0.7;
+                    padding: 5px;
+                    width: 100%;
+                    @include box-sizing(border-box);
+                }
+                @include desktop-quilt {
+                    color: $color-black;
+                    margin-bottom: 10px;
+                    margin-left: 10px;
+                    width: 90%;
+                    @include transition(all $image-speed ease-in);
+                    h3 {
+                        bottom: 0;
+                        font-size: 30px;
+                        margin-bottom: 10px;
+                        position: absolute;
+                    }
+                    p {
+                        bottom: -70px;
+                        line-height: 20px;
+                        position: absolute;
+                    }
+                }
+                // < 1024
+                @include desktop-small-quilt {
+                    h3 {
+                        font-size: 18px;
+                    }
+                    p {
+                        bottom: -150px;
+                    }
+                }
+                // < 1280
+                @include desktop-middle-quilt {
+                    h3 {
+                        font-size: 25px;
+                    }
+                    p {
+                        bottom: -110px;
+                    }
+                }
+                @include tablet-strict-quilt {
+                    h3,
+                    p {
+                        bottom: 0;
+                        position: relative;
+                    }
+                }
+            }
+            &:hover {
+                img {
+                    @include desktop-quilt {
+                         @include transform(scale(1.5));
+                        @include transition(all $image-speed ease-out);
+                    }
+                }
+                .quilt__tile__level-2-text {
+                    h3.animate {
+                        bottom: 5px;
+                        position: relative;
+                        @include desktop-quilt {
+                             @include transition(all $image-speed ease-out);
+                        }
+                    }
+                    p {
+                        bottom: 0;
+                        position: relative;
+                        @include desktop-quilt {
+                             @include transition(all $image-speed ease-out);
+                        }
+                    }
+                }
+            }
+        }
+        &--level-2:not(.quilt__return) {
+            .quilt__tile__wrapper {
+                background-color: $color-white; //FIXME: remove this when integrating with real data
+            }
+        }
+        &--1x1 {
+            height: $tile-level-2-size;
+            width: $tile-level-2-size;
+            @include desktop-small-quilt {
+                width: $tile-level-2-size-tablet-portrait;
+            }
+            @include desktop-middle-quilt {
+                width: $tile-level-2-size-tablet-landscape;
+            }
+            .quilt__tile__top-title--learn-more {
+                @include desktop-small-quilt {
+                    height: 45px;
+                    top: -50px;
+                }
+                @include desktop-middle-quilt {
+                    height: 45px;
+                    top: -50px;
+                }
+            }
+        }
+        &--2x1 {
+            height: $tile-level-2-size;
+            width: ($tile-level-2-size * 2) + ($tile-margin * 2);
+            @include desktop-small-quilt {
+                width: ($tile-level-2-size-tablet-portrait * 2) + ($tile-margin * 2);
+            }
+            @include desktop-middle-quilt {
+                width: ($tile-level-2-size-tablet-landscape * 2) + ($tile-margin * 2);
+            }
+        }
+        &--1x2 {
+            height: ($tile-level-2-size * 2) + ($tile-margin * 2);
+            width: $tile-level-2-size;
+            @include desktop-small-quilt {
+                width: $tile-level-2-size-tablet-portrait + ($tile-margin * 2);
+            }
+            @include desktop-middle-quilt {
+                width: $tile-level-2-size-tablet-landscape + ($tile-margin * 2);
+            }
+        }
+        &--2x2 {
+            height: ($tile-level-2-size * 2) + ($tile-margin * 2);
+            width: ($tile-level-2-size * 2) + ($tile-margin * 2);
+            @include desktop-small-quilt {
+                width: ($tile-level-2-size-tablet-portrait * 2) + ($tile-margin * 2);
+            }
+            @include desktop-middle-quilt {
+                width: ($tile-level-2-size-tablet-landscape * 2) + ($tile-margin * 2);
+            }
+        }
+        // mobile tiles
+        &--1 {
+            width: percentage(1/3) - 2;
+        }
+        &--2 {
+            width: 48%;
+        }
+        &--3 {
+            width: 98%;
+        }
+    }
+    .quilt__return {
+        .quilt__tile__wrapper {
+            z-index: $tile-learn-more;
+            @include align-items(center);
+            @include flex-direction(column);
+            @include flexbox;
+            @include justify-content(center);
+            h3 {
+                text-align: center;
+            }
+        }
+        .quilt__tile__wrapper__icon {
+            font-size: 70px;
+        }
+        &:hover {
+            .quilt__tile__ribbon {
+                -webkit-clip-path: polygon(10% 50%, 40% 0, 100% 0, 100% 100%, 40% 100%);
+            }
+        }
+        .quilt__tile__ribbon {
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            -webkit-clip-path: polygon(50% 50%, 70% 0, 100% 0, 100% 100%, 70% 100%);
+            @include desktop-quilt {
+                 @include transition(all $animation-speed $animation-type);
+            }
+        }
+        &--mobile {
+            height: 100%;
+            left: 0;
+            margin: 1% 0 0;
+            position: absolute;
+            width: 12%;
+            &__back {
+                height: 40px;
+                position: absolute;
+                width: 100%;
+                top: 0;
+            }
+            .quilt__tile__ribbon {
+                -webkit-clip-path: polygon(25% 50%, 50% 0, 100% 0, 100% 100%, 50% 100%);
+            }
+            .quilt__tile__wrapper {
+                display: block;
+                margin-top: 100px;
+                text-align: center;
+                .quilt__tile__wrapper__icon {
+                    font-size: 30px;
+                }
+                h3 {
+                    margin-top: 30px;
+                    @include transform(rotate(90deg));
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+    &.inactive {
+        opacity: 0;
+        max-height: 0;
+        @include desktop-quilt {
+             @include transition(all $animation-speed $animation-type);
+        }
+    }
+}

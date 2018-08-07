@@ -1,0 +1,3 @@
+#base=.
+
+mini-solution-block.js

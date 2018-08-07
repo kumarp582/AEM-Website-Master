@@ -1,0 +1,265 @@
+/** Inudstry darken background colors */
+.bg-darken-pallblue {
+    background-color: darken($color-pallblue, 10%);
+}
+.bg-darken-charcoal1 {
+    background-color: darken($color-charcoal1, 10%);
+}
+.bg-darken-charcoal2 {
+    background-color: darken($color-charcoal2, 10%);
+}
+.bg-darken-charcoal3 {
+    background-color: darken($color-charcoal3, 10%);
+}
+.bg-darken-highlight {
+    background-color: darken($color-highlight, 10%);
+}
+.bg-darken-microelec {
+    background-color: darken($color-microelec, 10%);
+}
+.bg-darken-aerospace {
+    background-color: darken($color-aerospace, 10%);
+}
+.bg-darken-oilgas {
+    background-color: darken($color-oilgas, 10%);
+}
+.bg-darken-laboratory {
+    background-color: darken($color-laboratory, 10%);
+}
+.bg-darken-biopharma {
+    background-color: darken($color-biopharma, 10%);
+}
+.bg-darken-chemicals {
+    background-color: darken($color-chemicals, 10%);
+}
+.bg-darken-power {
+    background-color: darken($color-power, 10%);
+}
+.bg-darken-industrial {
+    background-color: darken($color-industrial, 10%);
+}
+.bg-darken-medical {
+    background-color: darken($color-medical, 10%);
+}
+.bg-darken-food {
+    background-color: darken($color-food, 10%);
+}
+
+/** Inudstry opacity background colors */
+.bg-opacity-pallblue {
+    @include mobile {
+        background-color: $color-pallblue;
+    }
+    @include desktop {
+        background-color: rgba($color-pallblue, 0.8);
+    }
+}
+.bg-opacity-charcoal1 {
+    @include mobile {
+        background-color: $color-charcoal1;
+    }
+    @include desktop {
+        background-color: rgba($color-charcoal1, 0.8);
+    }
+}
+.bg-opacity-charcoal2 {
+    @include mobile {
+        background-color: $color-charcoal2;
+    }
+    @include desktop {
+        background-color: rgba($color-charcoal2, 0.8);
+    }
+}
+.bg-opacity-charcoal3 {
+    @include mobile {
+        background-color: $color-charcoal3;
+    }
+    @include desktop {
+        background-color: rgba($color-charcoal3, 0.8);
+    }
+}
+.bg-opacity-highlight {
+    @include mobile {
+        background-color: $color-highlight;
+    }
+    @include desktop {
+        background-color: rgba($color-highlight, 0.8);
+    }
+}
+.bg-opacity-microelec {
+    @include mobile {
+        background-color: $color-microelec;
+    }
+    @include desktop {
+        background-color: rgba($color-microelec, 0.8);
+    }
+}
+.bg-opacity-aerospace {
+    @include mobile {
+        background-color: $color-aerospace;
+    }
+    @include desktop {
+        background-color: rgba($color-aerospace, 0.8);
+    }
+}
+.bg-opacity-oilgas {
+    @include mobile {
+        background-color: $color-oilgas;
+     }
+    @include desktop {
+        background-color: rgba($color-oilgas, 0.8);
+    }
+}
+.bg-opacity-laboratory {
+    @include mobile {
+        background-color: $color-laboratory;
+    }
+    @include desktop {
+        background-color: rgba($color-laboratory, 0.8);
+    }
+}
+.bg-opacity-biopharma {
+    @include mobile {
+        background-color: $color-biopharma;
+    }
+    @include desktop {
+        background-color: rgba($color-biopharma, 0.8);
+    }
+}
+.bg-opacity-chemicals {
+    @include mobile {
+        background-color: $color-chemicals;
+    }
+    @include desktop {
+        background-color: rgba($color-chemicals, 0.8);
+    }
+}
+.bg-opacity-power {
+    @include mobile {
+        background-color: $color-power;
+    }
+    @include desktop {
+        background-color: rgba($color-power, 0.8);
+    }
+}
+.bg-opacity-industrial {
+    @include mobile {
+        background-color: $color-industrial;
+    }
+    @include desktop {
+        background-color: rgba($color-industrial, 0.8);
+    }
+}
+.bg-opacity-medical {
+    @include mobile {
+        background-color: $color-medical;
+    }
+    @include desktop {
+        background-color: rgba($color-medical, 0.8);
+    }
+}
+.bg-opacity-food {
+    @include mobile {
+        background-color: $color-food;
+    }
+    @include desktop {
+        background-color: rgba($color-food, 0.8);
+    }
+}
+
+/** Inudstry background colors */
+.bg-pallblue {
+    background-color: $color-pallblue;
+}
+.bg-charcoal1 {
+    background-color: $color-charcoal1;
+}
+.bg-charcoal2 {
+    background-color: $color-charcoal2;
+}
+.bg-charcoal3 {
+    background-color: $color-charcoal3;
+}
+.bg-highlight {
+    background-color: $color-highlight;
+}
+.bg-microelec {
+    background-color: $color-microelec;
+}
+.bg-aerospace {
+    background-color: $color-aerospace;
+}
+.bg-oilgas {
+    background-color: $color-oilgas;
+}
+.bg-laboratory {
+    background-color: $color-laboratory;
+}
+.bg-biopharma {
+    background-color: $color-biopharma;
+}
+.bg-chemicals {
+    background-color: $color-chemicals;
+}
+.bg-power {
+    background-color: $color-power;
+}
+.bg-industrial {
+    background-color: $color-industrial;
+}
+.bg-medical {
+    background-color: $color-medical;
+}
+.bg-food {
+    background-color: $color-food;
+}
+
+/** Inudstry text colors */
+.color-pallblue {
+    color: $color-pallblue;
+}
+.color-charcoal1 {
+    color: $color-charcoal1;
+}
+.color-charcoal2 {
+    color: $color-charcoal2;
+}
+.color-charcoal3 {
+    color: $color-charcoal3;
+}
+.color-highlight {
+    color: $color-highlight;
+}
+.color-microelec {
+    color: $color-microelec;
+}
+.color-aerospace {
+    color: $color-aerospace;
+}
+.color-oilgas {
+    color: $color-oilgas;
+}
+.color-laboratory {
+    color: $color-laboratory;
+}
+.color-biopharma {
+    color: $color-biopharma;
+}
+.color-chemicals {
+    color: $color-chemicals;
+}
+.color-power {
+    color: $color-power;
+}
+.color-industrial {
+    color: $color-industrial;
+}
+.color-medical {
+    color: $color-medical;
+}
+.color-food {
+    color: $color-food;
+}
+.color-white {
+    color: $color-white;
+}

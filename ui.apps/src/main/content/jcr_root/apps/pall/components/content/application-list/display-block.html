@@ -1,0 +1,10 @@
+<template data-sly-template.renderBlock="${ @ list }">
+    <div data-sly-test="${list}" class="application__list__col">
+        <img data-sly-test="${list.imagePath}" src="${list.imagePath}" alt="${list.title}"/>
+        <h2 class="application__list__coltitle">${list.title}</h2>
+        <p>${list.desc}</p>
+        <ul class="application__list__list" data-sly-list.key="${list.applicationList}">
+            <li><a href="${list.applicationList[key]}" target="_blank">${key}</a>
+        </ul>
+    </div>
+</template>

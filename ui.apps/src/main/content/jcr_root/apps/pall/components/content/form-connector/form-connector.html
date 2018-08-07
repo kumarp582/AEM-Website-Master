@@ -1,0 +1,32 @@
+<!--/*
+  AEM Form Connector component.
+*/-->
+<div data-sly-test="${wcmmode.edit}">
+    [ Configure ${component.title} Component ]
+</div>
+
+<div data-sly-test="${properties.formSelected}" class="form-connector" >
+    <sly data-sly-use.formEmbeded="${'com.pall.dotcom.service.models.FormEmbeded'}">
+         <!--/* to get form type: {formEmbeded.formType} */-->
+        <form action="${properties.post_url}" method="post">                
+            <sly data-sly-list="${formEmbeded.formFieldList}">
+                <sly data-sly-use.formField="form-fields-templates.html" 
+                    data-sly-call="${formField.field @ title = item.jcr:title , name = item.name, 
+                                                        type = item.fieldType, options = item.options,
+                                                        default_value = item.defaultValue, required = item.required,
+                                                        rows = item.rows}">
+                </sly>  
+                <br>           
+            </sly>
+
+            <br> 
+            <input type="hidden" name="formid" value="${properties.formid}">
+            <input type="hidden" name="formVid" value="${properties.formid}">
+            <sly data-sly-test="${properties.return_url}">
+                <input type="hidden" name="returnURL" value="${properties.return_url}">
+            </sly>
+            
+            <input type="submit" value="${properties.submit_text || 'Submit'}" class="form-connector__submit__button">
+        </form>
+    </sly> 
+</div>

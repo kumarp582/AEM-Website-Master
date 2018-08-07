@@ -1,0 +1,23 @@
+/* configuration and variables */
+@import "config/reset";
+@import "config/flexbox";
+@import "config/mixins";
+@import "config/icons";
+@import "config/variables";
+@import "config/colors";
+@import "config/fonts";
+@import "config/fontscontact";
+@import "config/breakpoints";
+@import "config/helpers";
+@import "config/pall-grid";
+
+/* shared layout styles */
+@import "layout/main";
+@import "layout/headings";
+@import "layout/buttons";
+@import "layout/z-layers";
+@import "layout/industry-specific";
+/* components */
+@import "components";
+
+

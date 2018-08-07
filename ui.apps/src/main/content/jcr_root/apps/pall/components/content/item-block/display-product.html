@@ -1,0 +1,36 @@
+<template data-sly-template.renderBlock="${ @ block, industry }">
+    <div data-sly-test="${block}" class="items-block__container__product-item product bg-${industry.color.cssClass} col-33">
+        <img class="items-block__container__product-item__image img-responsive" data-sly-test="${block.imagePath}" src="${block.imagePath}" alt="${block.resource.title}"/>
+        <div class="items-block__container__product-item__content" data-tactile="${industry.tactileGraphic}">
+            <img class="items-block__container__product-item__content__tactile-graphic" src="${industry.tactileGraphic}">
+            <h1 class="items-block__container__product-item__content__title">${block.resource.title}</h1>
+            <div class="items-block__container__product-item__content__description">
+                ${block.resource.prodDesc @ context='html'}
+            </div>
+            <div data-sly-test="${block.resource.partNumber}" class="items-block__container__product-item__content__part-number">
+                <h2>${'lblPartNumber' @ i18n}:</h2>
+                <p>${block.resource.partNumber}</p>
+            </div>
+            <div data-sly-test="${block.resource.price}" class="items-block__container__product-item__content__price">
+                <h2>${'lblPrice' @ i18n}:</h2><p>$${block.resource.price}</p>
+            </div>
+            <div class="mobile-hidden">
+                <a data-sly-test="${block.resource.link}" href="${block.resource.link}.html" target="${block.resource.linkTarget}" class="btn btn--small no-icon">
+                    <div>
+                        <span>${'lblViewProduct' @ i18n}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="items-block__container__product-item__mobile-content bg-darken-${industry.color.cssClass}">
+            <img class="items-block__container__product-item__mobile-content__image img-responsive" data-sly-test="${block.imagePath}" src="${block.imagePath}" alt="${block.resource.title}">
+            <div class="items-block__container__product-item__mobile-content__link">
+                <a data-sly-test="${block.resource.link}" href="${block.resource.link}.html" target="${block.resource.linkTarget}" class="btn btn--small no-icon">
+                    <div>
+                            <span>${'lblViewProduct' @ i18n}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,154 @@
+.items-block {
+    @extend .full-width;
+    &__container {
+        color: #fff;
+        padding-left: 0;
+        padding-right: 0;
+        @include flexbox;
+        @include mobile {
+          display: block;
+        }
+        &__learn-more__button {
+            &--desktop {
+                @include tablet-strict {
+                    display: none;
+                }
+            }
+            &--mobile {
+                @include desktop-strict {
+                    display: none;
+                }
+            }
+        }
+        // Layout
+        &__product-item, &__application-item {
+            padding: 0;
+            position: relative;
+            @include mobile {
+              left: 50%;
+              margin-left: -50vw;
+              margin-right: -50vw;
+              right: 50%;
+              width: 100vw;
+            }
+            @include desktop {
+                margin-bottom: -30px;
+                margin-top: -30px;
+                max-height: 722px;
+                z-index: $item-block-top;
+            }
+            &:nth-child(2n) {
+                @include mobile {
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                }
+                @include desktop {
+                    margin-left: 20px;
+                    margin-right: 20px;
+                }
+            }
+            &__image {
+                @include mobile {
+                    display: none;
+                }
+            }
+            &__content {
+                position: relative;
+                padding: 2em 30px;
+                background: linear-gradient(-135deg, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 25%);
+                @include mobile {
+                    padding: 2em 15px;
+                }
+                &__tactile-graphic {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+                &__title {
+                    font-size: 20px;
+                    line-height: 24px;
+                    margin-bottom: 0;
+                }
+                &__body, &__description {
+                    font-size: 14px;
+                    line-height: 20px;
+                    p {
+                        margin-bottom: 1.5em;
+                    }
+                }
+                &__part-number, &__price {
+                    font-size: 14px;
+                    line-height: 20px;
+                    text-transform: uppercase;
+                    h2 {
+                        font-size: 12px;
+                        text-transform: none;
+                        margin-bottom: 0;
+                        margin-top: 20px;
+                    }
+                    p {
+                        margin-bottom: 10px;
+                    }
+                }
+            }//__content
+            // Mobile Specific
+            &__mobile-content {
+                @include align-items(center);
+                @include mobile {
+                    @include flexbox;
+                }
+                @include desktop {
+                    display: none;
+                }
+                &__image {
+                    @include mobile {
+                        width: 110px;
+                    }
+                    @include desktop {
+                        width: 140px;
+                    }
+                }
+                &__link{
+                    padding-left: 1em;
+                }
+            }
+          }//__product-item, &__application-item
+          // Application Specific Styling
+          &__application-item {
+              &__bg-image {
+                  @include background-size-position(contain, 0, 100%);
+              }
+              &__content {
+                  &__title {
+                      margin-bottom: 1.5em;
+                  }
+                  // Mobile Read More functionality
+                  .read-more-state {
+                      display: none;
+                  }
+                  @include mobile {
+                      .read-more-mobile {
+                          display: block;
+                          opacity: 0;
+                          max-height: 0;
+                          transition: max-height 2500ms ease-in,
+                                    opacity 500ms ease-in;
+                      }
+                      .read-more-state:checked ~ .read-more-mobile {
+                          opacity: 1;
+                          max-height: 1000em;
+                      }
+                      .read-more-trigger {
+                          cursor: pointer;
+                          display: block;
+                          font-size: 14px;
+                          padding: 0.5em 0;
+                      }
+                      .read-more-state:checked ~ .read-more-trigger {
+                          display: none;
+                      }
+                  }
+              }
+        }//__application-item
+    }//__container
+}//.items-block

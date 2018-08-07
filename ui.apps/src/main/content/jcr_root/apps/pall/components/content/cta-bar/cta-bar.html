@@ -1,0 +1,59 @@
+<!--/*
+
+  CTA bar component.
+
+  Intershop CTA Bar Single Line  Component:
+    Could be 3 or 4 buttons. Need titles for the icon sets (when it’s 3 buttons, one single title)
+	Background image or color option, would need to choose icon set, button text/subtitle and link path.
+	
+	Mobile: buttons stack on mobile
+*/-->
+<div data-sly-test="${wcmmode.edit}">[ Configure ${component.title} Component ]</div>
+
+ <section data-sly-use.ctabar="${'com.pall.dotcom.service.models.CtaBar'}" 
+ 			data-sly-use.container="${'com.pall.dotcom.service.models.CtaBarContainer'}"
+ 			class="cta-bar__container bg-${ctabar.color.cssClass} ${properties.backgroundImage && properties.backgroundImage != '' ? 'bg-image-helper' : ''}"
+ 			data-image-src="${properties.backgroundImage}">
+	<div class="cta-bar__container__content pall-layout">
+		
+	    <div data-sly-test="${properties.bigtitle2}" class="cta-bar__container__content__buttons ">
+      			<h2 class="cta-bar__container__content__buttons__title">${properties.bigtitle1}</h2>
+        			<div class="cta-bar__container__content__buttons__block">
+	        			<sly data-sly-use.ctablock="cta-block.html"
+					         data-sly-call="${ ctablock.renderCta @ cta=container.cta1, class='cta-bar__container__content__buttons__block__items'  }"
+					         data-sly-unwrap></sly>
+	        			<sly data-sly-use.ctablock="cta-block.html"
+					         data-sly-call="${ ctablock.renderCta @ cta=container.cta2, class='cta-bar__container__content__buttons__block__items'  }"
+					         data-sly-unwrap></sly> 
+                   </div>         
+	    </div>
+	    
+	      <div data-sly-test="${properties.bigtitle2}" class="cta-bar__container__content__buttons cta-bar__line cta-bar__margin30">
+	        <h2 class="cta-bar__container__content__buttons__title">${properties.bigtitle2}</h2>
+	        	<div class="cta-bar__container__content__buttons__block">
+	        			<sly data-sly-use.ctablock="cta-block.html"
+					         data-sly-call="${ ctablock.renderCta @ cta=container.cta3, class='cta-bar__container__content__buttons__block__items' }"
+					         data-sly-unwrap></sly>
+	        			<sly data-sly-use.ctablock="cta-block.html"
+					         data-sly-call="${ ctablock.renderCta @ cta=container.cta4, class='cta-bar__container__content__buttons__block__items' }"
+					         data-sly-unwrap></sly>
+	             </div>          
+	    </div>
+	</div>
+	<div class="cta-bar__container__content3 pall-layout">
+	 <div data-sly-test="${properties.bigtitle2 == null && properties.bigtitle1 != null}" class="cta-bar__container__content3__buttons">
+	 <h2 class="cta-bar__container__content3__buttons__title ">${properties.bigtitle1}</h2>
+	 		<div class="cta-bar__container__content3__buttons__block">
+	 					<sly data-sly-use.ctablock="cta-block.html"
+					         data-sly-call="${ ctablock.renderCta @ cta=container.cta1, class='cta-bar__container__content3__buttons__block__items col-33' }"
+					         data-sly-unwrap></sly>
+		 				<sly data-sly-use.ctablock="cta-block.html"
+					         data-sly-call="${ ctablock.renderCta @ cta=container.cta2, class='cta-bar__container__content3__buttons__block__items col-33' }"
+					         data-sly-unwrap></sly>
+					    <sly data-sly-use.ctablock="cta-block.html"
+					         data-sly-call="${ ctablock.renderCta @ cta=container.cta3, class='cta-bar__container__content3__buttons__block__items col-33' }"
+					         data-sly-unwrap></sly>					 
+          	</div>
+	 </div>
+	 </div>
+</section>

@@ -1,0 +1,17 @@
+<template data-sly-template.renderCta="${ @ cta, class}">
+
+	<section data-sly-test="${cta}" class="${class}">   
+   		<a href="${cta.link}" class="btn ${cta.alternate}">
+          <div>
+              <span class="icon-${cta.icon}"></span>
+              <span>
+                  <span>
+                     ${cta.title} 
+                     <span>${cta.subtitle}</span>
+              				</span>                      
+                  </span>
+              </span>
+          </div>
+      </a>
+	</section>
+</template>

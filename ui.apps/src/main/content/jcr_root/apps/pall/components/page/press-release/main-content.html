@@ -1,0 +1,19 @@
+<template data-sly-template.articleMain="${ @ isAuthoring, industry }">
+  <div class="article__press__main-content clear-fix">
+      <img class="article__press__main-content__tactile-graphic mobile-hidden" src="${industry.tactileGraphic}">
+      <aside class="col-control col-20">
+          <div data-sly-resource="${'article-date' @ resourceType='pall/components/content/article-date'}">
+          </div>
+          <span class="article__press__main-content__label">${'lblNews' @ i18n}</span>
+      </aside>
+      <section class="col-control col-55">
+          <div data-sly-resource="${'content-col2' @ resourceType='wcm/foundation/components/parsys'}">
+          </div>
+      </section>
+      <aside class="col-control col-25">
+          <div data-sly-resource="${'content-col3' @ resourceType='wcm/foundation/components/parsys'}">
+          </div>
+      </aside>
+  </div>
+  <div data-sly-resource="${'related-articles' @ resourceType='pall/components/content/related-articles'}"></div>
+</template>

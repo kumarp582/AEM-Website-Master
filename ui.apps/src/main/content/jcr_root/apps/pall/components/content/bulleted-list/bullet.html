@@ -1,0 +1,15 @@
+<template data-sly-template.renderBullet="${ @ bullet, icon, color, rgbColor}">
+	<li class="bulleted-list__bullets__items__item">
+            
+             <div  class="bulleted-list__bullets__items__item__iconfa color-${color}" style="border-color: ${rgbColor};">
+                <i data-sly-test="${bullet.icon}" class="fa ${bullet.icon} fa-3x" aria-hidden="true"></i>
+                <img data-sly-test="${!bullet.icon}" class="bulleted-list__bullets__items__item__iconfa__img" src="${icon}" alt="${bullet.title}"/>
+			</div>
+            
+            <div class="bulleted-list__bullets__items__item__textbox">
+                <span class="bulleted-list__bullets__items__item__textbox__title">${bullet.title}</span>
+                <p class="bulleted-list__bullets__items__item__textbox__desc dot-ellipsis dot-height-100 dot-resize-update">${bullet.desc}</p>
+                <a data-sly-test="${bullet.link}" class="bulleted-list__bullets__items__item__textbox__link" href="${bullet.link}.html">Learn more &#187;</a>
+            </div>
+   </li>
+</template>

@@ -1,0 +1,241 @@
+.featured-solutions {
+	&__container {
+		@extend .full-width;
+	    padding-top: 5%;
+		position: relative;
+	   	&__background-image {
+    		position: absolute;
+	        right: 0;
+	        top: 0;
+	        width: auto;
+    	}
+		&__tactile-graphic {
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		&__content {
+			color: $color-white;
+			&__text-box {
+				padding-bottom: 5%;
+				width: 70%;
+				&__title {
+					@include mobile {
+						font-size: 24px;
+					}
+
+					@include desktop {
+						font-size: 80px;
+						line-height: 65px;	
+					}
+
+					padding-bottom: 5%;
+					padding-top: 15px;
+					text-transform: uppercase;
+				}
+				&__subtitle {
+					@include mobile {
+						font-size: 18px;
+					}
+
+					@include desktop {
+						font-size: 20px;
+						line-height: 20px;	
+					}
+				}
+				&__text {
+					padding-top: 15px;
+					padding-bottom: 5%;
+					padding-top: 15px;
+					@include mobile {
+						font-size: 12px;
+						line-height: 18px;	
+					}
+					@include desktop {
+						font-size: 14px;
+						line-height: 20px;	
+					}
+				}
+			}
+
+			&__blocks-container {
+				position: relative;
+
+				@include mobile {
+					left: 50%;
+					margin-left: -50vw;
+					margin-right: -50vw;
+					right: 50%;
+					width: 100vw;
+				}
+
+				@include desktop {
+					@include flexbox;
+					@include justify-content(space-between);
+				}
+
+				&__block {
+					@include mobile {
+						background: linear-gradient(-135deg, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 50%);
+						width: 100%;
+					}
+
+					@include desktop {
+						background: linear-gradient(135deg, rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 50%);
+						width: 49%;
+					}
+				}
+			}
+	    }
+	}
+	
+	&__segment-story {
+		@include mobile {
+			margin-top: 20px;
+			padding: 2em 0;
+		}
+
+		@include desktop {
+			padding: 2em 30px;
+		}
+
+		position: relative;
+
+		&__tactile-graphic {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		&__text-box {
+			@include mobile {
+				padding: 0 30px;
+			}
+
+			&__title {
+				font-family: 'proxima-nova-bold';
+				font-size: 40px;
+				line-height: 34px;	
+				padding-bottom: 5%;
+				padding-top: 15px;
+				text-transform: uppercase;				
+			}
+			
+			&__text {
+				font-size: 14px;
+				line-height: 20px;	
+				padding-bottom: 5%;
+			}
+		}
+
+		&__cta {
+			@include mobile {
+				padding: 0 30px;
+			}
+		}
+	}
+
+	&__product-story {
+		@include mobile {
+			padding: 2em 0;
+		}
+
+		@include desktop {
+			@include flexbox;
+		}
+
+		position: relative;
+
+		&__left {
+			@include mobile {
+				width: auto;
+			}
+
+			@include desktop {
+				width: 50%;
+			}
+
+			padding: 2em 30px;
+			position: relative;
+			
+			&.no-product-image {
+				width: 100%;
+			}
+		}
+
+		&__right {
+			@include mobile {
+				width: 30%;
+			}
+
+			@include desktop {
+				width: 50%;
+			}
+
+			&.no-product-image {
+				display: none;
+			}
+
+            // Mobile Specific
+            &__mobile-content {
+                @include align-items(center);
+                @include mobile {
+                    @include flexbox;
+					&.no-product-image {
+						@include justify-content(center);
+						padding: 20px 0;
+					}
+                }
+                @include desktop {
+                    display: none;
+                }
+                &__image {
+                    @include mobile {
+                        width: 33%;
+                    }
+                }
+                &__link{
+                    padding-left: 2em;
+                }
+            }
+		}
+
+
+		&__tactile-graphic {
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+
+		&__text-box {
+			&__title {
+				padding-top: 15px;
+				padding-bottom: 5%;
+			}
+
+			&__description {
+				font-size: 14px;
+				line-height: 20px;
+				p {
+					margin-bottom: 1.5em;
+				}
+			}
+
+			&__part-number, &__price {
+				font-size: 14px;
+				line-height: 20px;
+				text-transform: uppercase;
+				h2 {
+					font-size: 12px;
+					margin-bottom: 0;
+					margin-top: 20px;
+					text-transform: none;
+				}
+				p {
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}	
+	
+}

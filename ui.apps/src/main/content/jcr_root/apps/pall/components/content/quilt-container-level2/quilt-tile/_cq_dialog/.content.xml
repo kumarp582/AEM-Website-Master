@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Quilt Tile"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    helpPath="https://www.adobe.com/go/aem6_2_docs_component_en#Text &amp; Image - Sightly">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <tab1
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Tile Properties"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <size
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/foundation/form/select"
+                                class="cq-dialog-dropdown-showhide-multi"
+                                cq-dialog-dropdown-showhide-multi-target=".tile-size-showhide-multi-target"
+                                fieldLabel="Size"
+                                required="{Boolean}true"
+                                name="./size">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <s1-1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="1X1"
+                                        value="1x1"/>
+                                    <s1-2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="1X2"
+                                        value="1x2"/>
+                                    <s2-1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="2X1"
+                                        value="2x1"/>
+                                    <s2-2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="2X2"
+                                        value="2x2"/>
+                                </items>
+                            </size>
+                            <header
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Tile top headline text for desktop"
+                                fieldLabel="Header Text"
+                                maxlengthlong="13"
+                                name="./heading"/>
+                            <mobileHeading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Headline leter for mobile"
+                                fieldLabel="Headline Mobile"
+                                maxlengthlong="1"
+                                name="./mobileHeading"/>
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Title"
+                                fieldLabel="Title"
+                                name="./title"/>
+                            <desccontainer
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                class="hide tile-size-showhide-multi-target"
+                                showhidetargetvaluemulti="[1x2,2x1,2x2]">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <desc
+                                       jcr:primaryType="nt:unstructured"
+                                       sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                       fieldDescription="Short description"
+                                       fieldLabel="Description"
+                                       name="./desc"/>
+                                   </items>
+                            </desccontainer>
+                            <bgimg
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                allowUpload="{Boolean}false"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldLabel="Background Image"
+                                fileReferenceParameter="./image/fileReference"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                name="./image/file"
+                                title="Background Image"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true"/>
+                            <link
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Link"
+                                name="./link"
+                                rootPath="/content/pall"/>
+                        </items>
+                    </columns>
+                </items>
+            </tab1>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    allowedPaths="[/content/pall(/.*)?]"
+    jcr:primaryType="cq:Template"
+    jcr:title="Application Template"
+    ranking="1">
+  <jcr:content
+          jcr:primaryType="cq:PageContent"
+          cq:designPath="/etc/designs/pall"
+          sling:resourceType="pall/components/page/application">
+      <cq:BlueprintSyncConfig
+              cq:rolloutConfigs="[/etc/msm/rolloutconfigs/default]"
+              jcr:primaryType="cq:BlueprintSyncConfig"/>
+  </jcr:content>
+</jcr:root>

@@ -1,0 +1,8 @@
+.full-bleed-video {
+	&__content {
+		@extend .full-width;
+		&__responsive-player {
+			@include responsive-player;
+		}
+	}
+}

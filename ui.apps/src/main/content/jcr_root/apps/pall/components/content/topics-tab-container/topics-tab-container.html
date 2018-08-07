@@ -1,0 +1,31 @@
+<!--/*
+
+  Topics Tab Container component.
+
+*/-->
+<div data-sly-test="${wcmmode.edit}">[ Configure
+   ${component.title} Component ]
+</div>
+<div class="topics-tab__container bg-${tabcontainer.bgColor}" data-sly-use.tabcontainer="${'com.pall.dotcom.service.models.TopicsTabContainer'}">
+    <div class="topics-tab__container__intro ${tabcontainer.imagePath && tabcontainer.imagePath != '' ? 'bg-image-helper' : ''}" data-image-src="${tabcontainer.imagePath}" >
+        <h1 class="topics-tab__container__intro__title">${properties.title}</h1>
+        <div class="topics-tab__container__intro__description">
+            <p>${properties.description}</p>
+        </div>
+        <div class="topics-tab__container__tabs" data-sly-test="${tabcontainer.tabCount > 1}">
+            <sly data-sly-list="${ tabcontainer.tabs }">
+                <div class="topics-tab__container__tabs__topic" data-sly-test="${itemList.count <= tabcontainer.tabCount}">
+                    <a href="#${item.nodeName}" class="topic-selection color-${itemList.count == 1 ? item.activeFontColor : item.nonActiveFontColor} ${itemList.count == 1 ? 'active' : ''}" data-active-font-color ="${item.activeFontColorValue}" data-nonactive-font-color ="${item.nonActiveFontColorValue}">${item.tabName}<i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                </div>
+            </sly>
+        </div>
+    </div>
+    <div class="topics-tab__container__topics">
+        <div class="topics-tab__container__topics__wrapper pall-layout">
+            <sly data-sly-resource="${'.' @ resourceType='foundation/components/parsys'}"></sly>
+        </div>
+    </div>
+</div>
+<div data-sly-test="${wcmmode.edit}">[ End of
+   ${component.title} Component ]
+</div>

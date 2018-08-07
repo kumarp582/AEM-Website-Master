@@ -1,0 +1,22 @@
+<template data-sly-template.renderTopic="${ @ topic, fontColor }">
+	<div data-sly-test="${topic}" class="topics-tab__topic__item">
+        <div class="topics-tab__topic__item__content">
+            <img class="topics-tab__topic__item__content__graphic" data-sly-test="${topic.imagePath}" src="${topic.imagePath}"/>
+            <div class="topics-tab__topic__item__content__grip">
+                <span></span>
+            </div>
+            <h1 class="topics-tab__topic__item__content__title">${topic.title}</h1>
+            <div class="topics-tab__topic__item__content__description">
+                <p>${topic.description}</p>
+                <a href="${topic.link}.html" class="btn btn--small">
+                    <span class="icon-arrow"></span>
+                    <span>
+                        <span>
+                            ${'lblLearnMore' @ i18n }
+                        </span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</template>

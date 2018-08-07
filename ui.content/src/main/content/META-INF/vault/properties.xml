@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>FileVault Package Properties</comment>
+<entry key="buildCount">1</entry>
+<entry key="version">0.0.1-SNAPSHOT</entry>
+<entry key="dependencies" />
+<entry key="packageFormatVersion">2</entry>
+<entry key="description">AEM Pall Corp Project Content Package</entry>
+<entry key="group">pall-corp</entry>
+<entry key="name">pall-corp-aem-content</entry>
+<entry key="path">/etc/packages/pall-corp/pall-corp-aem-content-0.0.1-SNAPSHOT.zip</entry>
+</properties>

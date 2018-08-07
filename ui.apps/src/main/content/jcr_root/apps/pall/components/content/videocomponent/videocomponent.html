@@ -1,0 +1,110 @@
+
+
+
+
+
+<sly data-sly-test.isEdit="${wcmmode.edit}">
+ Full Bleed Video Configuration
+</sly>
+
+<div class="videowrapper" >
+    <sly data-sly-test="${properties.videoType=='multivideo'}">
+        <sly data-sly-test="${!isEdit}" data-sly-use.video="youtubevideo.js">
+
+        <div class="widthvideo" style=" width:100%;background-color:${properties.color @ context='unsafe'};background-image:url(${properties.backgroundImage @ context='unsafe'});">
+            <div class="widthcontrol" style="width:${properties.width @context='unsafe'}%;margin: auto;padding: ${properties.paddingtop @ context='styleToken'}% 0;">
+
+                <div class="wrapper">
+
+                    <div id="rypp-demo-2" class="RYPP r4-3" data-ids="${video.playlist}">
+                        <div class="RYPP-video">
+                            <div class="RYPP-video-player">
+                                <!-- Will be replaced -->
+                            </div>
+                        </div>
+                        <div class="videodescription" style="color:${properties.captioncolor @ context='styleToken'}">
+                            <h2 >${properties.videoheading}</h2>
+                            <p >${properties.embedvideodesc}</p>
+                        </div>
+                        <a href="#" data-loadmore="Load More" data-showless="Show Less" id="loadMore">Load More</a>
+
+                        <div class="RYPP-playlist">
+                            <header>
+                                <h2 class="_h1 RYPP-title">${properties.playlistname}</h2>
+                                <p class="RYPP-desc">${properties.playlistdesc}</p>
+                            </header>
+                            <div class="RYPP-items"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </sly>
+            <script>
+        $(document).ready(function() {
+            // https://developers.google.com/youtube/v3/getting-started
+            window.api_key = 'AIzaSyDI850ZxOSJgcbJn2-JGGxyXTukWOCqnIQ';
+            $('#rypp-demo-1').rypp(window.api_key, {
+                debug: true
+            });
+
+            $('#rypp-demo-2').rypp(window.api_key, {
+                debug: true
+            });
+
+
+        });
+</script>
+
+    </sly>
+
+    <sly data-sly-test="${properties.videoType=='singlevideo'}">
+        <div class="widthvideo" style=" width:100%;background-color:${properties.color @ context='unsafe'};background-image:url(${properties.backgroundImage @ context='unsafe'});">
+            <div class="widthcontrol" style="width:${properties.width @context='unsafe'}%;margin: auto;padding: ${properties.paddingtop @ context='styleToken'}% 0;">
+
+                <div class="wrapper">
+                    <sly data-sly-test.isSingle="${properties.videoCategory=='vimeosingle'}">
+                        <div id="fullbleed" class="youtube-player">
+
+                            <iframe src='https://player.vimeo.com/video/${properties.vimeovideolink}?autoplay=1&loop=1&title=0&byline=0&portrait=0' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen> class="video"></iframe>
+                        </div>
+                    </sly>
+                    <sly data-sly-test="${!isSingle}">
+                        <div class="youtube-player" data-id="${properties.youtubevideoid}" data-query="playlist=${video.playlist}"></div>
+                    </sly>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+</sly>
+
+    <sly data-sly-test="${properties.videoType=='fullbleed'}">
+     <div class="widthvideo" style=" width:100%;background-color:${properties.color @ context='unsafe'};background-image:url(${properties.backgroundImage @ context='unsafe'});">
+            <div class="widthcontrol" style="width:100%;margin: auto;padding: ${properties.paddingtop @ context='styleToken'}% 0;">
+
+                <div class="wrapper">
+                    <sly data-sly-test.isSingle="${properties.videoCategoryFull=='vimeofull'}">
+                        <div id="fullbleed" class="youtube-player">
+
+                            <iframe src='https://player.vimeo.com/video/${properties.vimeovideofull}?autoplay=1&loop=1&title=0&byline=0&portrait=0' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen> class="video"></iframe>
+                        </div>
+                    </sly>
+                    <sly data-sly-test="${!isSingle}">
+                        <div class="youtube-player" data-id="${properties.youtubevideofull}"></div>
+                    </sly>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+</sly>
+</div>

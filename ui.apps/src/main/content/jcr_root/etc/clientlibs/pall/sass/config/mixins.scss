@@ -1,0 +1,115 @@
+/* Global Mixins */
+@mixin font-face($font-family, $file-path, $font-weight, $font-style) {
+     @font-face{
+        font-family: $font-family;
+        src: url('#{$file-path}.eot');
+        src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype'), url('#{$file-path}.svg##{$font-family}') format('svg');
+        font-weight: $font-weight;
+        font-style: $font-style;
+    }
+    // Chrome for Windows rendering fix: http://www.adtrak.co.uk/blog/font-face-chrome-rendering/
+    @media screen and (-webkit-min-device-pixel-ratio: 0) {
+         @font-face{
+            font-family: $font-family;
+            src: url('#{$file-path}.svg##{$font-family}') format('svg');
+        }
+    }
+}
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+@mixin clearfix {
+    &:after,
+    &:before {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+@mixin responsive-player {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+@mixin shadow($shadow) {
+    -moz-box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+@mixin vertical-align($position: relative) {
+    position: $position;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+@mixin transition($transition...) {
+    -moz-transition: $transition;
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+@mixin transform($transform...) {
+    -moz-transform: $transform;
+    -webkit-transform: $transform;
+    transform: $transform;
+}
+@mixin grayscale($value) {
+    -webkit-filter: grayscale($value);
+    -moz-filter: grayscale($value);
+    filter:grayscale($value);
+}
+@mixin box-sizing($box-model) {
+    -webkit-box-sizing: $box-model; // Safari <= 5
+    -moz-box-sizing: $box-model; // Firefox <= 19
+    box-sizing: $box-model;
+}
+/* Pall Specific Mixins */
+@mixin button($btn-type) {
+    @if $btn-type == 'default' {
+        background-color: $color-btn-default;
+    }
+    @else {
+        background-color: $color-btn-alternate;
+    }
+    .btn-icon {
+        @if $btn-type == 'default' {
+            background-color: $color-btn-default-icon;
+        }
+        @else {
+            background-color: $color-btn-alternate-icon;
+        }
+    }
+    &:hover {
+        @if $btn-type == 'default' {
+            background-color: $color-btn-default-hover;
+            .btn-icon {
+                background-color: $color-btn-default-hover;
+            }
+        }
+        @else {
+            background-color: $color-btn-alternate-hover;
+            .btn-icon {
+                background-color: $color-btn-alternate-hover;
+            }
+        }
+    }
+}
+
+@mixin background-size-position($size, $x-position, $y-position) {
+    background-size: $size;
+    background-position: $x-position $y-position;
+}

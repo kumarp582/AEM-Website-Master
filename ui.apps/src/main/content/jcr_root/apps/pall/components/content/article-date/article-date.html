@@ -1,0 +1,18 @@
+<sly data-sly-use.articlePage="${'com.pall.dotcom.service.models.PallArticlePage'}" 
+     data-sly-use.artDate="${'com.pall.dotcom.service.models.ArticleDate' @ articlePage=articlePage}"
+     data-sly-use.industry="${'com.pall.dotcom.service.models.PallIndustryPage'}" data-sly-unwrap></sly>
+<div class="article-date">
+    <div class="article-date__year-month bg-${industry.color.cssClass} 
+                ${artDate.datePeriod ? 'date-period' : ''}">
+        <span class="article-date__em">${artDate.fromMonth}</span>
+        <span>${artDate.fromYear}</span>
+    </div>
+    <div class="article-date__day ${artDate.datePeriod ? 'date-period-to' : ''}">
+        <span class="article-date__em">${artDate.fromDate}</span>
+        <span>${artDate.fromDay}</span>
+    </div>
+    <div data-sly-test="${artDate.datePeriod}" class="article-date__day date-period-from">
+        <span class="article-date__em">${artDate.toDate}</span>
+        <span>${artDate.toDay}</span>
+    </div>
+</div>

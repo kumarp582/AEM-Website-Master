@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Item Block"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    helpPath="https://www.adobe.com/go/aem6_2_docs_component_en#Text &amp; Image - Sightly">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <general
+                jcr:primaryType="nt:unstructured"
+                jcr:title="General Configuration"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <color
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="pall/components/touch-ui/widget/colorpicker"
+                                fieldLabel="Background Color"
+                                fieldDescription="Color to be displayed as background for this component"
+                                freestylePaletteType="{Boolean}true"
+                                name="./bgColor"/>
+                        </items>
+                    </columns>
+                </items>
+            </general>
+            <block1
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Block1 Properties"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <itemtype
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/foundation/form/select"
+                                fieldLabel="Item Type"
+                                name="./block1/itemType"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".item-block1-showhide-target">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <product
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Product"
+                                        value="product"/>
+                                    <application
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Application"
+                                        value="application"/>
+                                </items>
+                            </itemtype>
+                            <container1
+                                class="hide item-block1-showhide-target"
+                                showhidetargetvalue="product"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <image
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                        allowUpload="{Boolean}false"
+                                        autoStart="{Boolean}false"
+                                        class="cq-droptarget"
+                                        fieldLabel="Product Image"
+                                        fileReferenceParameter="./block1/image/fileReference"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        name="./block1/image/file"
+                                        title="Product Image"
+                                        uploadUrl="${suffix.path}"
+                                        useHTML5="{Boolean}true"/>
+                                   </items>
+                            </container1>
+                            <container2
+                                class="hide item-block1-showhide-target"
+                                showhidetargetvalue="application"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <bgImage
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                        allowUpload="{Boolean}false"
+                                        autoStart="{Boolean}false"
+                                        class="cq-droptarget"
+                                        fieldLabel="Background Image"
+                                        fileReferenceParameter="./block1/bgImage/fileReference"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        name="./block1/bgImage/file"
+                                        title="Background Image"
+                                        uploadUrl="${suffix.path}"
+                                        useHTML5="{Boolean}true"/>
+                                </items>
+                            </container2>
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Title for the block"
+                                fieldLabel="Title"
+                                name="./block1/title"/>
+                            <container3
+                                class="hide item-block1-showhide-target"
+                                showhidetargetvalue="product"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <description
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                        fieldDescription="Short Description of the block"
+                                        fieldLabel="Description"
+                                        name="./block1/prodDesc"/>
+                                </items>
+                            </container3>
+                            <container4
+                                class="hide item-block1-showhide-target"
+                                showhidetargetvalue="application"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                jcr:primaryType="nt:unstructured">
+                                   <items jcr:primaryType="nt:unstructured">
+                                    <shortDesc
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                        fieldDescription="Short Description of the block"
+                                        fieldLabel="Short Description"
+                                        name="./block1/shortDesc"/>
+                                    <moreDesc
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                        fieldDescription="Short Description of the block"
+                                        fieldLabel="Read More Description"
+                                        name="./block1/moreDesc"/>
+                                </items> 
+                            </container4>
+                            <container5
+                                class="hide item-block1-showhide-target"
+                                showhidetargetvalue="product"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <partno
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Part Number"
+                                        name="./block1/partNumber"/>
+                                    <price
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Price"
+                                        name="./block1/price"/>
+                                </items>
+                            </container5>
+                            <link
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Link"
+                                name="./block1/link"
+                                rootPath="/content/pall"/>
+                            <linktarget
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/foundation/form/select"
+                                fieldLabel="Link Target"
+                                name="./block1/linkTarget"
+                                rootPath="/content/pall">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <threeColumns
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Same Window"
+                                        value="_self"/>
+                                    <twoColumns
+                                        jcr:primaryType="nt:unstructured"
+                                        text="New Window/Tab"
+                                        value="_blank"/>
+                                </items>
+                            </linktarget>
+                            <container6
+                                class="hide item-block1-showhide-target"
+                                showhidetargetvalue="application"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <linkSubtitle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        maxlength="29"
+                                        fieldDescription="Subtitle for the link"
+                                        fieldLabel="Link Subtitle"
+                                        name="./block1/linkSubtitle"/>
+                                </items>
+                            </container6>
+                        </items>
+                    </columns>
+                </items>
+            </block1>
+            <block2
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Block2 Properties"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <itemtype
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/foundation/form/select"
+                                fieldLabel="Item Type"
+                                name="./block2/itemType"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".item-block2-showhide-target">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <product
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Product"
+                                        value="product"/>
+                                    <application
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Application"
+                                        value="application"/>
+                                </items>
+                            </itemtype>
+                            <container1
+                                class="hide item-block2-showhide-target"
+                                showhidetargetvalue="product"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <image
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                        allowUpload="{Boolean}false"
+                                        autoStart="{Boolean}false"
+                                        class="cq-droptarget"
+                                        fieldLabel="Product Image"
+                                        fileReferenceParameter="./block2/image/fileReference"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        name="./block2/image/file"
+                                        title="Product Image"
+                                        uploadUrl="${suffix.path}"
+                                        useHTML5="{Boolean}true"/>
+                                   </items>
+                            </container1>
+                            <container2
+                                class="hide item-block2-showhide-target"
+                                showhidetargetvalue="application"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <bgImage
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                        allowUpload="{Boolean}false"
+                                        autoStart="{Boolean}false"
+                                        class="cq-droptarget"
+                                        fieldLabel="Background Image"
+                                        fileReferenceParameter="./block2/bgImage/fileReference"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        name="./block2/bgImage/file"
+                                        title="Background Image"
+                                        uploadUrl="${suffix.path}"
+                                        useHTML5="{Boolean}true"/>
+                                </items>
+                            </container2>
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Title for the block"
+                                fieldLabel="Title"
+                                name="./block2/title"/>
+                            <container3
+                                class="hide item-block2-showhide-target"
+                                showhidetargetvalue="product"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <description
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                        fieldDescription="Short Description of the block"
+                                        fieldLabel="Description"
+                                        name="./block2/prodDesc"/>
+                                </items>
+                            </container3>
+                            <container4
+                                class="hide item-block2-showhide-target"
+                                showhidetargetvalue="application"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                jcr:primaryType="nt:unstructured">
+                                   <items jcr:primaryType="nt:unstructured">
+                                    <shortDesc
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                        fieldDescription="Short Description of the block"
+                                        fieldLabel="Short Description"
+                                        name="./block2/shortDesc"/>
+                                    <moreDesc
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                        fieldDescription="Short Description of the block"
+                                        fieldLabel="Read More Description"
+                                        name="./block2/moreDesc"/>
+                                </items> 
+                            </container4>
+                            <container5
+                                class="hide item-block2-showhide-target"
+                                showhidetargetvalue="product"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <partno
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Part Number"
+                                        name="./block2/partNumber"/>
+                                    <price
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Price"
+                                        name="./block2/price"/>
+                                </items>
+                            </container5>
+                            <link
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Link"
+                                name="./block2/link"
+                                rootPath="/content/pall"/>
+                            <linktarget
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/foundation/form/select"
+                                fieldLabel="Link Target"
+                                name="./block2/linkTarget"
+                                rootPath="/content/pall">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <threeColumns
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Same Window"
+                                        value="_self"/>
+                                    <twoColumns
+                                        jcr:primaryType="nt:unstructured"
+                                        text="New Window/Tab"
+                                        value="_blank"/>
+                                </items>
+                            </linktarget>
+                            <container6
+                                class="hide item-block2-showhide-target"
+                                showhidetargetvalue="application"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <linkSubtitle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        maxlength="29"
+                                        fieldDescription="Subtitle for the link"
+                                        fieldLabel="Link Subtitle"
+                                        name="./block2/linkSubtitle"/>
+                                </items>
+                            </container6>
+                        </items>
+                    </columns>
+                </items>
+            </block2>
+            <block3
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Block3 Properties"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                               <itemtype
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/foundation/form/select"
+                                fieldLabel="Item Type"
+                                name="./block3/itemType"
+                                class="cq-dialog-dropdown-showhide"
+                                cq-dialog-dropdown-showhide-target=".item-block3-showhide-target">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <product
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Product"
+                                        value="product"/>
+                                    <application
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Application"
+                                        value="application"/>
+                                </items>
+                            </itemtype>
+                            <container1
+                                class="hide item-block3-showhide-target"
+                                showhidetargetvalue="product"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <image
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                        allowUpload="{Boolean}false"
+                                        autoStart="{Boolean}false"
+                                        class="cq-droptarget"
+                                        fieldLabel="Product Image"
+                                        fileReferenceParameter="./block3/image/fileReference"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        name="./block3/image/file"
+                                        title="Product Image"
+                                        uploadUrl="${suffix.path}"
+                                        useHTML5="{Boolean}true"/>
+                                   </items>
+                            </container1>
+                            <container2
+                                class="hide item-block3-showhide-target"
+                                showhidetargetvalue="application"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <bgImage
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                        allowUpload="{Boolean}false"
+                                        autoStart="{Boolean}false"
+                                        class="cq-droptarget"
+                                        fieldLabel="Background Image"
+                                        fileReferenceParameter="./block3/bgImage/fileReference"
+                                        mimeTypes="[image]"
+                                        multiple="{Boolean}false"
+                                        name="./block3/bgImage/file"
+                                        title="Background Image"
+                                        uploadUrl="${suffix.path}"
+                                        useHTML5="{Boolean}true"/>
+                                </items>
+                            </container2>
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Title for the block"
+                                fieldLabel="Title"
+                                name="./block3/title"/>
+                            <container3
+                                class="hide item-block3-showhide-target"
+                                showhidetargetvalue="product"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <description
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                        fieldDescription="Short Description of the block"
+                                        fieldLabel="Description"
+                                        name="./block3/prodDesc"/>
+                                </items>
+                            </container3>
+                            <container4
+                                class="hide item-block3-showhide-target"
+                                showhidetargetvalue="application"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                jcr:primaryType="nt:unstructured">
+                                   <items jcr:primaryType="nt:unstructured">
+                                    <shortDesc
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                        fieldDescription="Short Description of the block"
+                                        fieldLabel="Short Description"
+                                        name="./block3/shortDesc"/>
+                                    <moreDesc
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                        fieldDescription="Short Description of the block"
+                                        fieldLabel="Read More Description"
+                                        name="./block3/moreDesc"/>
+                                </items> 
+                            </container4>
+                            <container5
+                                class="hide item-block3-showhide-target"
+                                showhidetargetvalue="product"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <partno
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Part Number"
+                                        name="./block3/partNumber"/>
+                                    <price
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Price"
+                                        name="./block3/price"/>
+                                </items>
+                            </container5>
+                            <link
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Link"
+                                name="./block3/link"
+                                rootPath="/content/pall"/>
+                            <linktarget
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/foundation/form/select"
+                                fieldLabel="Link Target"
+                                name="./block3/linkTarget"
+                                rootPath="/content/pall">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <threeColumns
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Same Window"
+                                        value="_self"/>
+                                    <twoColumns
+                                        jcr:primaryType="nt:unstructured"
+                                        text="New Window/Tab"
+                                        value="_blank"/>
+                                </items>
+                            </linktarget>
+                            <container6
+                                class="hide item-block3-showhide-target"
+                                showhidetargetvalue="application"
+                                sling:resourceType="granite/ui/components/foundation/container"
+                                jcr:primaryType="nt:unstructured">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <linkSubtitle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        maxlength="29"
+                                        fieldDescription="Subtitle for the link"
+                                        fieldLabel="Link Subtitle"
+                                        name="./block3/linkSubtitle"/>
+                                </items>
+                            </container6>
+                        </items>
+                    </columns>
+                </items>
+            </block3>
+        </items>
+    </content>
+</jcr:root>

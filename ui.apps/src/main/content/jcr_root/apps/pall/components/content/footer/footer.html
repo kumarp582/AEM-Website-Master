@@ -1,0 +1,61 @@
+<div data-sly-test="${wcmmode.edit}">[ Configure ${component.title} Component ]</div>
+<div class="footer__content pall-layout" data-sly-use.footer="${'com.pall.dotcom.service.models.PallFooter'}">
+    <section class="footer__content__row">
+        <section class="col-45">
+            <img class="img-responsive" data-sly-test="${footer.logoImagePath}" src="${footer.logoImagePath}" alt="${properties.altText}">
+        </section>
+    </section>
+    <section class="footer__content__row">
+        <section class="footer__content__legal col-45">
+            <p>${properties.legalText}</p>
+        </section>
+        <aside class="footer__content__links mobile-hidden col-15">
+            <h3 class="footer__content__links__title">${'lblFooterLink1' @ i18n}</h3>
+            <ul class="footer__content__links__items">
+                <sly data-sly-list="${footer.pallLinks}">
+                    <li>
+                        <a href="${item.linkHref}.html">${item.linkText}</a>
+                    </li>
+                </sly>
+            </ul>
+        </aside>
+        <aside class="footer__content__links mobile-hidden col-40">
+            <h3 class="footer__content__links__title">${'lblFooterLink2' @ i18n}</h3>
+            <ul class="footer__content__links__items col-50">
+                <sly data-sly-list="${footer.industriesLinksFirst}">
+                    <li>
+                        <a href="${item.linkHref}.html">${item.linkText}</a>
+                    </li>
+                </sly>
+            </ul>
+            <ul class="footer__content__links__items col-50">
+                <sly data-sly-list="${footer.industriesLinksSecond}">
+                    <li>
+                        <a href="${item.linkHref}.html">${item.linkText}</a>
+                    </li>
+                </sly>
+            </ul>
+        </aside>
+    </section>
+    <section class="footer__content__row footer__content__row--social">
+        <section class="footer__content__legal col-45">
+            <a class="fa fa-facebook-square footer__social__facebook" data-sly-test="${footer.industryPage.linkFacebook ? footer.industryPage.linkFacebook : footer.homePage.linkFacebook}" href="${footer.industryPage.linkFacebook ? footer.industryPage.linkFacebook : footer.homePage.linkFacebook}"
+                target="_blank"></a>
+            <a class="fa fa-twitter footer__social__twitter" data-sly-test="${footer.industryPage.linkTwitter ? footer.industryPage.linkTwitter : footer.homePage.linkTwitter}" href="${footer.industryPage.linkTwitter ? footer.industryPage.linkTwitter : footer.homePage.linkTwitter}"
+                target="_blank"></a>
+            <a class="fa fa-youtube-play footer__social__youtube" data-sly-test="${footer.industryPage.linkYoutube ? footer.industryPage.linkYoutube : footer.homePage.linkYoutube}" href="${footer.industryPage.linkYoutube ? footer.industryPage.linkYoutube : footer.homePage.linkYoutube}"
+                target="_blank"></a>
+            <a class="fa fa-google-plus footer__social__googleplus" data-sly-test="${footer.industryPage.linkGooglePlus ? footer.industryPage.linkGooglePlus : footer.homePage.linkGooglePlus}" href="${footer.industryPage.linkGooglePlus ? footer.industryPage.linkGooglePlus : footer.homePage.linkGooglePlus}"
+                target="_blank"></a>
+            <a class="fa fa-linkedin footer__social__linkedin" data-sly-test="${footer.industryPage.linkLinkedin ? footer.industryPage.linkLinkedin : footer.homePage.linkLinkedin}" href="${footer.industryPage.linkLinkedin ? footer.industryPage.linkLinkedin : footer.homePage.linkLinkedin}"
+                target="_blank"></a>
+        </section>
+    </section>
+    <section class="footer__content__row">
+        <section class="footer__content__copyright col-45">
+            <p>${properties.copyrightMsg}
+                <a class="footer__content__links__tandc" href="${properties.tandcHref}" target="_blank"> ${'lblTermsAndConditions' @ i18n}</a>
+            </p>
+        </section>
+    </section>
+</div>

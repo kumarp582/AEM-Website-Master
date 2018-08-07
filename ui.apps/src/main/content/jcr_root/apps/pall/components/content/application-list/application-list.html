@@ -1,0 +1,22 @@
+<!--/*
+
+  Application List component.
+
+    Image and information will be generated from page properties information in Applications Template. Can be 1, 2 or 3 columns. 
+    Images will all be same size in component per ol column. Links will go to intershop for now, but eventually to application pages.
+
+*/-->
+<div data-sly-test="${wcmmode.edit}">[ Configure ${component.title} Component ]</div>
+<div data-sly-use.container="${'com.pall.dotcom.service.models.ApplicationListContainer'}" class="application__list bg-${container.industry.color.cssClass}" >
+    <h1 class="application__list__title">${properties.title}</h1>
+    <img class="application__list__bgimg" src="${container.bgImagePath}">
+    <sly data-sly-use.displayblock="display-block.html"
+         data-sly-call="${ displayblock.renderBlock @ list=container.applicationList1 }"
+         data-sly-unwrap></sly>
+    <sly data-sly-use.displayblock="display-block.html"
+         data-sly-call="${ displayblock.renderBlock @ list=container.applicationList2 }"
+         data-sly-unwrap></sly>
+    <sly data-sly-use.displayblock="display-block.html"
+         data-sly-call="${ displayblock.renderBlock @ list=container.applicationList3 }"
+         data-sly-unwrap></sly>
+</sly>

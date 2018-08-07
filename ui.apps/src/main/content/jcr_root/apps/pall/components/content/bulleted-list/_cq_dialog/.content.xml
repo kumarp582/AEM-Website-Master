@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Bulleted List"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    mode="edit">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <bulletedlist
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Bulleted List"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldLabel="Title"
+                                name="./title"
+                                required="{Boolean}true"/>
+                            <description
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                fieldDescription="Main description for the header"
+                                fieldLabel="Description"
+                                name="./description"
+                                required="{Boolean}true"/>
+                            <image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                allowUpload="{Boolean}false"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldLabel="Image"
+                                fileReferenceParameter="./image/fileReference"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                name="./image/file"
+                                title="Image"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true"/>
+                            <alignment
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Image alignment position"
+                                fieldLabel="Alignment"
+                                name="./alignment">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <left
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Left"
+                                        value="left"/>
+                                    <right
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Right"
+                                        value="right"/>
+                                </items>
+                            </alignment>
+                            <bu1
+		                        jcr:primaryType="nt:unstructured"
+		                        jcr:title="First bullet Configuration"
+		                        sling:resourceType="granite/ui/components/foundation/section">
+		                        <layout
+		                            jcr:primaryType="nt:unstructured"
+		                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+		                            margin="{Boolean}false"/>
+		                        <items jcr:primaryType="nt:unstructured">
+		                            <column
+		                                jcr:primaryType="nt:unstructured"
+		                                sling:resourceType="granite/ui/components/foundation/container">
+		                                <items jcr:primaryType="nt:unstructured">
+		                                    <buproperties1
+		                                        jcr:primaryType="nt:unstructured"
+		                                        jcr:title="First bullet"
+		                                        sling:resourceType="granite/ui/components/foundation/form/fieldset">
+		                                        <items jcr:primaryType="nt:unstructured">
+                                                <icon1
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Icon1 class"
+                                                    fieldDescription="Use font awesome. If empty, the industry icon will be used."
+                                                    name="./bullet1/icon"/>
+                                                <title1
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Title1"
+                                                    name="./bullet1/title"/>
+                                                <description1
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                                    fieldLabel="Description1"
+                                                    name="./bullet1/desc"/>
+                                                <link1
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                    fieldLabel="Link1"
+                                                    name="./bullet1/link"
+                                                    rootPath="/content/pall"/>
+                                               </items>
+                                           </buproperties1>
+                                         </items>
+                                      </column>
+                                   </items>
+                                </bu1>
+								<bu2
+		                        jcr:primaryType="nt:unstructured"
+		                        jcr:title="Second bullet Configuration"
+		                        sling:resourceType="granite/ui/components/foundation/section">
+		                        <layout
+		                            jcr:primaryType="nt:unstructured"
+		                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+		                            margin="{Boolean}false"/>
+		                        <items jcr:primaryType="nt:unstructured">
+		                            <column
+		                                jcr:primaryType="nt:unstructured"
+		                                sling:resourceType="granite/ui/components/foundation/container">
+		                                <items jcr:primaryType="nt:unstructured">
+		                                    <buproperties1
+		                                        jcr:primaryType="nt:unstructured"
+		                                        jcr:title="Second bullet"
+		                                        sling:resourceType="granite/ui/components/foundation/form/fieldset">
+		                                        <items jcr:primaryType="nt:unstructured">                                                    
+                                               <icon2
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Icon2 class"
+                                                    fieldDescription="Use font awesome. If empty, the industry icon will be used."
+                                                    name="./bullet2/icon"/>
+                                                <title2
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Title2"
+                                                    name="./bullet2/title"/>
+                                                <description2
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                                    fieldLabel="Description2"
+                                                    name="./bullet2/desc"/>
+                                                <link2
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                    fieldLabel="Link2"
+                                                    name="./bullet2/link"
+                                                    rootPath="/content/pall"/>
+                                              </items>
+                                           </buproperties1>
+                                         </items>
+                                      </column>
+                                    </items>
+                                </bu2>
+ 								<bu3
+		                        jcr:primaryType="nt:unstructured"
+		                        jcr:title="Third bullet Configuration"
+		                        sling:resourceType="granite/ui/components/foundation/section">
+		                        <layout
+		                            jcr:primaryType="nt:unstructured"
+		                            sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+		                            margin="{Boolean}false"/>
+		                        <items jcr:primaryType="nt:unstructured">
+		                            <column
+		                                jcr:primaryType="nt:unstructured"
+		                                sling:resourceType="granite/ui/components/foundation/container">
+		                                <items jcr:primaryType="nt:unstructured">
+		                                    <buproperties1
+		                                        jcr:primaryType="nt:unstructured"
+		                                        jcr:title="Third bullet"
+		                                        sling:resourceType="granite/ui/components/foundation/form/fieldset">
+		                                        <items jcr:primaryType="nt:unstructured">                                                   
+                                               <icon3
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Icon3 class"
+                                                    fieldDescription="Use font awesome. If empty, the industry icon will be used."
+                                                    name="./bullet3/icon"/>
+                                                <title3
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                    fieldLabel="Title3"
+                                                    name="./bullet3/title"/>
+                                                <description3
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                                    fieldLabel="Description3"
+                                                    name="./bullet3/desc"/>
+                                                <link3
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                    fieldLabel="Link3"
+                                                    name="./bullet3/link"
+                                                    rootPath="/content/pall"/>
+                                           </items>
+                                        </buproperties1>
+                                   </items>
+                                  </column>
+                              </items>
+                            </bu3>                          
+                            <backgroundImage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                allowUpload="{Boolean}false"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldLabel="Optional Background Image to show on the bottom"
+                                fileReferenceParameter="./backgroundImage/fileReference"
+                                name="./backgroundImage/file"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                title="Background Image"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true"/>
+                        </items>
+                    </columns>
+                </items>
+            </bulletedlist>
+        </items>
+    </content>
+</jcr:root>
